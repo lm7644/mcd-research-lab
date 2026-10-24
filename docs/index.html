@@ -4,71 +4,190 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>麦麦研究所 · 麦当劳菜单情报站</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23DA291C'/%3E%3Cpath d='M14 50 V30 A9.5 9.5 0 0 1 33 30 V50 M33 50 V30 A9.5 9.5 0 0 1 52 30 V50' stroke='%23FFC72C' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-  :root { --red:#da291c; --yellow:#ffbc0d; --ink:#1a1a1a; --bg:#faf7f2; --card:#ffffff; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
-  header { background:linear-gradient(135deg,var(--red) 0%,#b02318 100%); color:#fff; padding:48px 20px 40px; text-align:center; }
-  header h1 { font-size:2.2em; letter-spacing:.05em; }
-  header .sub { margin-top:10px; opacity:.92; }
-  header .badge { display:inline-block; background:var(--yellow); color:var(--ink); border-radius:20px; padding:2px 14px; font-size:.85em; font-weight:700; margin-top:14px; }
-  main { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
-  section { background:var(--card); border-radius:14px; padding:22px 24px; margin-top:20px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
-  h2 { font-size:1.25em; border-left:5px solid var(--yellow); padding-left:10px; margin-bottom:12px; }
-  .meta { color:#888; font-size:.85em; margin-bottom:10px; }
-  ul { list-style:none; }
-  li { padding:6px 0; border-bottom:1px dashed #eee; }
-  li:last-child { border-bottom:none; }
-  .up { color:var(--red); font-weight:700; } .down { color:#1a7f37; font-weight:700; }
-  .tag { display:inline-block; background:#f0ece4; border-radius:6px; padding:0 8px; font-size:.82em; margin-left:6px; }
-  .rank1 li:nth-child(1)::before { content:"🥇 "; } .rank1 li:nth-child(2)::before { content:"🥈 "; } .rank1 li:nth-child(3)::before { content:"🥉 "; }
-  .bar { background:#f0ece4; border-radius:6px; overflow:hidden; height:10px; margin-top:3px; }
-  .bar i { display:block; height:100%; background:linear-gradient(90deg,var(--yellow),var(--red)); }
-  a { color:var(--red); text-decoration:none; } a:hover { text-decoration:underline; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:10px; }
-  .card { border:1px solid #eee; border-radius:10px; padding:10px 12px; }
-  .card b { display:block; }
-  .card small { color:#888; }
-  footer { text-align:center; color:#999; font-size:.85em; padding:24px; }
-  .empty { color:#999; font-style:italic; }
+  /* ── 设计 token：一切色与形从麦当劳品牌长出来 ── */
+  :root{
+    --red:#DA291C; --red-deep:#A92318; --red-hot:#E4382A;
+    --gold:#FFC72C; --gold-deep:#E8A800;
+    --cream:#FFF6E7; --paper:#FFFDF7; --cocoa:#31241A;
+    --ink:#2B2016; --ink-soft:#8A7A63; --ink-faint:#B3A690;
+    --lettuce:#3E9B4F; --line:#F0E4CC; --track:#F6ECD7;
+    --r-card:26px; --r-pill:999px;
+    --shadow-card:0 1px 2px rgba(63,38,10,.04), 0 10px 28px rgba(63,38,10,.07);
+    --shadow-pop:0 4px 10px rgba(63,38,10,.08), 0 18px 44px rgba(63,38,10,.13);
+    --font:ui-rounded,"SF Pro Rounded","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:var(--red);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+
+  /* ── 红金主视觉：金拱门水印 + 大字阶 ── */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--red-hot) 0%,var(--red) 42%,var(--red-deep) 100%);color:#fff;padding:84px 24px 132px}
+  .hero .arches{position:absolute;right:-60px;bottom:-72px;width:420px;max-width:70vw;opacity:.16;pointer-events:none}
+  .hero .arches.left{right:auto;left:-90px;top:-90px;width:280px;opacity:.09;bottom:auto}
+  .hero-inner{position:relative;max-width:880px;margin:0 auto}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+  .hero h1{font-size:clamp(2.6rem,7vw,4rem);font-weight:900;letter-spacing:.02em;line-height:1.15;margin:14px 0 10px;text-wrap:balance}
+  .hero h1 .gold{color:var(--gold)}
+  .hero .sub{max-width:34em;color:rgba(255,255,255,.88);font-size:1.02rem;text-wrap:pretty}
+  .hero .badge{display:inline-flex;align-items:center;gap:8px;margin-top:26px;background:var(--gold);color:var(--ink);border-radius:var(--r-pill);padding:8px 18px;font-size:.88rem;font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+  .hero .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red)}
+
+  /* ── 主体上叠：面包圆角压住红底 ── */
+  main{max-width:880px;margin:-72px auto 0;padding:0 20px 72px;position:relative}
+  section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-card);padding:34px 36px;margin-top:26px;box-shadow:var(--shadow-card)}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+  .sec-head .kicker{font-size:.78rem;font-weight:800;letter-spacing:.22em;color:var(--red);text-transform:uppercase}
+  .sec-head h2{font-size:clamp(1.45rem,3vw,1.9rem);font-weight:900;letter-spacing:.01em;margin-top:4px;text-wrap:balance}
+  .sec-head .more{white-space:nowrap;font-size:.88rem;font-weight:700;color:var(--ink-soft);padding-bottom:4px}
+  .sec-head .more a{color:var(--red)}
+  .meta{color:var(--ink-soft);font-size:.86rem}
+
+  /* ── 行情看板：基线日大数字 ── */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stat{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+  .stat b{display:block;font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.01em;line-height:1.2}
+  .stat b .unit{font-size:.45em;font-weight:800;color:var(--ink-soft);margin-left:4px}
+  .stat span{font-size:.84rem;color:var(--ink-soft);font-weight:600}
+  .stat.hot b{color:var(--red)}
+  .delta{padding:11px 2px;border-bottom:1px dashed var(--line);display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+  .delta:last-child{border-bottom:none}
+  .delta b{font-weight:800}
+  .pill{display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-pill);padding:3px 12px;font-size:.82rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+  .up{color:var(--red);background:rgba(218,41,28,.08)} .down{color:var(--lettuce);background:rgba(62,155,79,.10)}
+  .new{color:var(--red-deep);background:rgba(218,41,28,.08)} .gone{color:var(--ink-soft);background:var(--track)}
+  .price{font-weight:900;font-variant-numeric:tabular-nums}
+  .coupon-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .coupon{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#FFF3D0,#FFE9AE);border:1px solid #F2D888;border-radius:var(--r-pill);padding:8px 16px;font-size:.9rem;font-weight:700}
+  .coupon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(218,41,28,.15)}
+  .coupon i{font-style:normal;font-size:.8rem;color:var(--ink-soft);font-weight:600}
+
+  /* ── 省钱榜：奖牌 + 金红数据条 ── */
+  .rank-item{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:15px 4px;border-bottom:1px dashed var(--line);align-items:center}
+  .rank-item:last-child{border-bottom:none}
+  .medal{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;font-variant-numeric:tabular-nums;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
+  .m1{background:linear-gradient(145deg,#FFD84D,var(--gold-deep))}
+  .m2{background:linear-gradient(145deg,#D9DDE3,#AAB2BD)}
+  .m3{background:linear-gradient(145deg,#E2AC76,#B97E45)}
+  .mn{background:var(--track);color:var(--ink-soft);box-shadow:none;font-size:.9rem}
+  .rank-main b{display:block;font-weight:800;font-size:1.02rem}
+  .rank-main .formula{font-size:.86rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .rank-main .formula .price{color:var(--ink)}
+  .gain{display:inline-flex;align-items:center;gap:6px;margin-left:8px;background:rgba(62,155,79,.10);color:var(--lettuce);border-radius:var(--r-pill);padding:2px 11px;font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .bar{height:9px;border-radius:var(--r-pill);background:var(--track);overflow:hidden;margin-top:9px}
+  .bar i{display:block;height:100%;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--gold),var(--red))}
+
+  /* ── 考古图鉴：序号金章卡片 ── */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .card{position:relative;border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;background:var(--paper);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-pop);border-color:var(--gold)}
+  .card .no{position:absolute;top:14px;right:16px;font-size:.78rem;font-weight:900;color:var(--gold-deep);background:#FFF3D0;border-radius:var(--r-pill);padding:1px 9px;font-variant-numeric:tabular-nums}
+  .card b{display:block;font-weight:800;font-size:1rem;margin-bottom:6px;padding-right:44px}
+  .card small{color:var(--ink-soft);font-size:.82rem;font-variant-numeric:tabular-nums}
+  .card a{color:inherit}
+  .card a:hover{text-decoration:none}
+  .card a::after{content:"";position:absolute;inset:0}
+
+  /* ── 关于：可可色收尾带 ── */
+  .about{background:linear-gradient(150deg,#3B2C1E,var(--cocoa));border:none;color:#F3E9D8}
+  .about .kicker{color:var(--gold)}
+  .about p{font-size:.95rem;color:rgba(243,233,216,.92);max-width:40em;text-wrap:pretty}
+  .about p + p{margin-top:10px}
+  .about a{color:var(--gold)}
+  .about .meta{color:rgba(243,233,216,.55)}
+  .about code{background:rgba(255,255,255,.1);border-radius:8px;padding:1px 8px;font-size:.88em}
+
+  footer{text-align:center;color:var(--ink-faint);font-size:.84rem;padding:30px 20px 42px}
+  .empty{color:var(--ink-faint);font-style:italic}
+  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .fade.d1{animation-delay:.08s}.fade.d2{animation-delay:.16s}.fade.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.card,.card:hover{transition:none;transform:none}}
+  @media (max-width:640px){
+    .hero{padding:64px 20px 116px}
+    section{padding:26px 20px}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:first-child{grid-column:1/-1}
+    .sec-head{flex-direction:column;align-items:flex-start;gap:6px}
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>🍟 麦麦研究所</h1>
-  <div class="sub">行情部 · 考古部 · 积分理财科 —— 数据全部来自麦当劳中国官方 MCP</div>
-  <div class="badge">非官方 · 大赛参赛作品 · 零依赖</div>
+
+<header class="hero">
+  <svg class="arches left" viewBox="0 0 300 160" aria-hidden="true"><path d="M40 160 V95 A55 55 0 0 1 150 95 V160 M150 160 V95 A55 55 0 0 1 260 95 V160" stroke="#FFC72C" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+  <svg class="arches" viewBox="0 0 300 160" aria-hidden="true"><path d="M40 160 V95 A55 55 0 0 1 150 95 V160 M150 160 V95 A55 55 0 0 1 260 95 V160" stroke="#FFC72C" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+  <div class="hero-inner">
+    <span class="eyebrow">McDonald's Menu Intelligence</span>
+    <h1>麦麦<span class="gold">研究所</span></h1>
+    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据全部来自麦当劳中国官方 MCP 实时接口。</p>
+    <span class="badge">非官方 · 大赛参赛作品 · 零依赖</span>
+  </div>
 </header>
+
 <main>
-  <section>
-    <h2>📈 今日行情</h2>
+  <section class="fade">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">行情部 · Daily Market</div>
+        <h2>今日行情</h2>
+      </div>
+      <span class="more">完整日报与历史 → <a href="market/">docs/market/</a></span>
+    </div>
     <div class="meta" id="market-date">加载中…</div>
-    <ul id="market"></ul>
-    <div class="meta" style="margin-top:8px">完整日报与历史 → <a href="market/">docs/market/</a></div>
+    <div style="height:14px"></div>
+    <div class="stats" id="market-stats"></div>
+    <ul id="market" style="list-style:none"></ul>
+    <div class="coupon-row" id="coupons"></div>
   </section>
 
-  <section>
-    <h2>💰 积分省钱榜 <span class="tag">每万积分省多少</span></h2>
+  <section class="fade d1">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">积分理财科 · Per 10k Points</div>
+        <h2>积分省钱榜</h2>
+      </div>
+      <span class="more">算法与免责 → <a href="market/">docs/market/</a> · 体检请本地运行 <code>python -m mcd_lab.points --me</code></span>
+    </div>
     <div class="meta" id="points-date"></div>
-    <ul class="rank1" id="points"></ul>
-    <div class="meta" style="margin-top:8px">算法与免责 → <a href="market/">docs/market/</a> · 个人体检请本地运行 <code>python -m mcd_lab.points --me</code></div>
+    <div style="height:10px"></div>
+    <div id="points"></div>
+    <div class="meta" id="points-wall" style="margin-top:12px"></div>
   </section>
 
-  <section>
-    <h2>⛏️ 考古部 · 隐藏吃法自由度榜</h2>
+  <section class="fade d2">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">考古部 · Freedom Ranking</div>
+        <h2>隐藏吃法自由度榜</h2>
+      </div>
+      <span class="more">全部 0 元特调清单 → <a href="archaeology/INDEX.md">docs/archaeology/INDEX.md</a></span>
+    </div>
     <div class="meta" id="arch-date"></div>
+    <div style="height:14px"></div>
     <div class="grid" id="arch"></div>
-    <div class="meta" style="margin-top:8px">全部 0 元特调清单 → <a href="archaeology/INDEX.md">docs/archaeology/INDEX.md</a></div>
   </section>
 
-  <section>
-    <h2>🏛️ 关于研究所</h2>
-    <p>本站由 <a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a> 参赛项目自动生成：
-    GitHub Action 每日调用麦当劳中国官方 MCP（35 个工具中的 11 个只读工具），采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
-    <p style="margin-top:8px">源代码 → GitHub 仓库 <code>mcd-research-lab</code> · 纯 Python 标准库 · 不自动领券、不下单、不消耗积分。</p>
+  <section class="about fade d3">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">关于研究所 · About</div>
+        <h2>一所为麦麦菜单而建的研究所</h2>
+      </div>
+    </div>
+    <p>本站由 <a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a> 参赛项目自动生成：GitHub Action 每日调用麦当劳中国官方 MCP（35 个工具中的 11 个只读工具），采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
+    <p>纯 Python 标准库，零依赖 · 不自动领券、不下单、不消耗积分 · 源代码 → GitHub 仓库 <code>mcd-research-lab</code></p>
   </section>
 </main>
+
 <footer>麦麦研究所 · 数据来自麦当劳官方 MCP · 价格与商品以门店实际供应为准</footer>
+<noscript><p style="text-align:center;color:#8A7A63">本页需要启用 JavaScript 加载每日数据。</p></noscript>
+
 <script>
 const fmt = v => v == null ? "—" : v;
 async function load(url) {
@@ -85,40 +204,54 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
   try {
     const m = await load("data/market-latest.json");
     document.getElementById("market-date").textContent = `${m.date} · 门店快照自动对比`;
+    const stats = document.getElementById("market-stats");
     const ul = document.getElementById("market");
-    if (m.isBaseline) ul.innerHTML = `<li>📌 观察首日，价格基线已建立；明日起输出逐日变动。</li>`;
-    else if (!m.changes.length) ul.innerHTML = `<li>今日无变动，麦门平稳。</li>`;
-    else m.changes.slice(0,12).forEach(c => {
-      const map = {up:`🔺 <span class="up">¥${c.from}→¥${c.to}</span>`, down:`🔻 <span class="down">¥${c.from}→¥${c.to}</span>`,
-                   new:`🆕 上新 ¥${fmt(c.price)}`, gone:`💀 下架（昨日 ¥${fmt(c.price)}）`};
-      ul.innerHTML += `<li><b>${esc(c.name)}</b> ${map[c.type]||""}</li>`;
+    const nChange = (m.changes || []).length, nCoupon = (m.couponPool || []).length;
+    stats.innerHTML = `
+      <div class="stat hot"><b>${m.isBaseline ? "基线日" : nChange}<span class="unit">${m.isBaseline ? "" : " 项变动"}</span></b><span>${m.isBaseline ? "观察首日 · 价格基线已建立" : "较昨日快照"}</span></div>
+      <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券池</span></div>
+      <div class="stat"><b>${m.isBaseline ? "明日起" : "已就绪"}</b><span>${m.isBaseline ? "输出逐日涨跌/上新/下架" : "涨跌与新上下一目了然"}</span></div>`;
+    if (nChange) m.changes.slice(0,12).forEach(c => {
+      const map = {up:`<span class="pill up">▲ ¥${c.from}→¥${c.to}</span>`, down:`<span class="pill down">▼ ¥${c.from}→¥${c.to}</span>`,
+                   new:`<span class="pill new">上新 ¥${fmt(c.price)}</span>`, gone:`<span class="pill gone">下架（昨日 ¥${fmt(c.price)}）</span>`};
+      ul.innerHTML += `<li class="delta"><b>${esc(c.name)}</b>${map[c.type]||""}</li>`;
     });
-    if (m.couponPool?.length) ul.innerHTML += `<li>🎟️ 券池：${m.couponPool.map(c=>esc(c.title)).join(" · ")}</li>`;
-  } catch(e) { document.getElementById("market").innerHTML = `<li class="empty">行情数据加载失败（${e.message}）</li>`; }
+    if (nCoupon) document.getElementById("coupons").innerHTML =
+      m.couponPool.map(c=>`<span class="coupon">${esc(c.title)}<i>${esc(c.status||"")}</i></span>`).join("");
+  } catch(e) { document.getElementById("market-date").innerHTML = `<span class="empty">行情数据加载失败（${e.message}）</span>`; }
 
   // 积分
   try {
     const p = await load("data/points-rank.json");
     document.getElementById("points-date").textContent = `更新于 ${today}`;
-    const ul = document.getElementById("points");
-    if (!p.rank.length) ul.innerHTML = `<li class="empty">本期暂无可核价的兑换券。</li>`;
-    p.rank.slice(0,5).forEach(r => {
+    const box = document.getElementById("points");
+    if (!p.rank.length) box.innerHTML = `<div class="empty">本期暂无可核价的兑换券。</div>`;
+    p.rank.slice(0,5).forEach((r,i) => {
       const w = Math.max(4, Math.min(100, r.per10k / 5));
-      ul.innerHTML += `<li><b>${esc(r.spu)}</b> — ${r.points} 积分 + ¥${r.cash}，省 ¥${r.savings}
-        <span class="tag">每万积分省 ¥${r.per10k}</span><div class="bar"><i style="width:${w}%"></i></div></li>`;
+      const medal = i<3 ? `m${i+1}` : "mn";
+      box.innerHTML += `<div class="rank-item">
+        <span class="medal ${medal}">${i+1}</span>
+        <div class="rank-main">
+          <b>${esc(r.spu)}<span class="gain">每万积分省 ¥${r.per10k}</span></b>
+          <span class="formula"><span class="price">${r.points} 积分 + ¥${r.cash}</span> · 省 ¥${r.savings}</span>
+          <div class="bar"><i style="width:${w}%"></i></div>
+        </div></div>`;
     });
-  } catch(e) { document.getElementById("points").innerHTML = `<li class="empty">榜单加载失败（${e.message}）</li>`; }
+    if (p.wall?.length) document.getElementById("points-wall").textContent =
+      `积分商城另有 ${p.wall.length} 条周边情报（含联名与数码），完整清单见 docs/market/。`;
+  } catch(e) { document.getElementById("points-date").innerHTML = `<span class="empty">榜单加载失败（${e.message}）</span>`; }
 
   // 考古
   try {
     const a = await load("data/archaeology-summary.json");
     document.getElementById("arch-date").textContent = `已考古 ${a.length} 款套餐的官方选配空间`;
     const g = document.getElementById("arch");
-    a.sort((x,y)=>(y.freeMods+y.swaps)-(x.freeMods+x.swaps)).slice(0,8).forEach(x => {
-      g.innerHTML += `<div class="card"><a href="${encodeURI(x.file)}"><b>${esc(x.name)}</b></a>
+    a.sort((x,y)=>(y.freeMods+y.swaps)-(x.freeMods+x.swaps)).slice(0,8).forEach((x,i) => {
+      g.innerHTML += `<div class="card"><span class="no">${String(i+1).padStart(2,"0")}</span>
+        <a href="${encodeURI(x.file)}"><b>${esc(x.name)}</b></a>
         <small>${x.freeMods} 项免费特调 · ${x.swaps} 个替换位 · ${x.nodes} 节点</small></div>`;
     });
-  } catch(e) { document.getElementById("arch").innerHTML = `<span class="empty">图鉴加载失败（${e.message}）</span>`; }
+  } catch(e) { document.getElementById("arch-date").innerHTML = `<span class="empty">图鉴加载失败（${e.message}）</span>`; }
 })();
 </script>
 </body>
