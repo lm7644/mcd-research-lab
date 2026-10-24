@@ -154,6 +154,13 @@
   "nodes": 34
  },
  {
+  "name": "学生专享汉堡小食随心选",
+  "file": "archaeology/学生专享汉堡小食随心选.md",
+  "freeMods": 4,
+  "swaps": 3,
+  "nodes": 6
+ },
+ {
   "name": "鸡肉堡单品精选",
   "file": "archaeology/鸡肉堡单品精选.md",
   "freeMods": 2,
@@ -436,6 +443,13 @@
  {
   "name": "可乐",
   "file": "archaeology/可乐.md",
+  "freeMods": 4,
+  "swaps": 0,
+  "nodes": 6
+ },
+ {
+  "name": "学生专享饮品随心选",
+  "file": "archaeology/学生专享饮品随心选.md",
   "freeMods": 4,
   "swaps": 0,
   "nodes": 6
