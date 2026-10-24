@@ -1,0 +1,19 @@
+{
+ "date": "2026-10-24",
+ "isBaseline": true,
+ "changes": [],
+ "couponPool": [
+  {
+   "title": "免费脆薯饼",
+   "status": "可领取"
+  },
+  {
+   "title": "11.9元麦辣鸡腿堡",
+   "status": "可领取"
+  },
+  {
+   "title": "19.9元王牌炸鸡任选2",
+   "status": "可领取"
+  }
+ ]
+}

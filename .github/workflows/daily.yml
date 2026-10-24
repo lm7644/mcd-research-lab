@@ -1,0 +1,36 @@
+name: daily-market
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # UTC 22:30 = 北京时间 06:30
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  market:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 行情部·快照采集
+        run: python -m mcd_lab.snapshot
+        env:
+          MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
+          MCD_STORE_CODE: "1450713"
+      - name: 行情部·差异引擎
+        run: python -m mcd_lab.diff
+      - name: 积分理财科·省钱榜
+        run: python -m mcd_lab.points
+      - name: 考古部·组合空间考古
+        run: python -m mcd_lab.archaeology --limit 80
+      - name: 发布日报
+        run: |
+          git config user.name "mcd-research-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "data: 麦麦行情日报 $(date -u -d '+8 hours' +%F) [skip ci]" || echo "no changes"
+          git push

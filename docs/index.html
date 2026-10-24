@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麦麦研究所 · 麦当劳菜单情报站</title>
+<style>
+  :root { --red:#da291c; --yellow:#ffbc0d; --ink:#1a1a1a; --bg:#faf7f2; --card:#ffffff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  header { background:linear-gradient(135deg,var(--red) 0%,#b02318 100%); color:#fff; padding:48px 20px 40px; text-align:center; }
+  header h1 { font-size:2.2em; letter-spacing:.05em; }
+  header .sub { margin-top:10px; opacity:.92; }
+  header .badge { display:inline-block; background:var(--yellow); color:var(--ink); border-radius:20px; padding:2px 14px; font-size:.85em; font-weight:700; margin-top:14px; }
+  main { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+  section { background:var(--card); border-radius:14px; padding:22px 24px; margin-top:20px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  h2 { font-size:1.25em; border-left:5px solid var(--yellow); padding-left:10px; margin-bottom:12px; }
+  .meta { color:#888; font-size:.85em; margin-bottom:10px; }
+  ul { list-style:none; }
+  li { padding:6px 0; border-bottom:1px dashed #eee; }
+  li:last-child { border-bottom:none; }
+  .up { color:var(--red); font-weight:700; } .down { color:#1a7f37; font-weight:700; }
+  .tag { display:inline-block; background:#f0ece4; border-radius:6px; padding:0 8px; font-size:.82em; margin-left:6px; }
+  .rank1 li:nth-child(1)::before { content:"🥇 "; } .rank1 li:nth-child(2)::before { content:"🥈 "; } .rank1 li:nth-child(3)::before { content:"🥉 "; }
+  .bar { background:#f0ece4; border-radius:6px; overflow:hidden; height:10px; margin-top:3px; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,var(--yellow),var(--red)); }
+  a { color:var(--red); text-decoration:none; } a:hover { text-decoration:underline; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:10px; }
+  .card { border:1px solid #eee; border-radius:10px; padding:10px 12px; }
+  .card b { display:block; }
+  .card small { color:#888; }
+  footer { text-align:center; color:#999; font-size:.85em; padding:24px; }
+  .empty { color:#999; font-style:italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🍟 麦麦研究所</h1>
+  <div class="sub">行情部 · 考古部 · 积分理财科 —— 数据全部来自麦当劳中国官方 MCP</div>
+  <div class="badge">非官方 · 大赛参赛作品 · 零依赖</div>
+</header>
+<main>
+  <section>
+    <h2>📈 今日行情</h2>
+    <div class="meta" id="market-date">加载中…</div>
+    <ul id="market"></ul>
+    <div class="meta" style="margin-top:8px">完整日报与历史 → <a href="market/">docs/market/</a></div>
+  </section>
+
+  <section>
+    <h2>💰 积分省钱榜 <span class="tag">每万积分省多少</span></h2>
+    <div class="meta" id="points-date"></div>
+    <ul class="rank1" id="points"></ul>
+    <div class="meta" style="margin-top:8px">算法与免责 → <a href="market/">docs/market/</a> · 个人体检请本地运行 <code>python -m mcd_lab.points --me</code></div>
+  </section>
+
+  <section>
+    <h2>⛏️ 考古部 · 隐藏吃法自由度榜</h2>
+    <div class="meta" id="arch-date"></div>
+    <div class="grid" id="arch"></div>
+    <div class="meta" style="margin-top:8px">全部 0 元特调清单 → <a href="archaeology/INDEX.md">docs/archaeology/INDEX.md</a></div>
+  </section>
+
+  <section>
+    <h2>🏛️ 关于研究所</h2>
+    <p>本站由 <a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a> 参赛项目自动生成：
+    GitHub Action 每日调用麦当劳中国官方 MCP（35 个工具中的 11 个只读工具），采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
+    <p style="margin-top:8px">源代码 → GitHub 仓库 <code>mcd-research-lab</code> · 纯 Python 标准库 · 不自动领券、不下单、不消耗积分。</p>
+  </section>
+</main>
+<footer>麦麦研究所 · 数据来自麦当劳官方 MCP · 价格与商品以门店实际供应为准</footer>
+<script>
+const fmt = v => v == null ? "—" : v;
+async function load(url) {
+  const r = await fetch(url, {cache: "no-store"});
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function esc(s){ const d=document.createElement("div"); d.textContent=s??""; return d.innerHTML; }
+
+(async () => {
+  const today = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    .toISOString().slice(0, 10);
+  // 行情
+  try {
+    const m = await load("data/market-latest.json");
+    document.getElementById("market-date").textContent = `${m.date} · 门店快照自动对比`;
+    const ul = document.getElementById("market");
+    if (m.isBaseline) ul.innerHTML = `<li>📌 观察首日，价格基线已建立；明日起输出逐日变动。</li>`;
+    else if (!m.changes.length) ul.innerHTML = `<li>今日无变动，麦门平稳。</li>`;
+    else m.changes.slice(0,12).forEach(c => {
+      const map = {up:`🔺 <span class="up">¥${c.from}→¥${c.to}</span>`, down:`🔻 <span class="down">¥${c.from}→¥${c.to}</span>`,
+                   new:`🆕 上新 ¥${fmt(c.price)}`, gone:`💀 下架（昨日 ¥${fmt(c.price)}）`};
+      ul.innerHTML += `<li><b>${esc(c.name)}</b> ${map[c.type]||""}</li>`;
+    });
+    if (m.couponPool?.length) ul.innerHTML += `<li>🎟️ 券池：${m.couponPool.map(c=>esc(c.title)).join(" · ")}</li>`;
+  } catch(e) { document.getElementById("market").innerHTML = `<li class="empty">行情数据加载失败（${e.message}）</li>`; }
+
+  // 积分
+  try {
+    const p = await load("data/points-rank.json");
+    document.getElementById("points-date").textContent = `更新于 ${today}`;
+    const ul = document.getElementById("points");
+    if (!p.rank.length) ul.innerHTML = `<li class="empty">本期暂无可核价的兑换券。</li>`;
+    p.rank.slice(0,5).forEach(r => {
+      const w = Math.max(4, Math.min(100, r.per10k / 5));
+      ul.innerHTML += `<li><b>${esc(r.spu)}</b> — ${r.points} 积分 + ¥${r.cash}，省 ¥${r.savings}
+        <span class="tag">每万积分省 ¥${r.per10k}</span><div class="bar"><i style="width:${w}%"></i></div></li>`;
+    });
+  } catch(e) { document.getElementById("points").innerHTML = `<li class="empty">榜单加载失败（${e.message}）</li>`; }
+
+  // 考古
+  try {
+    const a = await load("data/archaeology-summary.json");
+    document.getElementById("arch-date").textContent = `已考古 ${a.length} 款套餐的官方选配空间`;
+    const g = document.getElementById("arch");
+    a.sort((x,y)=>(y.freeMods+y.swaps)-(x.freeMods+x.swaps)).slice(0,8).forEach(x => {
+      g.innerHTML += `<div class="card"><a href="${encodeURI(x.file)}"><b>${esc(x.name)}</b></a>
+        <small>${x.freeMods} 项免费特调 · ${x.swaps} 个替换位 · ${x.nodes} 节点</small></div>`;
+    });
+  } catch(e) { document.getElementById("arch").innerHTML = `<span class="empty">图鉴加载失败（${e.message}）</span>`; }
+})();
+</script>
+</body>
+</html>
