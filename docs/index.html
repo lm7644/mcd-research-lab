@@ -34,8 +34,6 @@
   .hero h1{font-size:clamp(2.6rem,7vw,4rem);font-weight:900;letter-spacing:.02em;line-height:1.15;margin:14px 0 10px;text-wrap:balance}
   .hero h1 .gold{color:var(--gold)}
   .hero .sub{max-width:34em;color:rgba(255,255,255,.88);font-size:1.02rem;text-wrap:pretty}
-  .hero .badge{display:inline-flex;align-items:center;gap:8px;margin-top:26px;background:var(--gold);color:var(--ink);border-radius:var(--r-pill);padding:8px 18px;font-size:.88rem;font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.18)}
-  .hero .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red)}
 
   /* ── 主体上叠：面包圆角压住红底 ── */
   main{max-width:880px;margin:-72px auto 0;padding:0 20px 72px;position:relative}
@@ -125,8 +123,7 @@
   <div class="hero-inner">
     <span class="eyebrow">McDonald's Menu Intelligence</span>
     <h1>麦麦<span class="gold">研究所</span></h1>
-    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据全部来自麦当劳中国官方 MCP 实时接口。</p>
-    <span class="badge">非官方 · 大赛参赛作品 · 零依赖</span>
+    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据来自麦当劳中国官方 MCP。</p>
   </div>
 </header>
 
@@ -137,7 +134,7 @@
         <div class="kicker">行情部 · Daily Market</div>
         <h2>今日行情</h2>
       </div>
-      <span class="more">完整日报与历史 → <a href="market/">docs/market/</a></span>
+      <span class="more"><a href="market/">完整日报与历史</a></span>
     </div>
     <div class="meta" id="market-date">加载中…</div>
     <div style="height:14px"></div>
@@ -152,7 +149,7 @@
         <div class="kicker">积分理财科 · Per 10k Points</div>
         <h2>积分省钱榜</h2>
       </div>
-      <span class="more">算法与免责 → <a href="market/">docs/market/</a> · 体检请本地运行 <code>python -m mcd_lab.points --me</code></span>
+      <span class="more"><a href="market/">算法与免责</a></span>
     </div>
     <div class="meta" id="points-date"></div>
     <div style="height:10px"></div>
@@ -166,7 +163,7 @@
         <div class="kicker">考古部 · Freedom Ranking</div>
         <h2>隐藏吃法自由度榜</h2>
       </div>
-      <span class="more">全部 0 元特调清单 → <a href="archaeology/INDEX.md">docs/archaeology/INDEX.md</a></span>
+      <span class="more"><a href="archaeology/INDEX.md">全部 0 元特调清单</a></span>
     </div>
     <div class="meta" id="arch-date"></div>
     <div style="height:14px"></div>
@@ -176,12 +173,12 @@
   <section class="about fade d3">
     <div class="sec-head">
       <div>
-        <div class="kicker">关于研究所 · About</div>
+        <div class="kicker">关于研究所 · The Lab</div>
         <h2>一所为麦麦菜单而建的研究所</h2>
       </div>
     </div>
-    <p>本站由 <a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a> 参赛项目自动生成：GitHub Action 每日调用麦当劳中国官方 MCP（35 个工具中的 11 个只读工具），采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
-    <p>纯 Python 标准库，零依赖 · 不自动领券、不下单、不消耗积分 · 源代码 → GitHub 仓库 <code>mcd-research-lab</code></p>
+    <p>本站为「<a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a>」参赛项目：GitHub Action 每日通过麦当劳中国官方 MCP 采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
+    <p>非麦当劳官方产品 · 不自动领券、不下单、不消耗积分 · 源代码 <code>mcd-research-lab</code></p>
   </section>
 </main>
 
@@ -206,12 +203,14 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
     document.getElementById("market-date").textContent = `${m.date} · 门店快照自动对比`;
     const stats = document.getElementById("market-stats");
     const ul = document.getElementById("market");
-    const nChange = (m.changes || []).length, nCoupon = (m.couponPool || []).length;
+    const ch = m.changes || [];
+    const nCoupon = (m.couponPool || []).length;
+    const nUp = ch.filter(c => c.type === "up").length, nDown = ch.filter(c => c.type === "down").length;
     stats.innerHTML = `
-      <div class="stat hot"><b>${m.isBaseline ? "基线日" : nChange}<span class="unit">${m.isBaseline ? "" : " 项变动"}</span></b><span>${m.isBaseline ? "观察首日 · 价格基线已建立" : "较昨日快照"}</span></div>
-      <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券池</span></div>
-      <div class="stat"><b>${m.isBaseline ? "明日起" : "已就绪"}</b><span>${m.isBaseline ? "输出逐日涨跌/上新/下架" : "涨跌与新上下一目了然"}</span></div>`;
-    if (nChange) m.changes.slice(0,12).forEach(c => {
+      <div class="stat hot"><b>${m.isBaseline ? "基线日" : ch.length}<span class="unit">${m.isBaseline ? "" : " 项变动"}</span></b><span>${m.isBaseline ? "观察首日 · 价格基线已建立" : "较昨日快照的价格变动"}</span></div>
+      <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券</span></div>
+      <div class="stat"><b>${m.isBaseline ? "0 项" : `${nUp} 涨 · ${nDown} 降`}</b><span>${m.isBaseline ? "今日价格变动" : "涨跌风向"}</span></div>`;
+    if (ch.length) m.changes.slice(0,12).forEach(c => {
       const map = {up:`<span class="pill up">▲ ¥${c.from}→¥${c.to}</span>`, down:`<span class="pill down">▼ ¥${c.from}→¥${c.to}</span>`,
                    new:`<span class="pill new">上新 ¥${fmt(c.price)}</span>`, gone:`<span class="pill gone">下架（昨日 ¥${fmt(c.price)}）</span>`};
       ul.innerHTML += `<li class="delta"><b>${esc(c.name)}</b>${map[c.type]||""}</li>`;
@@ -237,8 +236,8 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
           <div class="bar"><i style="width:${w}%"></i></div>
         </div></div>`;
     });
-    if (p.wall?.length) document.getElementById("points-wall").textContent =
-      `积分商城另有 ${p.wall.length} 条周边情报（含联名与数码），完整清单见 docs/market/。`;
+    if (p.wall?.length) document.getElementById("points-wall").innerHTML =
+      `积分商城另有 ${p.wall.length} 条周边情报 · 个人体检请本地运行 <code>python -m mcd_lab.points --me</code>`;
   } catch(e) { document.getElementById("points-date").innerHTML = `<span class="empty">榜单加载失败（${e.message}）</span>`; }
 
   // 考古
