@@ -27,6 +27,9 @@ jobs:
         run: python -m mcd_lab.points
       - name: 考古部·组合空间考古
         run: python -m mcd_lab.archaeology --limit 80
+        env:
+          MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
+          MCD_STORE_CODE: "1450713"
       - name: 发布日报
         run: |
           git config user.name "mcd-research-bot"
