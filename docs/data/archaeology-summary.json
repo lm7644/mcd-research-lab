@@ -1,28 +1,14 @@
 [
  {
-  "name": "猪柳蛋麦满分套餐",
-  "file": "archaeology/猪柳蛋麦满分套餐.md",
+  "name": "厚松饼猪柳蛋堡三件套",
+  "file": "archaeology/厚松饼猪柳蛋堡三件套.md",
   "freeMods": 8,
   "swaps": 11,
-  "nodes": 36
+  "nodes": 37
  },
  {
-  "name": "一早现磨 超值二件套",
-  "file": "archaeology/一早现磨-超值二件套.md",
-  "freeMods": 10,
-  "swaps": 0,
-  "nodes": 10
- },
- {
-  "name": "麦当劳奶昔",
-  "file": "archaeology/麦当劳奶昔.md",
-  "freeMods": 0,
-  "swaps": 1,
-  "nodes": 2
- },
- {
-  "name": "芝芝火腿扒堡套餐",
-  "file": "archaeology/芝芝火腿扒堡套餐.md",
+  "name": "猪柳蛋麦满分套餐",
+  "file": "archaeology/猪柳蛋麦满分套餐.md",
   "freeMods": 8,
   "swaps": 11,
   "nodes": 36
@@ -33,6 +19,20 @@
   "freeMods": 8,
   "swaps": 10,
   "nodes": 35
+ },
+ {
+  "name": "一早现磨 超值二件套",
+  "file": "archaeology/一早现磨-超值二件套.md",
+  "freeMods": 10,
+  "swaps": 0,
+  "nodes": 11
+ },
+ {
+  "name": "芝芝火腿扒堡套餐",
+  "file": "archaeology/芝芝火腿扒堡套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
  },
  {
   "name": "脆香油条组合",
@@ -72,6 +72,62 @@
  {
   "name": "原味板烧鸡腿炒双蛋堡组合",
   "file": "archaeology/原味板烧鸡腿炒双蛋堡组合.md",
+  "freeMods": 8,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
+  "name": "巧克力味厚松饼猪柳蛋堡套餐",
+  "file": "archaeology/巧克力味厚松饼猪柳蛋堡套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "巧克力味厚松饼猪柳堡套餐",
+  "file": "archaeology/巧克力味厚松饼猪柳堡套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳蛋堡套餐",
+  "file": "archaeology/枫糖风味厚松饼猪柳蛋堡套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳堡套餐",
+  "file": "archaeology/枫糖风味厚松饼猪柳堡套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "巧克力味厚松饼猪柳蛋堡组合",
+  "file": "archaeology/巧克力味厚松饼猪柳蛋堡组合.md",
+  "freeMods": 8,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
+  "name": "巧克力味厚松饼猪柳堡组合",
+  "file": "archaeology/巧克力味厚松饼猪柳堡组合.md",
+  "freeMods": 8,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳蛋堡组合",
+  "file": "archaeology/枫糖风味厚松饼猪柳蛋堡组合.md",
+  "freeMods": 8,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳堡组合",
+  "file": "archaeology/枫糖风味厚松饼猪柳堡组合.md",
   "freeMods": 8,
   "swaps": 10,
   "nodes": 35
@@ -217,13 +273,6 @@
   "nodes": 33
  },
  {
-  "name": "派",
-  "file": "archaeology/派.md",
-  "freeMods": 0,
-  "swaps": 1,
-  "nodes": 2
- },
- {
   "name": "经典麦旋风",
   "file": "archaeology/经典麦旋风.md",
   "freeMods": 0,
@@ -233,6 +282,13 @@
  {
   "name": "新地",
   "file": "archaeology/新地.md",
+  "freeMods": 0,
+  "swaps": 1,
+  "nodes": 2
+ },
+ {
+  "name": "麦当劳奶昔",
+  "file": "archaeology/麦当劳奶昔.md",
   "freeMods": 0,
   "swaps": 1,
   "nodes": 2
