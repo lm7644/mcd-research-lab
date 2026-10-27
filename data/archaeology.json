@@ -93,18 +93,6 @@
       "modifications": []
      },
      {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
       "name": "冰浓浓黑巧中杯",
       "isDefault": false,
       "supportModify": true,
@@ -727,8 +715,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -926,18 +912,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -1565,8 +1539,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -1739,18 +1711,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -2398,8 +2358,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -2961,18 +2919,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -3600,8 +3546,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -3768,18 +3712,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -4427,8 +4359,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -4606,18 +4536,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -5265,8 +5183,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -5433,18 +5349,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -6116,8 +6020,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -6322,18 +6224,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -6961,8 +6851,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -7135,18 +7023,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -7794,8 +7670,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -7969,18 +7843,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -8628,8 +8490,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -8833,18 +8693,6 @@
       "modifications": []
      },
      {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
       "name": "冰浓浓黑巧中杯",
       "isDefault": false,
       "supportModify": true,
@@ -9467,8 +9315,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -9671,18 +9517,6 @@
       "modifications": []
      },
      {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
       "name": "冰浓浓黑巧中杯",
       "isDefault": false,
       "supportModify": true,
@@ -10305,8 +10139,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -10504,18 +10336,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -11143,8 +10963,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -11342,18 +11160,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -11981,8 +11787,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -12155,18 +11959,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -12814,8 +12606,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -12989,18 +12779,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -13648,8 +13426,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -13823,18 +13599,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -14482,8 +14246,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -14657,18 +14419,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -15316,8 +15066,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -15521,18 +15269,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -16160,8 +15896,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -16370,18 +16104,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -17009,8 +16731,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -17214,18 +16934,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -17853,8 +17561,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -18062,18 +17768,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -18701,8 +18395,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -18912,18 +18604,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -19551,8 +19231,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -19750,18 +19428,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -20389,8 +20055,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -20544,18 +20208,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -21222,8 +20874,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -21397,18 +21047,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -22056,8 +21694,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -22212,18 +21848,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -22895,8 +22519,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -23057,18 +22679,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -23735,8 +23345,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -23910,18 +23518,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -24569,8 +24165,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -24769,18 +24363,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -25408,8 +24990,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -25601,18 +25181,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -26240,8 +25808,6 @@
     "选择早餐套餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -26402,18 +25968,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -27061,8 +26615,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -27255,18 +26807,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -27894,8 +27434,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -28093,18 +27631,6 @@
      },
      {
       "name": "优品豆浆大杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -28732,8 +28258,6 @@
     "选择早餐小食：德式图林根香肠",
     "选择早餐套餐饮料：鲜萃冰咖",
     "选择早餐套餐饮料：优品豆浆大杯",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -28906,18 +28430,6 @@
      },
      {
       "name": "优品豆浆小杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
       "isDefault": false,
       "supportModify": false,
       "modifications": []
@@ -29565,8 +29077,6 @@
    "swaps": [
     "选择早餐组合饮料：鲜萃冰咖",
     "选择早餐组合饮料：优品豆浆小杯",
-    "选择早餐组合饮料：香草风味奶昔",
-    "选择早餐组合饮料：草莓风味奶昔",
     "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
     "选择早餐组合饮料：100%苹果汁",
     "选择早餐组合饮料：优品豆浆大杯",
@@ -29861,18 +29371,6 @@
         "max": 1
        }
       ]
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
      },
      {
       "name": "冰浓浓黑巧中杯",
@@ -30493,8 +29991,6 @@
    ],
    "swaps": [
     "选择早餐套餐饮料：鲜萃冰咖",
-    "选择早餐套餐饮料：香草风味奶昔",
-    "选择早餐套餐饮料：草莓风味奶昔",
     "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
     "选择早餐套餐饮料：100%苹果汁",
     "选择早餐套餐饮料：纯牛奶",
@@ -30609,6 +30105,40 @@
    ]
   }
  },
+ "9900008752": {
+  "name": "派",
+  "rounds": [
+   {
+    "name": "选择派",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "菠萝派",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "香芋派",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "选择派：菠萝派"
+   ],
+   "swaps": [
+    "选择派：香芋派"
+   ],
+   "freeMods": [],
+   "paidMods": []
+  }
+ },
  "9900008754": {
   "name": "经典麦旋风",
   "rounds": [
@@ -30672,40 +30202,6 @@
    ],
    "swaps": [
     "选择新地：草莓新地"
-   ],
-   "freeMods": [],
-   "paidMods": []
-  }
- },
- "9900014092": {
-  "name": "麦当劳奶昔",
-  "rounds": [
-   {
-    "name": "选择甜品",
-    "min": 1,
-    "max": 1,
-    "choices": [
-     {
-      "name": "香草风味奶昔",
-      "isDefault": true,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     }
-    ]
-   }
-  ],
-  "found": {
-   "defaults": [
-    "选择甜品：香草风味奶昔"
-   ],
-   "swaps": [
-    "选择甜品：草莓风味奶昔"
    ],
    "freeMods": [],
    "paidMods": []
