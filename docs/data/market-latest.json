@@ -1,24 +1,12 @@
 {
- "date": "2026-10-27",
+ "date": "2026-10-28",
  "isBaseline": false,
  "changes": [
   {
    "type": "new",
-   "code": "9900008752",
-   "name": "派",
-   "price": 8.5
-  },
-  {
-   "type": "gone",
    "code": "9900014092",
    "name": "麦当劳奶昔",
    "price": 15.0
-  },
-  {
-   "type": "gone",
-   "code": "515949",
-   "name": "浓浓黑巧雪冰",
-   "price": 23.0
   }
  ],
  "couponPool": [
