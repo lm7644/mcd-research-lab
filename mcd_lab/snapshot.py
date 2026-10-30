@@ -10,7 +10,7 @@ import os
 import re
 from pathlib import Path
 
-from .client import McpClient
+from .client import McpClient, McpError
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_STORE = os.environ.get("MCD_STORE_CODE", "1450713")
@@ -61,7 +61,13 @@ def main():
     categories, meals = c.menu(args.store)
     coupons = parse_coupons_md(c.call("available-coupons"))
     calendar = parse_calendar_md(c.call("campaign-calendar"))
-    points_products = c.call_json("mall-points-products").get("data") or []
+    # 积分商城目录：官方可能下架/改名工具（2026-10-30 起 mall-points-products
+    # 返回 unknown tool）。单点故障不应炸掉整条日报管道，缺失时降级为空列表。
+    try:
+        points_products = c.call_json("mall-points-products").get("data") or []
+    except McpError as e:
+        print(f"  ⚠️ 积分商城目录接口不可用，本期降级为空: {e}")
+        points_products = []
     time_info = c.call_json("now-time-info").get("data") or {}
 
     snap = {
