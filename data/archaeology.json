@@ -14728,6 +14728,840 @@
    ]
   }
  },
+ "9900003428": {
+  "name": "火腿扒早安营养卷组合",
+  "rounds": [
+   {
+    "name": "火腿扒早安营养卷",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "火腿扒早安营养卷",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "番茄酱",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "选择早餐组合饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "小杯鲜萃咖啡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "鲜萃冰咖",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆小杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆大杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "卡布奇诺中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热牛奶中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "火腿扒早安营养卷：火腿扒早安营养卷",
+    "选择早餐组合饮料：小杯鲜萃咖啡"
+   ],
+   "swaps": [
+    "选择早餐组合饮料：鲜萃冰咖",
+    "选择早餐组合饮料：优品豆浆小杯",
+    "选择早餐组合饮料：香草风味奶昔",
+    "选择早餐组合饮料：草莓风味奶昔",
+    "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
+    "选择早餐组合饮料：100%苹果汁",
+    "选择早餐组合饮料：优品豆浆大杯",
+    "选择早餐组合饮料：纯牛奶",
+    "选择早餐组合饮料：锡兰红茶",
+    "选择早餐组合饮料：热牛奶中杯"
+   ],
+   "freeMods": [
+    {
+     "where": "火腿扒早安营养卷 · 火腿扒早安营养卷",
+     "name": "番茄酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 小杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 小杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 热燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 卡布奇诺中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 卡布奇诺中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
  "9900003424": {
   "name": "原味板烧鸡腿炒双蛋堡组合",
   "rounds": [
@@ -27194,6 +28028,2516 @@
     "选择早餐组合饮料：热牛奶中杯"
    ],
    "freeMods": [
+    {
+     "where": "选择早餐组合饮料 · 小杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 小杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择早餐组合饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 冰燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 热燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 卡布奇诺中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐组合饮料 · 卡布奇诺中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
+ "9900003468": {
+  "name": "火腿扒早安营养卷套餐",
+  "rounds": [
+   {
+    "name": "火腿扒早安营养卷",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "火腿扒早安营养卷",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "番茄酱",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "选择早餐小食",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "脆薯饼",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "脆香油条",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "德式图林根香肠",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   },
+   {
+    "name": "选择早餐套餐饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "鲜萃冰咖",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆大杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "卡布奇诺中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热牛奶中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "火腿扒早安营养卷：火腿扒早安营养卷",
+    "选择早餐小食：脆薯饼",
+    "选择早餐套餐饮料：大杯鲜萃咖啡"
+   ],
+   "swaps": [
+    "选择早餐小食：脆香油条",
+    "选择早餐小食：德式图林根香肠",
+    "选择早餐套餐饮料：鲜萃冰咖",
+    "选择早餐套餐饮料：优品豆浆大杯",
+    "选择早餐套餐饮料：香草风味奶昔",
+    "选择早餐套餐饮料：草莓风味奶昔",
+    "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
+    "选择早餐套餐饮料：100%苹果汁",
+    "选择早餐套餐饮料：纯牛奶",
+    "选择早餐套餐饮料：锡兰红茶",
+    "选择早餐套餐饮料：热牛奶中杯"
+   ],
+   "freeMods": [
+    {
+     "where": "火腿扒早安营养卷 · 火腿扒早安营养卷",
+     "name": "番茄酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 大杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 大杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 热燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 卡布奇诺中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 卡布奇诺中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
+ "9900003469": {
+  "name": "图林根香肠早安营养卷套餐",
+  "rounds": [
+   {
+    "name": "图林根香肠早安营养卷",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "图林根香肠早安营养卷",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "芥末沙拉酱",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "选择早餐小食",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "脆薯饼",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "脆香油条",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "德式图林根香肠",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   },
+   {
+    "name": "选择早餐套餐饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "鲜萃冰咖",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆大杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "卡布奇诺中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热牛奶中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "图林根香肠早安营养卷：图林根香肠早安营养卷",
+    "选择早餐小食：脆薯饼",
+    "选择早餐套餐饮料：大杯鲜萃咖啡"
+   ],
+   "swaps": [
+    "选择早餐小食：脆香油条",
+    "选择早餐小食：德式图林根香肠",
+    "选择早餐套餐饮料：鲜萃冰咖",
+    "选择早餐套餐饮料：优品豆浆大杯",
+    "选择早餐套餐饮料：香草风味奶昔",
+    "选择早餐套餐饮料：草莓风味奶昔",
+    "选择早餐套餐饮料：热浓浓燕麦黑巧中杯",
+    "选择早餐套餐饮料：100%苹果汁",
+    "选择早餐套餐饮料：纯牛奶",
+    "选择早餐套餐饮料：锡兰红茶",
+    "选择早餐套餐饮料：热牛奶中杯"
+   ],
+   "freeMods": [
+    {
+     "where": "图林根香肠早安营养卷 · 图林根香肠早安营养卷",
+     "name": "芥末沙拉酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 大杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 大杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择早餐套餐饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 冰燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 热燕麦奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 卡布奇诺中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择早餐套餐饮料 · 卡布奇诺中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
+ "9900003429": {
+  "name": "图林根香肠早安营养卷组合",
+  "rounds": [
+   {
+    "name": "图林根香肠早安营养卷",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "图林根香肠早安营养卷",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "芥末沙拉酱",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "选择早餐组合饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "小杯鲜萃咖啡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "鲜萃冰咖",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆小杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "优品豆浆大杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热燕麦奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "卡布奇诺中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热牛奶中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "图林根香肠早安营养卷：图林根香肠早安营养卷",
+    "选择早餐组合饮料：小杯鲜萃咖啡"
+   ],
+   "swaps": [
+    "选择早餐组合饮料：鲜萃冰咖",
+    "选择早餐组合饮料：优品豆浆小杯",
+    "选择早餐组合饮料：香草风味奶昔",
+    "选择早餐组合饮料：草莓风味奶昔",
+    "选择早餐组合饮料：热浓浓燕麦黑巧中杯",
+    "选择早餐组合饮料：100%苹果汁",
+    "选择早餐组合饮料：优品豆浆大杯",
+    "选择早餐组合饮料：纯牛奶",
+    "选择早餐组合饮料：锡兰红茶",
+    "选择早餐组合饮料：热牛奶中杯"
+   ],
+   "freeMods": [
+    {
+     "where": "图林根香肠早安营养卷 · 图林根香肠早安营养卷",
+     "name": "芥末沙拉酱",
+     "price": 0.0,
+     "max": 1
+    },
     {
      "where": "选择早餐组合饮料 · 小杯鲜萃咖啡",
      "name": "奶油球",

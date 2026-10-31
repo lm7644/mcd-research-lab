@@ -133,6 +133,13 @@
   "nodes": 36
  },
  {
+  "name": "火腿扒早安营养卷组合",
+  "file": "archaeology/火腿扒早安营养卷组合.md",
+  "freeMods": 8,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
   "name": "原味板烧鸡腿炒双蛋堡组合",
   "file": "archaeology/原味板烧鸡腿炒双蛋堡组合.md",
   "freeMods": 8,
@@ -234,6 +241,27 @@
   "name": "猪柳炒双蛋堡组合",
   "file": "archaeology/猪柳炒双蛋堡组合.md",
   "freeMods": 7,
+  "swaps": 10,
+  "nodes": 35
+ },
+ {
+  "name": "火腿扒早安营养卷套餐",
+  "file": "archaeology/火腿扒早安营养卷套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "图林根香肠早安营养卷套餐",
+  "file": "archaeology/图林根香肠早安营养卷套餐.md",
+  "freeMods": 8,
+  "swaps": 11,
+  "nodes": 36
+ },
+ {
+  "name": "图林根香肠早安营养卷组合",
+  "file": "archaeology/图林根香肠早安营养卷组合.md",
+  "freeMods": 8,
   "swaps": 10,
   "nodes": 35
  },
