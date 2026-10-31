@@ -82,4 +82,4 @@ flowchart TD
 3. `calculate-price` 的 items 字段名是 `productCode`（非 `code`），否则返回 price=0；
 4. `随心配` 类特殊商品 `query-meal-detail` 返回空 data，已在考古器中跳过；
 5. `query-meals` 可不传 `reservationDate`（默认当前时刻），CI 中固定门店与时间窗以保证 diff 可比性；
-6. 官方会无公告调整服务端工具集：2026-10-30 起 `mall-points-products` 返回 `unknown tool`（认证与会话正常，官方 README 文档仍保留该工具名，无公告）。快照器已对该调用做优雅降级（缺失记空列表，日报其余板块照常出刊）。**接入同类服务请勿假设工具清单永远不变——单工具故障不应中断管道，必要时用 `tools/list` 枚举现役清单。**
+6. 官方会无公告调整服务端工具集：2026-10-30 起 `mall-points-products` 返回 `unknown tool`，经 `tools/list` 枚举确认为**改名 → `query-mall-products`**（返回结构与字段完全不变；官方 README 文档滞后未更新）。快照器已改用新名并保留降级（缺失记空列表，日报其余板块照常出刊）。**接入同类服务请勿假设工具清单永远不变——单工具故障不应中断管道，必要时用 `tools/list` 枚举现役清单。**

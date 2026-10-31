@@ -61,10 +61,10 @@ def main():
     categories, meals = c.menu(args.store)
     coupons = parse_coupons_md(c.call("available-coupons"))
     calendar = parse_calendar_md(c.call("campaign-calendar"))
-    # 积分商城目录：官方可能下架/改名工具（2026-10-30 起 mall-points-products
-    # 返回 unknown tool）。单点故障不应炸掉整条日报管道，缺失时降级为空列表。
+    # 积分商城目录：2026-10-30 官方将其改名 mall-points-products → query-mall-products
+    # （返回结构与字段不变）。保留降级逻辑：未来再遇单工具故障不炸整条管道。
     try:
-        points_products = c.call_json("mall-points-products").get("data") or []
+        points_products = c.call_json("query-mall-products").get("data") or []
     except McpError as e:
         print(f"  ⚠️ 积分商城目录接口不可用，本期降级为空: {e}")
         points_products = []
