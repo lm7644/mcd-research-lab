@@ -70,6 +70,30 @@ def main():
         points_products = []
     time_info = c.call_json("now-time-info").get("data") or {}
 
+    # 营养数据：官方自定义表格文本（[N]{列名}: + CSV 行）。成分基本静态，
+    # 解析后写入稳定名 docs/data/nutrition.json，内容变化才落盘（CI 提交才非空）。
+    nutrition = []
+    try:
+        nut_text = c.call_json("list-nutrition-foods").get("data") or ""
+        m = re.search(r"\[(\d+)\]\{([^}]+)\}:\s*\n", nut_text)
+        if m:
+            cols = [x.strip() for x in m.group(2).split(",")]
+            for line in nut_text[m.end():].splitlines():
+                parts = [x.strip() for x in line.strip().split(",")]
+                if len(parts) != len(cols):
+                    continue
+                row = {col: (None if v == "null" else v) for col, v in zip(cols, parts)}
+                nutrition.append(row)
+        else:
+            print("  ⚠️ 营养数据格式未识别，跳过")
+    except McpError as e:
+        print(f"  ⚠️ 营养数据接口不可用，跳过: {e}")
+    nut_file = ROOT / "docs" / "data" / "nutrition.json"
+    nut_payload = json.dumps(nutrition, ensure_ascii=False, indent=1) + "\n"
+    if nutrition and (not nut_file.exists() or nut_file.read_text() != nut_payload):
+        nut_file.write_text(nut_payload)
+        print(f"  营养数据已更新: {len(nutrition)} 款 → docs/data/nutrition.json")
+
     snap = {
         "storeCode": args.store,
         "serverTime": time_info.get("datetime", ""),
