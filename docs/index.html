@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>麦麦研究所 · 麦当劳菜单情报站</title>
+<title>麦麦研究所 · 麦当劳菜单行情终端</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23DA291C'/%3E%3Cpath d='M14 50 V30 A9.5 9.5 0 0 1 33 30 V50 M33 50 V30 A9.5 9.5 0 0 1 52 30 V50' stroke='%23FFC72C' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-  /* ── 设计 token：一切色与形从麦当劳品牌长出来 ── */
+  /* ═══ 设计 token：麦当劳品牌 × 行情终端哲学 ═══ */
   :root{
     --red:#DA291C; --red-deep:#A92318; --red-hot:#E4382A;
     --gold:#FFC72C; --gold-deep:#E8A800;
@@ -17,6 +17,7 @@
     --shadow-card:0 1px 2px rgba(63,38,10,.04), 0 10px 28px rgba(63,38,10,.07);
     --shadow-pop:0 4px 10px rgba(63,38,10,.08), 0 18px 44px rgba(63,38,10,.13);
     --font:ui-rounded,"SF Pro Rounded","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -24,19 +25,43 @@
   ::selection{background:var(--gold);color:var(--ink)}
   a{color:var(--red);text-decoration:none}
   a:hover{text-decoration:underline;text-underline-offset:3px}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
 
-  /* ── 红金主视觉：金拱门水印 + 大字阶 ── */
-  .hero{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--red-hot) 0%,var(--red) 42%,var(--red-deep) 100%);color:#fff;padding:84px 24px 132px}
-  .hero .arches{position:absolute;right:-60px;bottom:-72px;width:420px;max-width:70vw;opacity:.16;pointer-events:none}
-  .hero .arches.left{right:auto;left:-90px;top:-90px;width:280px;opacity:.09;bottom:auto}
+  /* ═══ 行情终端头版：网格底纹 + 金拱门水印 + 跑马灯 ═══ */
+  .hero{position:relative;overflow:hidden;color:#fff;padding:64px 24px 118px;
+        background:linear-gradient(140deg,var(--red-hot) 0%,var(--red) 42%,var(--red-deep) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+        background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);
+        background-size:56px 56px}
+  .hero .arches{position:absolute;right:-70px;bottom:-90px;width:430px;max-width:65vw;opacity:.15;pointer-events:none}
   .hero-inner{position:relative;max-width:880px;margin:0 auto}
-  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
-  .hero h1{font-size:clamp(2.6rem,7vw,4rem);font-weight:900;letter-spacing:.02em;line-height:1.15;margin:14px 0 10px;text-wrap:balance}
+  .brand-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand-row .mark{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+  .brand-row .mark svg{width:26px}
+  .brand-row .name{font-weight:900;font-size:1.02rem;letter-spacing:.06em;white-space:nowrap}
+  .brand-row .sep{opacity:.4;white-space:nowrap}
+  .brand-row .tag{font-size:.8rem;letter-spacing:.2em;color:var(--gold);font-weight:700}
+  .hero h1{font-size:clamp(2.5rem,6.5vw,3.9rem);font-weight:900;letter-spacing:.02em;line-height:1.14;margin:34px 0 12px;text-wrap:balance}
   .hero h1 .gold{color:var(--gold)}
-  .hero .sub{max-width:34em;color:rgba(255,255,255,.88);font-size:1.02rem;text-wrap:pretty}
+  .hero .sub{max-width:36em;color:rgba(255,255,255,.88);font-size:1.02rem;text-wrap:pretty}
+  .hero .issue{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-size:.86rem;color:rgba(255,255,255,.75);
+        border:1px solid rgba(255,255,255,.25);border-radius:var(--r-pill);padding:7px 16px}
+  .hero .issue b{color:var(--gold);font-weight:800}
 
-  /* ── 主体上叠：面包圆角压住红底 ── */
-  main{max-width:880px;margin:-72px auto 0;padding:0 20px 72px;position:relative}
+  /* 跑马灯：当日变动长出来的行情条 */
+  .ticker{position:relative;background:var(--cocoa);overflow:hidden;white-space:nowrap}
+  .ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+  .ticker::before{left:0;background:linear-gradient(90deg,var(--cocoa),transparent)}
+  .ticker::after{right:0;background:linear-gradient(-90deg,var(--cocoa),transparent)}
+  .ticker-track{display:inline-block;padding:13px 0;animation:tick 36s linear infinite;will-change:transform}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker span{margin:0 22px;font-size:.88rem;font-weight:700;color:#F3E9D8}
+  .ticker span i{font-style:normal;color:var(--gold)}
+  .ticker .up{color:#FFB4AB} .ticker .down{color:#9FE0AE} .ticker .fresh{color:var(--gold)}
+
+  /* ═══ 主体上叠：面包圆角压住红底 ═══ */
+  main{max-width:880px;margin:-64px auto 0;padding:0 20px 72px;position:relative}
   section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-card);padding:34px 36px;margin-top:26px;box-shadow:var(--shadow-card)}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
   .sec-head .kicker{font-size:.78rem;font-weight:800;letter-spacing:.22em;color:var(--red);text-transform:uppercase}
@@ -45,53 +70,69 @@
   .sec-head .more a{color:var(--red)}
   .meta{color:var(--ink-soft);font-size:.86rem}
 
-  /* ── 行情看板：基线日大数字 ── */
+  /* 收盘快报：交易所大数字 */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .stat{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:18px 20px}
-  .stat b{display:block;font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:.01em;line-height:1.2}
+  .stat b{display:block;font-size:clamp(1.7rem,4vw,2.3rem);font-weight:900;line-height:1.2;letter-spacing:.01em}
   .stat b .unit{font-size:.45em;font-weight:800;color:var(--ink-soft);margin-left:4px}
   .stat span{font-size:.84rem;color:var(--ink-soft);font-weight:600}
   .stat.hot b{color:var(--red)}
+
   .delta{padding:11px 2px;border-bottom:1px dashed var(--line);display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
   .delta:last-child{border-bottom:none}
   .delta b{font-weight:800}
-  .pill{display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-pill);padding:3px 12px;font-size:.82rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .pill{display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-pill);padding:3px 12px;font-size:.82rem;font-weight:800}
   .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
   .up{color:var(--red);background:rgba(218,41,28,.08)} .down{color:var(--lettuce);background:rgba(62,155,79,.10)}
   .new{color:var(--red-deep);background:rgba(218,41,28,.08)} .gone{color:var(--ink-soft);background:var(--track)}
-  .price{font-weight:900;font-variant-numeric:tabular-nums}
+  .price{font-weight:900}
   .coupon-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
   .coupon{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#FFF3D0,#FFE9AE);border:1px solid #F2D888;border-radius:var(--r-pill);padding:8px 16px;font-size:.9rem;font-weight:700}
   .coupon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(218,41,28,.15)}
   .coupon i{font-style:normal;font-size:.8rem;color:var(--ink-soft);font-weight:600}
 
-  /* ── 省钱榜：奖牌 + 金红数据条 ── */
+  /* ═══ 省钱榜：奖牌 + 金红数据条 ═══ */
   .rank-item{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:15px 4px;border-bottom:1px dashed var(--line);align-items:center}
   .rank-item:last-child{border-bottom:none}
-  .medal{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;font-variant-numeric:tabular-nums;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
+  .medal{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
   .m1{background:linear-gradient(145deg,#FFD84D,var(--gold-deep))}
   .m2{background:linear-gradient(145deg,#D9DDE3,#AAB2BD)}
   .m3{background:linear-gradient(145deg,#E2AC76,#B97E45)}
   .mn{background:var(--track);color:var(--ink-soft);box-shadow:none;font-size:.9rem}
   .rank-main b{display:block;font-weight:800;font-size:1.02rem}
-  .rank-main .formula{font-size:.86rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .rank-main .formula{font-size:.86rem;color:var(--ink-soft)}
   .rank-main .formula .price{color:var(--ink)}
-  .gain{display:inline-flex;align-items:center;gap:6px;margin-left:8px;background:rgba(62,155,79,.10);color:var(--lettuce);border-radius:var(--r-pill);padding:2px 11px;font-size:.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .gain{display:inline-flex;align-items:center;gap:6px;margin-left:8px;background:rgba(62,155,79,.10);color:var(--lettuce);border-radius:var(--r-pill);padding:2px 11px;font-size:.8rem;font-weight:800}
   .bar{height:9px;border-radius:var(--r-pill);background:var(--track);overflow:hidden;margin-top:9px}
   .bar i{display:block;height:100%;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--gold),var(--red))}
 
-  /* ── 考古图鉴：序号金章卡片 ── */
+  /* ═══ 营养速查：成分表终端 ═══ */
+  .nut-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .nut-card{border:1px solid var(--line);border-radius:20px;padding:18px 20px;background:var(--cream)}
+  .nut-card h3{font-size:.92rem;font-weight:900;letter-spacing:.06em;display:flex;align-items:center;gap:8px}
+  .nut-card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--red)}
+  .nut-card.low h3 .dot{background:var(--lettuce)}
+  .nut-card ol{list-style:none;margin-top:10px;counter-reset:nr}
+  .nut-card li{counter-increment:nr;display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+  .nut-card li:last-child{border-bottom:none}
+  .nut-card li::before{content:counter(nr,decimal-leading-zero);color:var(--ink-faint);font-weight:800;font-size:.78rem;margin-right:10px}
+  .nut-card li .n{flex:1;font-weight:700}
+  .nut-card li .k{font-weight:900;white-space:nowrap}
+  .nut-card li .k small{font-weight:600;color:var(--ink-soft);font-size:.72rem}
+  .nut-foot{margin-top:14px;font-size:.82rem;color:var(--ink-soft)}
+
+  /* ═══ 考古图鉴：序号金章卡片 ═══ */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
   .card{position:relative;border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;background:var(--paper);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
   .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-pop);border-color:var(--gold)}
-  .card .no{position:absolute;top:14px;right:16px;font-size:.78rem;font-weight:900;color:var(--gold-deep);background:#FFF3D0;border-radius:var(--r-pill);padding:1px 9px;font-variant-numeric:tabular-nums}
+  .card .no{position:absolute;top:14px;right:16px;font-size:.78rem;font-weight:900;color:var(--gold-deep);background:#FFF3D0;border-radius:var(--r-pill);padding:1px 9px}
   .card b{display:block;font-weight:800;font-size:1rem;margin-bottom:6px;padding-right:44px}
-  .card small{color:var(--ink-soft);font-size:.82rem;font-variant-numeric:tabular-nums}
+  .card small{color:var(--ink-soft);font-size:.82rem}
   .card a{color:inherit}
   .card a:hover{text-decoration:none}
   .card a::after{content:"";position:absolute;inset:0}
 
-  /* ── 关于：可可色收尾带 ── */
+  /* ═══ 关于：可可色收尾带 ═══ */
   .about{background:linear-gradient(150deg,#3B2C1E,var(--cocoa));border:none;color:#F3E9D8}
   .about .kicker{color:var(--gold)}
   .about p{font-size:.95rem;color:rgba(243,233,216,.92);max-width:40em;text-wrap:pretty}
@@ -105,34 +146,42 @@
   .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
   .fade.d1{animation-delay:.08s}.fade.d2{animation-delay:.16s}.fade.d3{animation-delay:.24s}
   @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.card,.card:hover{transition:none;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.ticker-track{animation:none}.card,.card:hover{transition:none;transform:none}}
   @media (max-width:640px){
-    .hero{padding:64px 20px 116px}
+    .hero{padding:52px 20px 108px}
     section{padding:26px 20px}
     .stats{grid-template-columns:1fr 1fr}
     .stat:first-child{grid-column:1/-1}
     .sec-head{flex-direction:column;align-items:flex-start;gap:6px}
+    .nut-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <svg class="arches left" viewBox="0 0 300 160" aria-hidden="true"><path d="M40 160 V95 A55 55 0 0 1 150 95 V160 M150 160 V95 A55 55 0 0 1 260 95 V160" stroke="#FFC72C" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
   <svg class="arches" viewBox="0 0 300 160" aria-hidden="true"><path d="M40 160 V95 A55 55 0 0 1 150 95 V160 M150 160 V95 A55 55 0 0 1 260 95 V160" stroke="#FFC72C" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
   <div class="hero-inner">
-    <span class="eyebrow">McDonald's Menu Intelligence</span>
-    <h1>麦麦<span class="gold">研究所</span></h1>
-    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据来自麦当劳中国官方 MCP。</p>
+    <div class="brand-row">
+      <span class="mark"><svg viewBox="0 0 64 64"><path d="M14 50 V30 A9.5 9.5 0 0 1 33 30 V50 M33 50 V30 A9.5 9.5 0 0 1 52 30 V50" stroke="#FFC72C" stroke-width="7" fill="none" stroke-linecap="round"/></svg></span>
+      <span class="name">麦麦研究所</span>
+      <span class="sep">·</span>
+      <span class="tag">MCD MARKET TERMINAL</span>
+    </div>
+    <h1>麦当劳菜单，<br>从此<span class="gold">有行情</span>。</h1>
+    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据来自麦当劳中国官方 MCP，每天 6:30 自动开盘。</p>
+    <span class="issue num" id="issue-line">期刊加载中…</span>
   </div>
 </header>
+
+<div class="ticker num" aria-hidden="true"><div class="ticker-track" id="ticker-track"><span>今日行情采集中…</span></div></div>
 
 <main>
   <section class="fade">
     <div class="sec-head">
       <div>
         <div class="kicker">行情部 · Daily Market</div>
-        <h2>今日行情</h2>
+        <h2>收盘快报</h2>
       </div>
       <span class="more"><a href="market/">完整日报与历史</a></span>
     </div>
@@ -158,6 +207,27 @@
   </section>
 
   <section class="fade d2">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">营养科 · Nutrition Desk</div>
+        <h2>营养速查</h2>
+      </div>
+      <span class="more">160 款餐品 · 数据来自官方接口</span>
+    </div>
+    <div class="nut-grid">
+      <div class="nut-card">
+        <h3><span class="dot"></span>热量 Top 5</h3>
+        <ol id="nut-high"></ol>
+      </div>
+      <div class="nut-card low">
+        <h3><span class="dot"></span>轻负担 Top 5</h3>
+        <ol id="nut-low"></ol>
+      </div>
+    </div>
+    <div class="nut-foot num" id="nut-foot"></div>
+  </section>
+
+  <section class="fade d3">
     <div class="sec-head">
       <div>
         <div class="kicker">考古部 · Freedom Ranking</div>
@@ -197,34 +267,43 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
 (async () => {
   const today = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
     .toISOString().slice(0, 10);
-  // 行情
+
+  // ── 行情：看板 + 变动 + 券池 + 跑马灯 ──
+  let market = null;
   try {
-    const m = await load("data/market-latest.json");
-    document.getElementById("market-date").textContent = `${m.date} · 门店快照自动对比`;
-    const stats = document.getElementById("market-stats");
-    const ul = document.getElementById("market");
-    const ch = m.changes || [];
-    const nCoupon = (m.couponPool || []).length;
+    market = await load("data/market-latest.json");
+    document.getElementById("market-date").textContent = `${market.date} · 门店快照自动对比`;
+    document.getElementById("issue-line").innerHTML = `第 <b>${market.date.replaceAll("-",".")}</b> 期 · 已自动开盘`;
+    const ch = market.changes || [];
+    const nCoupon = (market.couponPool || []).length;
     const nUp = ch.filter(c => c.type === "up").length, nDown = ch.filter(c => c.type === "down").length;
-    stats.innerHTML = `
-      <div class="stat hot"><b>${m.isBaseline ? "基线日" : ch.length}<span class="unit">${m.isBaseline ? "" : " 项变动"}</span></b><span>${m.isBaseline ? "观察首日 · 价格基线已建立" : "较昨日快照的价格变动"}</span></div>
+    document.getElementById("market-stats").innerHTML = `
+      <div class="stat hot"><b>${market.isBaseline ? "基线日" : ch.length}<span class="unit">${market.isBaseline ? "" : " 项变动"}</span></b><span>${market.isBaseline ? "观察首日 · 价格基线已建立" : "较昨日快照的价格变动"}</span></div>
       <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券</span></div>
-      <div class="stat"><b>${m.isBaseline ? "0 项" : `${nUp} 涨 · ${nDown} 降`}</b><span>${m.isBaseline ? "今日价格变动" : "涨跌风向"}</span></div>`;
-    if (ch.length) m.changes.slice(0,12).forEach(c => {
+      <div class="stat"><b>${market.isBaseline ? "0 项" : `${nUp} 涨 · ${nDown} 降`}</b><span>${market.isBaseline ? "今日价格变动" : "涨跌风向"}</span></div>`;
+    if (ch.length) ch.slice(0,12).forEach(c => {
       const map = {up:`<span class="pill up">▲ ¥${c.from}→¥${c.to}</span>`, down:`<span class="pill down">▼ ¥${c.from}→¥${c.to}</span>`,
                    new:`<span class="pill new">上新 ¥${fmt(c.price)}</span>`, gone:`<span class="pill gone">下架（昨日 ¥${fmt(c.price)}）</span>`};
-      ul.innerHTML += `<li class="delta"><b>${esc(c.name)}</b>${map[c.type]||""}</li>`;
+      document.getElementById("market").innerHTML += `<li class="delta"><b>${esc(c.name)}</b>${map[c.type]||""}</li>`;
     });
     if (nCoupon) document.getElementById("coupons").innerHTML =
-      m.couponPool.map(c=>`<span class="coupon">${esc(c.title)}<i>${esc(c.status||"")}</i></span>`).join("");
+      market.couponPool.map(c=>`<span class="coupon">${esc(c.title)}<i>${esc(c.status||"")}</i></span>`).join("");
+    // 跑马灯：变动 ×2 无缝滚动；基线日用券池
+    const items = ch.length
+      ? ch.slice(0,14).map(c => {
+          const map = {up:`<i class="up num">▲¥${c.to}</i>`, down:`<i class="down num">▼¥${c.to}</i>`, new:`<i class="fresh">上新</i>`, gone:`<i>下架</i>`};
+          return `<span>${esc(c.name)} ${map[c.type]||""}</span>`;
+        })
+      : (market.couponPool||[]).map(c => `<span>🎟️ ${esc(c.title)}</span>`);
+    if (items.length) document.getElementById("ticker-track").innerHTML = (items.join("") + items.join(""));
   } catch(e) { document.getElementById("market-date").innerHTML = `<span class="empty">行情数据加载失败（${e.message}）</span>`; }
 
-  // 积分
+  // ── 积分 ──
   try {
     const p = await load("data/points-rank.json");
     document.getElementById("points-date").textContent = `更新于 ${today}`;
     const box = document.getElementById("points");
-    if (!p.rank.length) box.innerHTML = `<div class="empty">本期暂无可核价的兑换券。</div>`;
+    if (!p.rank.length) box.innerHTML = `<div class="empty">本期暂无可核价的兑换券（商城在售组合随餐段变动）。</div>`;
     p.rank.slice(0,5).forEach((r,i) => {
       const w = Math.max(4, Math.min(100, r.per10k / 5));
       const medal = i<3 ? `m${i+1}` : "mn";
@@ -240,7 +319,21 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
       `积分商城另有 ${p.wall.length} 条周边情报 · 个人体检请本地运行 <code>python -m mcd_lab.points --me</code>`;
   } catch(e) { document.getElementById("points-date").innerHTML = `<span class="empty">榜单加载失败（${e.message}）</span>`; }
 
-  // 考古
+  // ── 营养 ──
+  try {
+    const n = await load("data/nutrition.json");
+    const foods = n.filter(x => x.energyKcal && +x.energyKcal > 0);
+    const high = [...foods].sort((a,b) => +b.energyKcal - +a.energyKcal).slice(0,5);
+    const low  = [...foods].sort((a,b) => +a.energyKcal - +b.energyKcal).slice(0,5);
+    document.getElementById("nut-high").innerHTML = high.map(x =>
+      `<li><span class="n">${esc(x.productName)}</span><span class="k num">${x.energyKcal}<small> kcal</small></span></li>`).join("");
+    document.getElementById("nut-low").innerHTML = low.map(x =>
+      `<li><span class="n">${esc(x.productName)}</span><span class="k num">${x.energyKcal}<small> kcal</small></span></li>`).join("");
+    const avg = Math.round(foods.reduce((s,x)=>s + +x.energyKcal, 0) / foods.length);
+    document.getElementById("nut-foot").textContent = `160 款餐品实测均值约 ${avg} kcal · 数据来自麦当劳官方接口，仅供参考`;
+  } catch(e) { document.getElementById("nut-foot").innerHTML = `<span class="empty">营养数据加载失败（${e.message}）</span>`; }
+
+  // ── 考古 ──
   try {
     const a = await load("data/archaeology-summary.json");
     document.getElementById("arch-date").textContent = `已考古 ${a.length} 款套餐的官方选配空间`;
