@@ -1,7 +1,7 @@
 {
  "storeCode": "1450713",
- "serverTime": "2026-10-31T09:45:00.758",
- "capturedAt": "2026-10-31T01:45:00",
+ "serverTime": "2026-10-31T10:23:08.586",
+ "capturedAt": "2026-10-31T02:23:10",
  "categories": [
   {
    "name": "满分假日",
@@ -1870,19 +1870,6 @@
    "price": "45"
   },
   {
-   "spuName": "麦当劳一起开心鸭尊享版生日派对",
-   "spuId": 8516,
-   "spuImage": "https://img.mcd.cn/ecs/572d282f03f9d757.png",
-   "point": "0",
-   "shopId": 5,
-   "selling": "［上海迪士尼唐老鸭主题］尊享版生日派对，小朋友们快来进入唐老鸭的奇妙世界，在麦当劳体验一场特别的生日派对，一起开心鸭！",
-   "upTime": "2024-10-31 00:00:00",
-   "downTime": "2026-12-31 23:59:59",
-   "catName": "生日类派对",
-   "status": 2,
-   "price": "138"
-  },
-  {
    "spuName": "麦当劳奇妙生日派对",
    "spuId": 1779,
    "spuImage": "https://img.mcd.cn/ecs/c2e746f29662c40d.png",
@@ -1909,43 +1896,17 @@
    "price": "45"
   },
   {
-   "spuName": "麦当劳狂欢生日派对 迪士尼疯狂动物城主题",
-   "spuId": 5224,
-   "spuImage": "https://img.mcd.cn/ecs/feb9130d2d541617.jpg",
+   "spuName": "麦当劳一起开心鸭尊享版生日派对",
+   "spuId": 8516,
+   "spuImage": "https://img.mcd.cn/ecs/572d282f03f9d757.png",
    "point": "0",
    "shopId": 5,
-   "selling": "欢迎小朋友们变身喜爱的动物角色，尽情狂欢，为寿星庆生，体验独一无二的迪士尼疯狂动物城主题的麦当劳生日派对",
-   "upTime": "2026-03-03 00:00:00",
+   "selling": "［上海迪士尼唐老鸭主题］尊享版生日派对，小朋友们快来进入唐老鸭的奇妙世界，在麦当劳体验一场特别的生日派对，一起开心鸭！",
+   "upTime": "2024-10-31 00:00:00",
    "downTime": "2026-12-31 23:59:59",
    "catName": "生日类派对",
    "status": 2,
-   "price": "58"
-  },
-  {
-   "spuName": "麦当劳狂欢生日派对 迪士尼疯狂动物城主题（尊享版）",
-   "spuId": 5247,
-   "spuImage": "https://img.mcd.cn/ecs/8531de33ea5be685.jpg",
-   "point": "0",
-   "shopId": 5,
-   "selling": "\"欢迎小朋友们变身喜爱的动物角色，尽情狂欢，为寿星庆生，体验独一无二的迪士尼疯狂动物城主题的 麦当劳生日派对\"",
-   "upTime": "2024-03-28 00:00:00",
-   "downTime": "2026-12-31 23:59:59",
-   "catName": "生日类派对",
-   "status": 2,
-   "price": "98"
-  },
-  {
-   "spuName": "麦当劳一起开心鸭生日派对",
-   "spuId": 8084,
-   "spuImage": "https://img.mcd.cn/ecs/0011dc7b40deacce.jpg",
-   "point": "0",
-   "shopId": 5,
-   "selling": "［上海迪士尼唐老鸭主题］生日派对，小朋友们快来进入唐老鸭的奇妙世界，在麦当劳体验一场特别的生日派对，一起开心鸭！",
-   "upTime": "2024-09-27 00:00:00",
-   "downTime": "2026-12-31 23:59:59",
-   "catName": "生日类派对",
-   "status": 2,
-   "price": "50"
+   "price": "138"
   },
   {
    "spuName": "麦当劳过家家派对尊享版",
@@ -2013,6 +1974,45 @@
    "price": "45"
   },
   {
+   "spuName": "麦当劳狂欢生日派对 迪士尼疯狂动物城主题",
+   "spuId": 5224,
+   "spuImage": "https://img.mcd.cn/ecs/feb9130d2d541617.jpg",
+   "point": "0",
+   "shopId": 5,
+   "selling": "欢迎小朋友们变身喜爱的动物角色，尽情狂欢，为寿星庆生，体验独一无二的迪士尼疯狂动物城主题的麦当劳生日派对",
+   "upTime": "2026-03-03 00:00:00",
+   "downTime": "2026-12-31 23:59:59",
+   "catName": "生日类派对",
+   "status": 2,
+   "price": "58"
+  },
+  {
+   "spuName": "麦当劳狂欢生日派对 迪士尼疯狂动物城主题（尊享版）",
+   "spuId": 5247,
+   "spuImage": "https://img.mcd.cn/ecs/8531de33ea5be685.jpg",
+   "point": "0",
+   "shopId": 5,
+   "selling": "\"欢迎小朋友们变身喜爱的动物角色，尽情狂欢，为寿星庆生，体验独一无二的迪士尼疯狂动物城主题的 麦当劳生日派对\"",
+   "upTime": "2024-03-28 00:00:00",
+   "downTime": "2026-12-31 23:59:59",
+   "catName": "生日类派对",
+   "status": 2,
+   "price": "98"
+  },
+  {
+   "spuName": "麦当劳一起开心鸭生日派对",
+   "spuId": 8084,
+   "spuImage": "https://img.mcd.cn/ecs/0011dc7b40deacce.jpg",
+   "point": "0",
+   "shopId": 5,
+   "selling": "［上海迪士尼唐老鸭主题］生日派对，小朋友们快来进入唐老鸭的奇妙世界，在麦当劳体验一场特别的生日派对，一起开心鸭！",
+   "upTime": "2024-09-27 00:00:00",
+   "downTime": "2026-12-31 23:59:59",
+   "catName": "生日类派对",
+   "status": 2,
+   "price": "50"
+  },
+  {
    "spuName": "开心特工派对 之 深海探秘",
    "spuId": 6971,
    "spuImage": "https://img.mcd.cn/ecs/ce7d0cd610277689.png",
@@ -2078,19 +2078,6 @@
    "price": "138"
   },
   {
-   "spuName": "麦麦奇妙夜捣蛋派对常规版",
-   "spuId": 13496,
-   "spuImage": "https://img.mcd.cn/ecs/f6b8c62a88821d10.jpg",
-   "point": "0",
-   "shopId": 5,
-   "selling": "以“捣蛋”的童趣、调皮、欢乐为核心，打造创意热烈的儿童派对，还有多种互动体验和精美礼品",
-   "upTime": "2025-10-04 00:00:00",
-   "downTime": "2028-10-04 23:49:59",
-   "catName": "主题类派对",
-   "status": 2,
-   "price": "58"
-  },
-  {
    "spuName": "麦当劳海底小纵队欢乐派对（尊享版）",
    "spuId": 17357,
    "spuImage": "https://img.mcd.cn/ecs/4a5362ac61da4ba9.jpg",
@@ -2115,6 +2102,19 @@
    "catName": "主题类派对",
    "status": 2,
    "price": "45"
+  },
+  {
+   "spuName": "麦麦奇妙夜捣蛋派对常规版",
+   "spuId": 13496,
+   "spuImage": "https://img.mcd.cn/ecs/f6b8c62a88821d10.jpg",
+   "point": "0",
+   "shopId": 5,
+   "selling": "以“捣蛋”的童趣、调皮、欢乐为核心，打造创意热烈的儿童派对，还有多种互动体验和精美礼品",
+   "upTime": "2025-10-04 00:00:00",
+   "downTime": "2028-10-04 23:49:59",
+   "catName": "主题类派对",
+   "status": 2,
+   "price": "58"
   },
   {
    "spuName": "一年一度品虾会",
@@ -2299,6 +2299,19 @@
    "price": "0"
   },
   {
+   "spuName": "10.9元指定小食任选",
+   "spuId": 17077,
+   "spuImage": "https://img.mcd.cn/ecs/72a21fa0f800c4d7.jpg",
+   "point": "200",
+   "shopId": 2,
+   "selling": "10.9元指定小食任选1份",
+   "upTime": "2026-06-25 00:00:03",
+   "downTime": "2026-12-30 23:59:59",
+   "catName": "到店专用",
+   "status": 2,
+   "price": "0"
+  },
+  {
    "spuName": "21.9元巨无霸可乐组合",
    "spuId": 17081,
    "spuImage": "https://img.mcd.cn/ecs/bd4382429dc7c39c.jpg",
@@ -2318,19 +2331,6 @@
    "point": "500",
    "shopId": 2,
    "selling": "16.9元麦辣可乐组合",
-   "upTime": "2026-06-25 00:00:03",
-   "downTime": "2026-12-30 23:59:59",
-   "catName": "到店专用",
-   "status": 2,
-   "price": "0"
-  },
-  {
-   "spuName": "10.9元指定小食任选",
-   "spuId": 17077,
-   "spuImage": "https://img.mcd.cn/ecs/72a21fa0f800c4d7.jpg",
-   "point": "200",
-   "shopId": 2,
-   "selling": "10.9元指定小食任选1份",
    "upTime": "2026-06-25 00:00:03",
    "downTime": "2026-12-30 23:59:59",
    "catName": "到店专用",
@@ -2429,32 +2429,6 @@
    "price": "0"
   },
   {
-   "spuName": "6.9元可乐麦炫酷",
-   "spuId": 17073,
-   "spuImage": "https://img.mcd.cn/ecs/affec854b9474fa2.jpg",
-   "point": "50",
-   "shopId": 2,
-   "selling": "6.9元可乐麦炫酷1份",
-   "upTime": "2026-06-25 00:00:03",
-   "downTime": "2026-12-30 23:59:59",
-   "catName": "到店专用",
-   "status": 2,
-   "price": "0"
-  },
-  {
-   "spuName": "17.9元板烧可乐组合",
-   "spuId": 17080,
-   "spuImage": "https://img.mcd.cn/ecs/08b655d1f4d3d639.jpg",
-   "point": "500",
-   "shopId": 2,
-   "selling": "17.9元板烧可乐组合",
-   "upTime": "2026-06-25 00:00:00",
-   "downTime": "2026-12-30 23:59:59",
-   "catName": "到店专用",
-   "status": 2,
-   "price": "0"
-  },
-  {
    "spuName": "6.9元香芋派/菠萝派任选",
    "spuId": 17074,
    "spuImage": "https://img.mcd.cn/ecs/c8e3a03b35f73ede.jpg",
@@ -2468,12 +2442,38 @@
    "price": "0"
   },
   {
+   "spuName": "6.9元可乐麦炫酷",
+   "spuId": 17073,
+   "spuImage": "https://img.mcd.cn/ecs/affec854b9474fa2.jpg",
+   "point": "50",
+   "shopId": 2,
+   "selling": "6.9元可乐麦炫酷1份",
+   "upTime": "2026-06-25 00:00:03",
+   "downTime": "2026-12-30 23:59:59",
+   "catName": "到店专用",
+   "status": 2,
+   "price": "0"
+  },
+  {
    "spuName": "10.9元指定小食任选",
    "spuId": 17076,
    "spuImage": "https://img.mcd.cn/ecs/acd57835928c0f6f.jpg",
    "point": "100",
    "shopId": 2,
    "selling": "10.9元指定小食任选1份",
+   "upTime": "2026-06-25 00:00:00",
+   "downTime": "2026-12-30 23:59:59",
+   "catName": "到店专用",
+   "status": 2,
+   "price": "0"
+  },
+  {
+   "spuName": "17.9元板烧可乐组合",
+   "spuId": 17080,
+   "spuImage": "https://img.mcd.cn/ecs/08b655d1f4d3d639.jpg",
+   "point": "500",
+   "shopId": 2,
+   "selling": "17.9元板烧可乐组合",
    "upTime": "2026-06-25 00:00:00",
    "downTime": "2026-12-30 23:59:59",
    "catName": "到店专用",
