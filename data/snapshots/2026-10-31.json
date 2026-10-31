@@ -1,7 +1,7 @@
 {
  "storeCode": "1450713",
- "serverTime": "2026-10-31T09:41:20.777",
- "capturedAt": "2026-10-31T01:41:20",
+ "serverTime": "2026-10-31T09:45:00.758",
+ "capturedAt": "2026-10-31T01:45:00",
  "categories": [
   {
    "name": "满分假日",
@@ -2299,19 +2299,6 @@
    "price": "0"
   },
   {
-   "spuName": "10.9元指定小食任选",
-   "spuId": 17077,
-   "spuImage": "https://img.mcd.cn/ecs/72a21fa0f800c4d7.jpg",
-   "point": "200",
-   "shopId": 2,
-   "selling": "10.9元指定小食任选1份",
-   "upTime": "2026-06-25 00:00:03",
-   "downTime": "2026-12-30 23:59:59",
-   "catName": "到店专用",
-   "status": 2,
-   "price": "0"
-  },
-  {
    "spuName": "21.9元巨无霸可乐组合",
    "spuId": 17081,
    "spuImage": "https://img.mcd.cn/ecs/bd4382429dc7c39c.jpg",
@@ -2331,6 +2318,19 @@
    "point": "500",
    "shopId": 2,
    "selling": "16.9元麦辣可乐组合",
+   "upTime": "2026-06-25 00:00:03",
+   "downTime": "2026-12-30 23:59:59",
+   "catName": "到店专用",
+   "status": 2,
+   "price": "0"
+  },
+  {
+   "spuName": "10.9元指定小食任选",
+   "spuId": 17077,
+   "spuImage": "https://img.mcd.cn/ecs/72a21fa0f800c4d7.jpg",
+   "point": "200",
+   "shopId": 2,
+   "selling": "10.9元指定小食任选1份",
    "upTime": "2026-06-25 00:00:03",
    "downTime": "2026-12-30 23:59:59",
    "catName": "到店专用",
@@ -2442,6 +2442,19 @@
    "price": "0"
   },
   {
+   "spuName": "17.9元板烧可乐组合",
+   "spuId": 17080,
+   "spuImage": "https://img.mcd.cn/ecs/08b655d1f4d3d639.jpg",
+   "point": "500",
+   "shopId": 2,
+   "selling": "17.9元板烧可乐组合",
+   "upTime": "2026-06-25 00:00:00",
+   "downTime": "2026-12-30 23:59:59",
+   "catName": "到店专用",
+   "status": 2,
+   "price": "0"
+  },
+  {
    "spuName": "6.9元香芋派/菠萝派任选",
    "spuId": 17074,
    "spuImage": "https://img.mcd.cn/ecs/c8e3a03b35f73ede.jpg",
@@ -2461,19 +2474,6 @@
    "point": "100",
    "shopId": 2,
    "selling": "10.9元指定小食任选1份",
-   "upTime": "2026-06-25 00:00:00",
-   "downTime": "2026-12-30 23:59:59",
-   "catName": "到店专用",
-   "status": 2,
-   "price": "0"
-  },
-  {
-   "spuName": "17.9元板烧可乐组合",
-   "spuId": 17080,
-   "spuImage": "https://img.mcd.cn/ecs/08b655d1f4d3d639.jpg",
-   "point": "500",
-   "shopId": 2,
-   "selling": "17.9元板烧可乐组合",
    "upTime": "2026-06-25 00:00:00",
    "downTime": "2026-12-30 23:59:59",
    "catName": "到店专用",
