@@ -1,42 +1,90 @@
 {
- "date": "2026-10-31",
+ "date": "2026-11-01",
  "isBaseline": false,
  "changes": [
   {
-   "type": "new",
-   "code": "9900003429",
-   "name": "图林根香肠早安营养卷组合",
-   "price": 11.4
+   "type": "gone",
+   "code": "507328",
+   "name": "麦咖啡™热奶铁中杯",
+   "price": 13.9
   },
   {
-   "type": "new",
-   "code": "9900003428",
-   "name": "火腿扒早安营养卷组合",
-   "price": 11.1
+   "type": "gone",
+   "code": "510041",
+   "name": "冰牛奶中杯",
+   "price": 19.0
   },
   {
-   "type": "new",
-   "code": "9900003469",
-   "name": "图林根香肠早安营养卷套餐",
-   "price": 14.4
+   "type": "gone",
+   "code": "507394",
+   "name": "牛奶",
+   "price": 19.0
   },
   {
-   "type": "new",
-   "code": "9900003468",
-   "name": "火腿扒早安营养卷套餐",
-   "price": 14.1
+   "type": "gone",
+   "code": "514851",
+   "name": "咖啡阿芙佳朵",
+   "price": 15.0
   },
   {
-   "type": "new",
-   "code": "513112",
-   "name": "火腿扒早安营养卷",
-   "price": 15.5
+   "type": "gone",
+   "code": "507368",
+   "name": "麦咖啡™热美式中杯",
+   "price": 11.9
   },
   {
-   "type": "new",
-   "code": "513113",
-   "name": "图林根香肠早安营养卷",
-   "price": 16.0
+   "type": "gone",
+   "code": "510488",
+   "name": "燕麦奶",
+   "price": 21.0
+  },
+  {
+   "type": "gone",
+   "code": "510479",
+   "name": "燕麦奶铁",
+   "price": 9.9
+  },
+  {
+   "type": "gone",
+   "code": "9900013221",
+   "name": "一早现磨 超值二件套",
+   "price": 14.9
+  },
+  {
+   "type": "gone",
+   "code": "507389",
+   "name": "浓缩咖啡",
+   "price": 15.0
+  },
+  {
+   "type": "gone",
+   "code": "507387",
+   "name": "卡布奇诺",
+   "price": 21.0
+  },
+  {
+   "type": "gone",
+   "code": "515955",
+   "name": "浓浓燕麦黑巧（冰/热）",
+   "price": 15.9
+  },
+  {
+   "type": "gone",
+   "code": "507409",
+   "name": "麦咖啡™奶铁",
+   "price": 13.9
+  },
+  {
+   "type": "gone",
+   "code": "507411",
+   "name": "麦咖啡™美式",
+   "price": 11.9
+  },
+  {
+   "type": "gone",
+   "code": "515946",
+   "name": "浓浓黑巧（冰/热）",
+   "price": 13.9
   }
  ],
  "couponPool": [
