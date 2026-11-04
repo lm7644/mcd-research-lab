@@ -37,9 +37,16 @@
  {
   "name": "精选单人餐三件套",
   "file": "archaeology/精选单人餐三件套.md",
-  "freeMods": 19,
+  "freeMods": 15,
   "swaps": 11,
-  "nodes": 37
+  "nodes": 36
+ },
+ {
+  "name": "人气麦旋风任选",
+  "file": "archaeology/人气麦旋风任选.md",
+  "freeMods": 0,
+  "swaps": 1,
+  "nodes": 2
  },
  {
   "name": "麦当劳奶昔",

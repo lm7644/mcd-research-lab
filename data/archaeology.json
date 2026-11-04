@@ -3189,38 +3189,6 @@
       ]
      },
      {
-      "name": "巨无霸",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "巨无霸酱",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "吉士",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "生菜",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "酸黄瓜",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "洋葱粒",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
       "name": "麦辣鸡腿汉堡",
       "isDefault": false,
       "supportModify": true,
@@ -3928,38 +3896,14 @@
      "max": 1
     },
     {
-     "where": "主食任意选 · 巨无霸",
-     "name": "巨无霸酱",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "主食任意选 · 巨无霸",
-     "name": "吉士",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "主食任意选 · 巨无霸",
-     "name": "生菜",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "主食任意选 · 巨无霸",
-     "name": "酸黄瓜",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "主食任意选 · 巨无霸",
-     "name": "洋葱粒",
-     "price": 0.0,
-     "max": 1
-    },
-    {
      "where": "主食任意选 · 麦辣鸡腿汉堡",
      "name": "麦香鸡酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "主食任意选 · 培根安格斯厚牛堡",
+     "name": "吉士",
      "price": 0.0,
      "max": 1
     },
@@ -4068,6 +4012,40 @@
      "max": 1
     }
    ]
+  }
+ },
+ "9900016782": {
+  "name": "人气麦旋风任选",
+  "rounds": [
+   {
+    "name": "选择麦旋风",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "蓝莓爆爆珠麦旋风",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "泷愿成真麦旋风——大米风味",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "选择麦旋风：蓝莓爆爆珠麦旋风"
+   ],
+   "swaps": [
+    "选择麦旋风：泷愿成真麦旋风——大米风味"
+   ],
+   "freeMods": [],
+   "paidMods": []
   }
  },
  "9900014092": {
