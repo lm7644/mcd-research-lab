@@ -50,15 +50,33 @@ jobs:
         env:
           MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
           MCD_STORE_CODE: "1450713"
-      - name: 数据校验（四类采集量，采集不全则中止）
+      - name: 数据校验（四类采集量；采集不全则跳过发布，不算失败）
+        id: validate
         run: |
+          set +e
           if [ "${{ inputs.allow_shrink }}" = "true" ]; then
-            python -m mcd_lab.validate --allow-shrink
+            python -m mcd_lab.validate --allow-shrink > /tmp/validate.log 2>&1
           else
-            python -m mcd_lab.validate
+            python -m mcd_lab.validate > /tmp/validate.log 2>&1
           fi
+          code=$?
+          cat /tmp/validate.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 2 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "## 采集不全：本次跳过发布"
+              echo
+              echo '```'
+              cat /tmp/validate.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          exit $code
 
       - name: 发布日报（分支 + PR + 合并，不直推 main）
+        if: steps.validate.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -78,14 +96,29 @@ jobs:
             --title "data: 麦麦行情日报 ${DATE}" \
             --body "自动采集：快照 ${DATE}、行情日报、积分省钱榜、考古图鉴。合并后由 Pages 发布。"
           gh pr merge "$BRANCH" --merge --delete-branch
-      - name: 失败告警（自动开 issue）
+      - name: 失败告警（固定 issue，复用更新，不新开）
         if: failure()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue create \
-            --title "daily-market 失败：run ${GITHUB_RUN_ID}" \
-            --body "运行日志：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          TITLE="[auto-alert] daily-market 运行异常（固定追踪，请勿关闭）"
+          NUM=$(gh issue list --state open --limit 100 --json number,title \
+            --jq '.[] | select(.title | contains("[auto-alert]")) | .number' | head -n1)
+          BODY="最近一次运行失败（本 issue 自动更新，勿手改）
 
-          触发方式：${GITHUB_EVENT_NAME}
-          提交：${GITHUB_SHA}"
+          - 运行：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+          - 触发：${GITHUB_EVENT_NAME}
+          - 提交：${GITHUB_SHA}
+          - 时间（北京）：$(TZ=Asia/Shanghai date '+%F %T')
+
+          失败摘要：
+          ----------------------------------------
+          $(tail -n 20 /tmp/validate.log 2>/dev/null || echo '（无 validate 日志；请查看运行链接中的失败步骤）')
+          ----------------------------------------
+          "
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body "$BODY"
+            echo "已更新固定追踪 issue #$NUM"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi

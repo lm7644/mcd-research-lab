@@ -6,7 +6,8 @@
 - 某一类整类归零 → 采集不全，中止；
 - 单类跌幅超过该类阈值：时段异常时判采集不全中止，营业时段内判真实变动放行（打告警）。
 
-采集中止时退出码 1，workflow 里的发布步骤不会执行，因此不会把残缺快照提交上线。
+采集不全时退出码 2：workflow 视为「本次跳过发布」，不当作流程失败（不发失败告警）。
+真异常（读文件/解析失败等）退出码 1，workflow 照常失败。
 人工放行（仅限确认过的真实缩减，如门店调整菜单）：--allow-shrink。时段异常不可放行。
 
 用法：python -m mcd_lab.validate [--allow-shrink] [--prev PATH --cur PATH]
@@ -98,8 +99,8 @@ def main():
         if args.allow_shrink and not off_hours:
             print(f"::warning::人工放行（--allow-shrink），不中止：{msg}")
             return 0
-        print("::error::采集不全，已中止发布：" + msg)
-        return 1
+        print("::warning::采集不全，跳过发布：" + msg)
+        return 2
     for w in warnings:
         print(f"::warning::单类下降超过阈值但无采集不全信号，按真实变动放行：{w}")
     print("校验通过：四类采集量都在可解释范围内")
