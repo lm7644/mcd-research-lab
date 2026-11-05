@@ -32,7 +32,7 @@
   a:hover{text-decoration:underline;text-underline-offset:3px}
   a:focus-visible{outline:2px solid var(--gold-ink);outline-offset:3px;border-radius:4px}
   .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);padding:10px 16px;z-index:99;border-radius:0 0 12px 0}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);padding:8px 16px;z-index:99;border-radius:0 0 12px 0}
   .skip:focus{left:0}
 
   /* ═══ 头版：红底 + 金拱门水印 + 行情跑马灯 ═══ */
@@ -43,7 +43,7 @@
         background-size:56px 56px}
   .hero .arches{position:absolute;right:-70px;bottom:-90px;width:430px;max-width:65vw;opacity:.14;pointer-events:none}
   .hero-inner{position:relative;max-width:884px;margin:0 auto}
-  .brand-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .brand-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .brand-row .mark{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center}
   .brand-row .mark svg{width:26px}
   .brand-row .name{font-weight:900;font-size:1.02rem;letter-spacing:.04em;white-space:nowrap}
@@ -80,16 +80,16 @@
   .rail a.on{color:var(--ink);background:var(--paper);box-shadow:0 1px 2px rgba(63,38,10,.08),0 2px 10px rgba(63,38,10,.06)}
   .rail a.on .no{color:var(--red)}
   .rail .spacer{flex:1}
-  .rail .stamp{font-size:.78rem;color:var(--ink-faint);white-space:nowrap;padding-right:4px}
+  .rail .stamp{font-size:.78rem;color:var(--ink-faint);white-space:nowrap;padding-right:8px}
 
   /* ═══ 主体：纸面叠在红底上 ═══ */
   main{max-width:940px;margin:-72px auto 0;padding:0 24px 96px;position:relative}
   section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-sheet);
-        padding:48px;margin-top:40px;box-shadow:var(--shadow-card);scroll-margin-top:78px}
+        padding:48px;margin-top:40px;box-shadow:var(--shadow-card);scroll-margin-top:80px}
   .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:16px;margin-bottom:24px}
-  .sec-head .title{display:flex;align-items:center;gap:14px;min-width:0}
+  .sec-head .title{display:flex;align-items:center;gap:16px;min-width:0}
   .sec-head .no{font-family:var(--mono);font-size:.82rem;font-weight:800;color:var(--red-ink);
-        border:1px solid var(--line);border-radius:8px;padding:3px 7px;line-height:1.2;background:var(--cream)}
+        border:1px solid var(--line);border-radius:8px;padding:0 8px;line-height:24px;background:var(--cream)}
   .sec-head h2{font-size:2.5rem;font-weight:900;letter-spacing:.01em;line-height:1.2;text-wrap:balance}
   .sec-head .note{color:var(--ink-soft);font-size:.92rem;margin-top:8px}
   .sec-head .more{white-space:nowrap;font-size:.9rem;font-weight:700;color:var(--ink-soft);min-height:44px;display:inline-flex;align-items:center}
@@ -102,18 +102,18 @@
   .stat{padding:24px 24px 24px 0}
   .stat + .stat{border-left:1px solid var(--line-soft);padding-left:24px}
   .stat b{display:block;font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:.01em}
-  .stat b .unit{font-size:.42em;font-weight:800;color:var(--ink-soft);margin-left:6px}
+  .stat b .unit{font-size:.42em;font-weight:800;color:var(--ink-soft);margin-left:8px}
   .stat>span{display:block;margin-top:8px;font-size:.88rem;line-height:1.5;color:var(--ink-soft);font-weight:600}
   .stat.hot b{color:var(--red-ink)}
-  .stat b.pair{display:flex;align-items:baseline;gap:18px}
-  .stat b.pair span{display:inline-flex;align-items:baseline;gap:5px}
+  .stat b.pair{display:flex;align-items:baseline;gap:16px}
+  .stat b.pair span{display:inline-flex;align-items:baseline;gap:8px}
   .stat b.pair i{font-style:normal;font-size:.36em;font-weight:800;color:var(--ink-soft);letter-spacing:.04em}
 
   .price{font-weight:900}
 
   /* 行情表：昨收 / 今收 / 变动，像一张真的收盘行情单 */
   .ledger{border-top:1px solid var(--line);margin-top:var(--s2)}
-  .ledger-head,.ledger-row{display:grid;grid-template-columns:minmax(0,1fr) 82px 82px 92px;align-items:baseline;gap:14px}
+  .ledger-head,.ledger-row{display:grid;grid-template-columns:minmax(0,1fr) 80px 80px 96px;align-items:baseline;gap:16px}
   .ledger-head{padding:8px 0;font-size:.76rem;font-weight:800;color:var(--ink-faint);letter-spacing:.06em}
   .ledger-head .p,.ledger-head .chg{text-align:right}
   .ledger-row{padding:16px 0;border-top:1px dashed var(--line);font-size:.98rem}
@@ -123,37 +123,37 @@
   .ledger-row .p.now{color:var(--ink);font-weight:900}
   .ledger-row .chg{text-align:right;font-weight:800;font-size:.88rem;white-space:nowrap}
   .chg.up{color:var(--red-ink)} .chg.down{color:var(--green)} .chg.new{color:var(--red-deep)} .chg.gone{color:var(--ink-soft)}
-  .coupon-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--s3)}
-  .coupon{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#FFF3D0,#FFE9AE);border:1px solid #EFD489;border-radius:var(--r-pill);padding:9px 17px;font-size:.92rem;font-weight:700}
+  .coupon-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+  .coupon{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#FFF3D0,#FFE9AE);border:1px solid #EFD489;border-radius:var(--r-pill);padding:8px 16px;font-size:.92rem;font-weight:700}
   .coupon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(218,41,28,.14)}
   .coupon i{font-style:normal;font-size:.82rem;color:var(--ink-soft);font-weight:600}
 
   /* 省钱榜：奖牌 + 单色数据条 */
-  .rank-item{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);align-items:center}
+  .rank-item{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);align-items:center}
   .rank-item:last-child{border-bottom:none}
-  .medal{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
+  .medal{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
   .m1{background:linear-gradient(145deg,#FFD84D,var(--gold-ink))}
   .m2{background:linear-gradient(145deg,#D9DDE3,#AAB2BD)}
   .m3{background:linear-gradient(145deg,#E2AC76,#B97E45)}
   .mn{background:var(--track);color:var(--ink-soft);box-shadow:none;font-size:.9rem}
   .rank-main b{display:block;font-weight:800;font-size:1.02rem;line-height:1.5}
-  .rank-main .formula{display:block;font-size:.88rem;color:var(--ink-soft);margin-top:2px}
+  .rank-main .formula{display:block;font-size:.88rem;color:var(--ink-soft);margin-top:8px}
   .rank-main .formula .price{color:var(--ink)}
-  .gain{display:inline-flex;align-items:center;gap:6px;margin-left:8px;background:rgba(31,107,43,.09);color:var(--green);border-radius:var(--r-pill);padding:2px 11px;font-size:.82rem;font-weight:800;vertical-align:2px}
-  .bar{height:6px;border-radius:var(--r-pill);background:var(--track);overflow:hidden;margin-top:12px}
+  .gain{display:inline-flex;align-items:center;gap:8px;margin-left:8px;background:rgba(31,107,43,.09);color:var(--green);border-radius:var(--r-pill);padding:0 8px;line-height:24px;font-size:.82rem;font-weight:800;vertical-align:2px}
+  .bar{height:8px;border-radius:var(--r-pill);background:var(--track);overflow:hidden;margin-top:16px}
   .bar i{display:block;height:100%;border-radius:var(--r-pill);background:var(--red)}
 
   /* 营养速查：两栏成分表，用竖线分隔，不套卡片 */
-  .nut-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:6px}
-  .nut-card{padding:4px 32px 4px 2px}
-  .nut-card + .nut-card{border-left:1px solid var(--line-soft);padding:4px 2px 4px 32px}
-  .nut-card h3{font-size:.94rem;font-weight:900;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
-  .nut-card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--red)}
+  .nut-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+  .nut-card{padding:8px 32px 8px 0}
+  .nut-card + .nut-card{border-left:1px solid var(--line-soft);padding:8px 0 8px 32px}
+  .nut-card h3{font-size:.94rem;font-weight:900;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+  .nut-card h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
   .nut-card.low h3 .dot{background:var(--green)}
-  .nut-card ol{list-style:none;margin-top:10px;counter-reset:nr}
-  .nut-card li{counter-increment:nr;display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line-soft);font-size:.94rem}
+  .nut-card ol{list-style:none;margin-top:8px;counter-reset:nr}
+  .nut-card li{counter-increment:nr;display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line-soft);font-size:.94rem}
   .nut-card li:last-child{border-bottom:none}
-  .nut-card li::before{content:counter(nr,decimal-leading-zero);color:var(--ink-faint);font-weight:800;font-size:.78rem;margin-right:12px}
+  .nut-card li::before{content:counter(nr,decimal-leading-zero);color:var(--ink-faint);font-weight:800;font-size:.78rem;margin-right:8px}
   .nut-card li .n{flex:1;font-weight:700}
   .nut-card li .k{font-weight:900;white-space:nowrap}
   .nut-card li .k small{font-weight:600;color:var(--ink-soft);font-size:.74rem}
@@ -163,8 +163,8 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:24px}
   .card{position:relative;border:1px solid var(--line);border-radius:var(--r-inner);padding:24px;background:var(--paper);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
   @media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-pop);border-color:var(--gold)}}
-  .card .no{position:absolute;top:16px;right:18px;font-family:var(--mono);font-size:.78rem;font-weight:800;color:var(--red-ink);border-radius:var(--r-pill);padding:1px 9px;background:var(--track)}
-  .card b{display:block;font-weight:800;font-size:1rem;line-height:1.5;margin-bottom:6px;padding-right:48px}
+  .card .no{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:.78rem;font-weight:800;color:var(--red-ink);border-radius:var(--r-pill);padding:0 8px;line-height:24px;background:var(--track)}
+  .card b{display:block;font-weight:800;font-size:1rem;line-height:1.5;margin-bottom:8px;padding-right:48px}
   .card small{display:block;color:var(--ink-soft);font-size:.86rem;line-height:1.6}
   .card a{color:inherit}
   .card a:hover{text-decoration:none}
@@ -175,12 +175,12 @@
   .about .sec-head .no{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:var(--gold)}
   .about .sec-head h2{color:#FFF8EA}
   .about p{font-size:.98rem;color:rgba(250,242,228,.95);max-width:40em;line-height:1.8;text-wrap:pretty}
-  .about p + p{margin-top:12px}
+  .about p + p{margin-top:16px}
   .about a{color:var(--gold)}
   .about .meta{color:rgba(243,233,216,.7)}
-  .about code{background:rgba(255,255,255,.1);border-radius:8px;padding:1px 8px;font-size:.88em}
+  .about code{background:rgba(255,255,255,.1);border-radius:8px;padding:0 8px;font-size:.88em}
 
-  footer{text-align:center;color:var(--ink-faint);font-size:.86rem;line-height:1.8;padding:36px 24px 48px}
+  footer{text-align:center;color:var(--ink-faint);font-size:.86rem;line-height:1.8;padding:32px 24px 48px}
   .empty{color:var(--ink-faint);font-style:italic}
   .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
   @keyframes rise{to{opacity:1;transform:none}}
@@ -206,7 +206,7 @@
     .ledger-row .prices{grid-area:prices;display:flex;gap:16px;margin-top:0;font-size:.86rem}
     .ledger-row .p{text-align:left}
     .nut-grid{grid-template-columns:1fr;gap:0}
-    .nut-card{padding:0}
+    .nut-card{padding:8px 0}
     .nut-card + .nut-card{border-left:none;padding:24px 0 0;border-top:1px solid var(--line-soft);margin-top:24px}
     .about{padding:32px 24px}
   }
@@ -270,7 +270,7 @@
       <span class="more"><a href="https://github.com/lm7644/mcd-research-lab/blob/main/README.md">算法与免责</a></span>
     </div>
     <div id="points"></div>
-    <div class="meta" id="points-wall" style="margin-top:18px"></div>
+    <div class="meta" id="points-wall" style="margin-top:16px"></div>
   </section>
 
   <section class="fade" id="nutrition">
