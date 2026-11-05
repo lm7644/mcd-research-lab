@@ -205,11 +205,20 @@ def main():
     # 清理已不在当前菜单里的旧图鉴页（完整跑才清理）。
     # 只按「菜单里还有没有这款」判断，不按本次 --limit 的采集范围，
     # 否则 --limit 80 会把限额外的存量图鉴误删。
+    # 另外：本次快照若比上一份明显缩水（夜间/早餐菜单残缺），「不在菜单里」
+    # 不等于「已下架」，此时不清理，避免把存量图鉴误删。
+    prev_meals = 0
+    if len(snap_files) >= 2:
+        prev_meals = len(json.loads(snap_files[-2].read_text(encoding="utf-8")).get("meals") or {})
+    menu_complete = prev_meals == 0 or len(meals) >= prev_meals * 0.9
     if not args.only:
-        live_pages = {f"{slug(meals[code]['name'])}.md" for code in meals} | {"INDEX.md"}
-        for stale in out_dir.glob("*.md"):
-            if stale.name not in live_pages:
-                stale.unlink()
+        if not menu_complete:
+            print(f"  快照菜单 {len(meals)} 项 << 上一份 {prev_meals} 项，疑似非全日菜单，跳过存量清理")
+        else:
+            live_pages = {f"{slug(meals[code]['name'])}.md" for code in meals} | {"INDEX.md"}
+            for stale in out_dir.glob("*.md"):
+                if stale.name not in live_pages:
+                    stale.unlink()
 
     entries = build_summary(out_dir, clock.today(snap.get("serverTime")).isoformat())
     pages = len([p for p in out_dir.glob("*.md") if p.name != "INDEX.md"])
