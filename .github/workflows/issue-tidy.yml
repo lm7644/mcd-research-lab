@@ -1,0 +1,41 @@
+name: issue-tidy
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 收敛历史告警并标注固定追踪位
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -u
+          close_one () {
+            num="$1"; run="$2"; reason="$3"
+            gh issue comment "$num" --body "该告警已被固定追踪 issue #15 收敛，本条关闭。历史 run 与原因保留如下，可追溯：
+
+          - run：${run}
+          - 原因：${reason}"
+            gh issue close "$num"
+            echo "closed #${num} (run ${run})"
+          }
+
+          close_one 6  "42066122303" "workflow_dispatch 于北京 11-05 00:36 触发；夜间菜单不完整，校验打印「菜单项对比：116 → 50」，判定「疑似采集时段不完整（夜间/早餐菜单），已中止发布」；旧闸门 exit 1 致 job failure，publish skipped。"
+          close_one 8  "42078524707" "workflow_dispatch 于北京 11-05 01:50 触发；失败在「行情部·快照采集」步骤，报 ModuleNotFoundError: No module named 'mcd_lab.client'；属提交树构造错误（head bbf7e1d 的 mcd_lab/ 缺 client.py 与 __init__.py），非采集量问题。"
+          close_one 11 "42079357638" "workflow_dispatch 于北京 11-05 01:55 触发；夜间菜单不完整，校验 116 → 50，01:56 落在旧营业时段窗口（07:00–22:00）之外，判为采集不全；旧闸门 exit 1 致 job failure，publish skipped。"
+          close_one 13 "42084074943" "workflow_dispatch 于北京 11-05 02:25 触发；夜间菜单不完整，校验 116 → 50 (-56.9%)，02:25 不在 10:30–22:00 时段，缺 4 个分类（巨无霸牛鱼肉堡、安格斯MAX厚牛堡、开心乐园、500大卡套餐）；旧闸门 exit 1 致 job failure，publish skipped。"
+          close_one 14 "42084595410" "workflow_dispatch 于北京 11-05 02:28 触发；夜间菜单不完整，校验 116 → 50 (-56.9%)，02:28 不在 10:30–22:00 时段，缺同样 4 个分类；旧闸门 exit 1 致 job failure，publish skipped。"
+
+          gh issue comment 15 --body "本 issue 现为 daily-market 真异常告警的唯一固定追踪位。
+
+          - 采集不全（validate exit 2）：运行记为 success、跳过发布、不触发本 issue，也不发失败邮件。
+          - 真异常（快照/差异/积分/考古/校验非 2 退出）：job failure，本 issue 追加/更新，不再新开。
+          - 标题与编号保持固定，后续失败只更新这里；历史遗留的 #6/#8/#11/#13/#14 已关闭并注明对应 run。"
+          echo "annotated #15"
+          echo "DONE"
