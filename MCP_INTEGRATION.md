@@ -26,7 +26,7 @@ flowchart TD
     B --> C[query-meals 门店 1450713<br/>菜单+价格+折扣类型]
     C --> D[available-coupons 麦麦省券池]
     D --> E[campaign-calendar 当月活动日历]
-    E --> F[mall-points-products 积分商城目录]
+    E --> F[query-mall-products 积分商城目录]
     F --> G[(data/snapshots/日期.json)]
     G --> H[diff 引擎 对比昨日快照]
     I --> J[涨价/降价/上新/下架/券池/活动变动]
@@ -37,7 +37,7 @@ flowchart TD
 
 ### 2. 积分理财科（`mcd_lab/points.py`）—— 积分省钱榜 + 个人体检
 
-- `mall-points-products`（积分商城目录，实测 50 个商品）× `query-meals`（菜单现金价）
+- `query-mall-products`（积分商城目录，实测 50 个商品）× `query-meals`（菜单现金价）
   → 名称强匹配（菜单名去括号后 ≥3 字出现在券描述中，短名是长名子串时去重）
   → **每万积分省钱 = (菜单现价合计 − 兑换现金价) ÷ 积分 × 10000**
 - 个人体检模式（`--me`，仅本地）：`query-my-account`（余额/本月将过期积分/累计）+ `query-lottery-info`（抽奖消耗规则与奖品池）→ 输出体检报告，引导快过期积分优先兑换高性价比券。
@@ -49,13 +49,13 @@ flowchart TD
 - 遍历 `query-meals` 返回的全部餐品，逐个调用 `query-meal-detail`
 - 解析 `data.rounds[]`（选配轮次）× `choices[]`（选项，`isDefault`/`supportModify`）× `modification.items[].values[]`（特调：名称/价格(分)/最大份数）
 - 产出：默认搭配 / 可替换项 / 0 元特调 / 付费特调 / 原始组合树 → 每餐一页图鉴 + 全场摘要
-- 实测覆盖：63 款有选配空间的餐品，最大组合树 55 节点（全明星双人分享餐八件套）
+- 实测覆盖：63 款有选配空间的餐品（同名套餐按名称去重），最大组合树 56 节点（全明星双人分享餐八件套）
 
 ### 价格核验（保证「价格必须真实」）
 
 `calculate-price`（items 使用 `productCode` + `quantity`，**返回单位为分**）用于对图鉴中的关键组合实时核价，确保展示价格与官方一致；快照中的 `query-meals.currentPrice` 单位为元，两套单位在代码中统一换算。
 
-## 三、使用的 Tool 清单（11 个）
+## 三、使用的 Tool 清单（10 个已接入 + 1 个预留）
 
 | # | Tool | 科室 | 用途 |
 |---|---|---|---|
@@ -63,13 +63,13 @@ flowchart TD
 | 2 | `query-meals` | 行情/考古/积分 | 菜单、价格、分类主数据 |
 | 3 | `available-coupons` | 行情部 | 麦麦省可领券池（不含个人券码） |
 | 4 | `campaign-calendar` | 行情部 | 当月活动日历 |
-| 5 | `mall-points-products` | 积分科 | 积分商城目录 |
+| 5 | `query-mall-products`（原 `mall-points-products`） | 积分科 | 积分商城目录 |
 | 6 | `query-my-account` | 积分科(本地) | 积分余额与过期预警 |
 | 7 | `query-lottery-info` | 积分科(本地) | 抽奖规则与奖品池 |
 | 8 | `query-meal-detail` | 考古部 | 选配轮次×选项×特调 |
 | 9 | `calculate-price` | 考古部 | 组合实时核价 |
 | 10 | `query-nearby-stores` | 公共 | 门店定位（beType=1/searchType=2） |
-| 11 | `query-promotions` | 预留 | 团餐促销规则（规划中） |
+| 11 | `query-promotions` | 预留 | 团餐促销规则（规划中，代码未接入） |
 
 > **隐私边界（主动设计）**：实测发现 `query-store-coupons` / `query-my-coupons` 返回用户本人券包及**券码**，属个人敏感数据。本项目公共采集流程**不调用**这两个工具；涉及个人账户数据的 `--me` 模式仅在用户本地运行，结果不进入仓库。
 

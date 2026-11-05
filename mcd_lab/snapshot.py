@@ -17,14 +17,17 @@ DEFAULT_STORE = os.environ.get("MCD_STORE_CODE", "1450713")
 
 
 def parse_coupons_md(text):
-    """从 available-coupons / query-store-coupons 的 markdown 中提取券名+状态。"""
+    """从 available-coupons / query-store-coupons 的 markdown 中提取券名+状态。
+
+    兼容两种返回：真实换行，或把换行转义成字面量 ``\\n`` 的文本。
+    """
     coupons = []
-    for m in re.finditer(r"优惠券标题：(.+?)\\\n\s*状态：(.+?)(?:\\\n|$)", text):
+    for m in re.finditer(r"优惠券标题：(.+?)(?:\\n|\n)\s*状态：(.+?)(?:\\n|\\?\n|$)", text):
         coupons.append({"title": m.group(1).strip(), "status": m.group(2).strip()})
     if not coupons:  # 兜底：逐行扫描
         title = None
         for line in text.splitlines():
-            t = re.match(r"-\s*优惠券标题：(.+)", line)
+            t = re.match(r"[-*\s]*(?:\d+[.、])?\s*优惠券标题：(.+)", line)
             if t:
                 title = t.group(1).strip()
             s = re.match(r"\s*状态：(.+)", line)
@@ -59,7 +62,10 @@ def main():
     c = McpClient()
 
     categories, meals = c.menu(args.store)
-    coupons = parse_coupons_md(c.call("available-coupons"))
+    coupon_text = c.call("available-coupons")
+    coupons = parse_coupons_md(coupon_text)
+    if not coupons and coupon_text.strip():
+        print("  ⚠️ 券池解析结果为空，接口文案格式可能已变化，请检查 parse_coupons_md")
     calendar = parse_calendar_md(c.call("campaign-calendar"))
     # 积分商城目录：2026-10-30 官方将其改名 mall-points-products → query-mall-products
     # （返回结构与字段不变）。保留降级逻辑：未来再遇单工具故障不炸整条管道。
@@ -90,8 +96,9 @@ def main():
         print(f"  ⚠️ 营养数据接口不可用，跳过: {e}")
     nut_file = ROOT / "docs" / "data" / "nutrition.json"
     nut_payload = json.dumps(nutrition, ensure_ascii=False, indent=1) + "\n"
-    if nutrition and (not nut_file.exists() or nut_file.read_text() != nut_payload):
-        nut_file.write_text(nut_payload)
+    if nutrition and (not nut_file.exists() or nut_file.read_text(encoding="utf-8") != nut_payload):
+        nut_file.parent.mkdir(parents=True, exist_ok=True)
+        nut_file.write_text(nut_payload, encoding="utf-8")
         print(f"  营养数据已更新: {len(nutrition)} 款 → docs/data/nutrition.json")
 
     snap = {
@@ -108,7 +115,7 @@ def main():
     }
     out = ROOT / "data" / "snapshots" / f"{dt.date.today().isoformat()}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(snap, ensure_ascii=False, indent=1))
+    out.write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"快照完成: {out}")
     print(f"  菜单 {len(meals)} 项 / {len(categories)} 分类 | 券池 {len(coupons)} | "
           f"活动 {len(calendar)} | 积分商品 {len(points_products)}")

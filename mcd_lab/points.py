@@ -71,8 +71,10 @@ def analyze_product(p, meals):
 
 
 def build_rows():
-    snap_file = sorted((ROOT / "data" / "snapshots").glob("*.json"))[-1]
-    snap = json.loads(snap_file.read_text())
+    files = sorted((ROOT / "data" / "snapshots").glob("*.json"))
+    if not files:
+        raise SystemExit("未找到任何快照，请先运行 python -m mcd_lab.snapshot")
+    snap = json.loads(files[-1].read_text(encoding="utf-8"))
     meals = snap["meals"]
     rank, wall = [], []
     for p in snap.get("pointsProducts") or []:
@@ -134,12 +136,13 @@ def main():
     rank, wall = build_rows()
     date = dt.date.today().isoformat()
     out = ROOT / "docs" / "market" / f"points-rank-{date}.md"
-    out.write_text(render(rank, wall))
-    payload = json.dumps({"rank": rank, "wall": wall}, ensure_ascii=False, indent=1)
-    (ROOT / "data" / "market" / "points-rank.json").write_text(payload)
+    out.write_text(render(rank, wall), encoding="utf-8")
+    payload = json.dumps({"date": date, "rank": rank, "wall": wall},
+                         ensure_ascii=False, indent=1)
+    (ROOT / "data" / "market" / "points-rank.json").write_text(payload, encoding="utf-8")
     site_data = ROOT / "docs" / "data"
     site_data.mkdir(parents=True, exist_ok=True)
-    (site_data / "points-rank.json").write_text(payload)  # 稳定文件名，供在线 Demo 读取
+    (site_data / "points-rank.json").write_text(payload, encoding="utf-8")  # 稳定文件名，供在线 Demo 读取
     print(f"积分省钱榜已生成: {out}（{len(rank)} 条可核价 / {len(wall)} 条周边情报）")
 
 

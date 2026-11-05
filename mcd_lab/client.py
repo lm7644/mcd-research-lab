@@ -130,5 +130,7 @@ class McpClient:
         text = self.call("query-nearby-stores", beType=1, searchType=2,
                          city=city, keyword=keyword)
         m = re.search(r'\{"success"', text)
+        if not m:  # 无匹配门店时接口可能返回纯文本，避免 AttributeError
+            raise McpError(f"query-nearby-stores: 未找到门店数据: {text[:120]}")
         obj, _ = json.JSONDecoder().raw_decode(text[m.start():])
         return obj["data"][0] if obj.get("data") else {}

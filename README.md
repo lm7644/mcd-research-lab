@@ -5,8 +5,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue) ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen) ![Data](https://img.shields.io/badge/data-官方MCP实时-success) ![Update](https://img.shields.io/badge/更新-每日自动-orange)
 
-**🖥️ 在线演示**：开启 GitHub Pages（Settings → Pages → 分支 `main`、目录 `/docs`）后访问
-`https://<你的用户名>.github.io/mcd-research-lab/` —— 今日行情 / 省钱榜 / 自由度榜一页看全。
+**🖥️ 在线演示**：<https://lm7644.github.io/mcd-research-lab/> （GitHub Pages，分支 `main`、目录 `/docs`）——今日行情 / 省钱榜 / 自由度榜一页看全。
 
 麦当劳程序员创意开发大赛参赛作品 · 非麦当劳官方产品
 
@@ -48,7 +47,7 @@
 官方点餐接口里，每个套餐都是一棵组合树：主食轮 × 小食轮 × 饮料轮，选项可替换，还藏着**特调**（加酱、加吉士、去冰、换燕麦奶……多数 0 元）。
 考古部把全部有选配空间的套餐组合树挖出存档，每日随菜单自动更新（完整清单与实数见摘要）：
 - [考古发现摘要（自由度排行榜 + 全场 0 元特调清单）](docs/archaeology/INDEX.md)
-- 单品图鉴示例：[巨无霸三件套](docs/archaeology/巨无霸三件套.md)（12 项免费特调、12 个替换位、组合树 34 节点）
+- 单品图鉴示例：[全明星双人分享餐八件套](docs/archaeology/全明星双人分享餐八件套.md)（14 项免费特调、24 个替换位、组合树 56 节点）
 - 原始数据：[`data/archaeology.json`](data/archaeology.json)
 
 ### 💰 积分理财科 —— 积分省钱榜
@@ -60,7 +59,7 @@
 ## 🚀 快速开始
 
 ```bash
-export MCD_MCP_TOKEN=你的Token    # 在 https://open.mcd.cn/mcp 控制台申请
+export MCD_MCP_TOKEN=你的Token    # 在 https://open.mcd.cn/mcp 控制台申请；Windows PowerShell 用 $env:MCD_MCP_TOKEN="..."
 python -m mcd_lab.snapshot         # 采集当日快照
 python -m mcd_lab.diff             # 生成行情日报
 python -m mcd_lab.points           # 积分省钱榜

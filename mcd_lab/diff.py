@@ -13,9 +13,12 @@ README_END = "<!-- MARKET:END -->"
 
 def load_snapshots():
     files = sorted((ROOT / "data" / "snapshots").glob("*.json"))
+    if not files:
+        raise SystemExit("未找到任何快照，请先运行 python -m mcd_lab.snapshot")
     if len(files) < 2:
-        return None, json.loads(files[-1].read_text()), files[-1]
-    return json.loads(files[-2].read_text()), json.loads(files[-1].read_text()), files[-1]
+        return None, json.loads(files[-1].read_text(encoding="utf-8")), files[-1]
+    return (json.loads(files[-2].read_text(encoding="utf-8")),
+            json.loads(files[-1].read_text(encoding="utf-8")), files[-1])
 
 
 def yuan(v):
@@ -124,12 +127,12 @@ def rewrite_readme_block(report_md):
     readme = ROOT / "README.md"
     if not readme.exists():
         return
-    text = readme.read_text()
+    text = readme.read_text(encoding="utf-8")
     brief = "\n".join(report_md.splitlines()[2:20])  # 取日报核心段做摘要
     if README_BEGIN in text and README_END in text:
         pre = text.split(README_BEGIN)[0]
         post = text.split(README_END)[1]
-        readme.write_text(f"{pre}{README_BEGIN}\n{brief}\n{README_END}{post}")
+        readme.write_text(f"{pre}{README_BEGIN}\n{brief}\n{README_END}{post}", encoding="utf-8")
         print("README 今日行情区块已更新")
 
 
@@ -148,15 +151,15 @@ def main():
     date_str = new["capturedAt"][:10]
     out = ROOT / "docs" / "market" / f"{date_str}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(report)
+    out.write_text(report, encoding="utf-8")
     (ROOT / "data" / "market" / f"{date_str}.json").write_text(
-        json.dumps({"changes": changes}, ensure_ascii=False, indent=1))
+        json.dumps({"changes": changes}, ensure_ascii=False, indent=1), encoding="utf-8")
     site_data = ROOT / "docs" / "data"
     site_data.mkdir(parents=True, exist_ok=True)
     (site_data / "market-latest.json").write_text(json.dumps({
         "date": date_str, "isBaseline": old is None,
         "changes": changes, "couponPool": new.get("couponPool", []),
-    }, ensure_ascii=False, indent=1))  # 稳定文件名，供在线 Demo 读取
+    }, ensure_ascii=False, indent=1), encoding="utf-8")  # 稳定文件名，供在线 Demo 读取
     print(f"行情日报已生成: {out}")
     rewrite_readme_block(report)
 

@@ -138,8 +138,10 @@ def main():
     args = ap.parse_args()
 
     c = McpClient()
-    snap_file = sorted((ROOT / "data" / "snapshots").glob("*.json"))[-1]
-    snap = json.loads(snap_file.read_text())
+    snap_files = sorted((ROOT / "data" / "snapshots").glob("*.json"))
+    if not snap_files:
+        raise SystemExit("未找到任何快照，请先运行 python -m mcd_lab.snapshot")
+    snap = json.loads(snap_files[-1].read_text(encoding="utf-8"))
     store = snap["storeCode"]
     meals = snap["meals"]
     order = []
@@ -158,12 +160,15 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     archive, stats = {}, []
     done = 0
+    archived_names = set()
     for code in order:
         if done >= args.limit:
             break
         if code in archive:  # 同一套餐会出现在多个分类下，只考古一次
             continue
         name = meals[code]["name"]
+        if name in archived_names:  # 同名不同 code：图鉴与摘要均只保留一份
+            continue
         try:
             detail = c.meal_detail(store, code)
         except Exception as e:  # 单品失败不阻塞考古
@@ -174,14 +179,15 @@ def main():
         tree = extract_tree(detail)
         found = analyze(tree)
         archive[code] = {"name": name, "rounds": tree, "found": found}
+        archived_names.add(name)
         page = render_page(name, meals[code].get("currentPrice"), tree, found)
-        (out_dir / f"{slug(name)}.md").write_text(page)
+        (out_dir / f"{slug(name)}.md").write_text(page, encoding="utf-8")
         stats.append((name, len(found["freeMods"]), len(found["swaps"]),
                       sum(len(r["choices"]) for r in tree)))
         done += 1
         time.sleep(0.4)
     (ROOT / "data" / "archaeology.json").write_text(
-        json.dumps(archive, ensure_ascii=False, indent=1))
+        json.dumps(archive, ensure_ascii=False, indent=1), encoding="utf-8")
     site_data = ROOT / "docs" / "data"
     site_data.mkdir(parents=True, exist_ok=True)
     (site_data / "archaeology-summary.json").write_text(json.dumps([
@@ -191,7 +197,16 @@ def main():
          "swaps": len(a["found"]["swaps"]),
          "nodes": sum(len(r["choices"]) for r in a["rounds"])}
         for a in archive.values()
-    ], ensure_ascii=False, indent=1))  # 稳定文件名，供在线 Demo 读取
+    ], ensure_ascii=False, indent=1), encoding="utf-8")  # 稳定文件名，供在线 Demo 读取
+
+    # 清理上一轮遗留、已不在当前菜单的图鉴页，保证页面数与摘要一致。
+    # 仅在完整跑完时清理；--only / --limit 截断的局部运行不动存量页面。
+    full_run = not args.only and done < args.limit
+    if full_run:
+        live_pages = {f"{slug(a['name'])}.md" for a in archive.values()} | {"INDEX.md"}
+        for stale in out_dir.glob("*.md"):
+            if stale.name not in live_pages:
+                stale.unlink()
 
     # 考古摘要
     stats.sort(key=lambda x: x[1] + x[2], reverse=True)
