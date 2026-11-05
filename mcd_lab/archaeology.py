@@ -202,17 +202,41 @@ def main():
     (ROOT / "data" / "archaeology.json").write_text(
         json.dumps(archive, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    # 清理上一轮遗留、已不在本次考古范围内的图鉴页。
-    # 完整跑（非 --only）时清理，保证「目录文件数 = 摘要条目数」；--only 局部运行不动存量。
-    full_run = not args.only
-    if full_run:
-        live_pages = {f"{slug(a['name'])}.md" for a in archive.values()} | {"INDEX.md"}
+    # 清理已不在当前菜单里的旧图鉴页（完整跑才清理）。
+    # 只按「菜单里还有没有这款」判断，不按本次 --limit 的采集范围，
+    # 否则 --limit 80 会把限额外的存量图鉴误删。
+    if not args.only:
+        live_pages = {f"{slug(meals[code]['name'])}.md" for code in meals} | {"INDEX.md"}
         for stale in out_dir.glob("*.md"):
             if stale.name not in live_pages:
                 stale.unlink()
 
     entries = build_summary(out_dir, clock.today(snap.get("serverTime")).isoformat())
-    print(f"考古完成：{done} 款有选配空间，图鉴 {done} 个文件，摘要 {len(entries)} 条")
+    pages = len([p for p in out_dir.glob("*.md") if p.name != "INDEX.md"])
+    print(f"考古完成：本次采集 {done} 款，图鉴 {pages} 个文件，摘要 {len(entries)} 条")
+
+
+def parse_legacy_page(path, text):
+    """旧版页面没有内嵌元数据，按 markdown 结构还原摘要字段。"""
+    m = re.search(r"^# (.+?) 组合考古", text, re.MULTILINE)
+    name = m.group(1).strip() if m else path.stem
+    sections, cur = {}, None
+    for line in text.splitlines():
+        if line.startswith("## "):
+            cur = line[3:].strip()
+            sections[cur] = []
+        elif cur is not None and line.startswith("- "):
+            sections[cur].append(line[2:].strip())
+    free = sections.get("🆓 0 元特调（免费加/去/换）", [])
+    swaps = sections.get("🔄 可替换项", [])
+    tree = sections.get("🌳 原始组合树", [])
+    return {
+        "name": name,
+        "freeMods": len(free),
+        "swaps": len(swaps),
+        "nodes": sum(1 for x in tree if x.startswith(("✅", "·"))),
+        "freeNames": [x.split(" · ")[0] for x in free],
+    }
 
 
 def build_summary(out_dir, date):
@@ -222,25 +246,26 @@ def build_summary(out_dir, date):
     数量、排序、去重都与目录一致，不再手写或依赖内存态。
     """
     entries = []
-    for path in out_dir.glob("*.md"):
-        if path.name == "INDEX.md":
-            continue
+    files = [p for p in out_dir.glob("*.md") if p.name != "INDEX.md"]
+    for path in files:
         text = path.read_text(encoding="utf-8")
+        meta = None
         for line in text.splitlines():
             if line.startswith(META_PREFIX) and line.endswith("-->"):
                 meta = json.loads(line[len(META_PREFIX):-3].strip())
-                meta["file"] = f"archaeology/{path.name}"
-                entries.append(meta)
                 break
-    # 同名/同文件去重，排序键固定：免费特调+替换位 → 节点数 → 名称
-    seen, uniq = set(), []
-    for e in entries:
-        if e["file"] in seen or e["name"] in {u["name"] for u in uniq}:
-            continue
-        seen.add(e["file"])
-        uniq.append(e)
-    uniq.sort(key=lambda e: (-(e["freeMods"] + e["swaps"]), -e["nodes"], e["name"]))
-    entries = uniq
+        if meta is None:  # 兼容旧版页面（无内嵌元数据）：按正文结构解析
+            meta = parse_legacy_page(path, text)
+        meta["file"] = f"archaeology/{path.name}"
+        entries.append(meta)
+    # 摘要唯一事实来源是目录里的文件：条目数必须等于文件数，且不能有同名重复。
+    names = [e["name"] for e in entries]
+    dups = sorted({n for n in names if names.count(n) > 1})
+    if dups:
+        raise SystemExit(f"考古目录存在同名图鉴，摘要无法自洽：{'、'.join(dups)}"
+                         f"（文件 {len(files)} / 条目 {len(entries)}）")
+    # 排序键固定：免费特调+替换位 → 节点数 → 名称
+    entries.sort(key=lambda e: (-(e["freeMods"] + e["swaps"]), -e["nodes"], e["name"]))
 
     site_data = ROOT / "docs" / "data"
     site_data.mkdir(parents=True, exist_ok=True)

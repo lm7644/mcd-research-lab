@@ -54,12 +54,27 @@ def key_of_coupon(c):
     return c.get("title", "")
 
 
-def diff_sets(old_list, new_list, key, label_add, label_del):
+def diff_sets(old_list, new_list, key):
     old_keys = {key(x) for x in old_list}
     new_keys = {key(x) for x in new_list}
-    added = [x for x in new_list if key(x) not in old_keys]
-    removed = [x for x in old_list if key(x) not in new_keys]
+    added, removed = [], []
+    seen_add, seen_rm = set(), set()
+    for x in new_list:
+        k = key(x)
+        if k not in old_keys and k not in seen_add:
+            seen_add.add(k)
+            added.append(x)
+    for x in old_list:
+        k = key(x)
+        if k not in new_keys and k not in seen_rm:
+            seen_rm.add(k)
+            removed.append(x)
     return added, removed
+
+
+def key_of_calendar(e):
+    """活动日历按标题去重：date 字段带「今日/往期回顾」相对标签，隔日滚动不算增删。"""
+    return (e.get("title") or "").strip()
 
 
 def render_report(today_snap, yesterday_snap, changes, coupons_diff, cal_diff, points_diff):
@@ -143,11 +158,11 @@ def main():
         changes, coupons_diff, cal_diff, points_diff = [], ([], []), ([], []), ([], [])
     else:
         changes = diff_menus(old["meals"], new["meals"])
-        coupons_diff = diff_sets(old["couponPool"], new["couponPool"], key_of_coupon, "", "")
+        coupons_diff = diff_sets(old["couponPool"], new["couponPool"], key_of_coupon)
         cal_diff = diff_sets(old.get("campaignCalendar", []), new.get("campaignCalendar", []),
-                             lambda e: f"{e.get('date')}|{e.get('title')}", "", "")
+                             key_of_calendar)
         points_diff = diff_sets(old.get("pointsProducts", []), new.get("pointsProducts", []),
-                                lambda p: str(p.get("spuId")), "", "")
+                                lambda p: str(p.get("spuId")))
     report = render_report(new, old, changes, coupons_diff, cal_diff, points_diff)
     date_str = clock.today(new.get("serverTime")).isoformat()
     out = ROOT / "docs" / "market" / f"{date_str}.md"

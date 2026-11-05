@@ -3,7 +3,14 @@ name: daily-market
 on:
   schedule:
     - cron: "30 2 * * *"   # UTC 02:30 = 北京时间 10:30（门店全日菜单已上齐，站点按「通常上午出刊」）
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: "人工放行：确认是真实缩减后，允许四类采集量下降（时段异常仍会中止）"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
 
 concurrency:
   group: daily-market
@@ -44,7 +51,12 @@ jobs:
           MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
           MCD_STORE_CODE: "1450713"
       - name: 数据校验（四类采集量，采集不全则中止）
-        run: python -m mcd_lab.validate
+        run: |
+          if [ "${{ inputs.allow_shrink }}" = "true" ]; then
+            python -m mcd_lab.validate --allow-shrink
+          else
+            python -m mcd_lab.validate
+          fi
 
       - name: 发布日报（分支 + PR + 合并，不直推 main）
         env:
