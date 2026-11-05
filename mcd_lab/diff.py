@@ -2,9 +2,10 @@
 
 用法：python -m mcd_lab.diff            # 自动取最近两份快照
 """
-import datetime as dt
 import json
 from pathlib import Path
+
+from . import clock
 
 ROOT = Path(__file__).resolve().parent.parent
 README_BEGIN = "<!-- MARKET:BEGIN -->"
@@ -148,10 +149,11 @@ def main():
         points_diff = diff_sets(old.get("pointsProducts", []), new.get("pointsProducts", []),
                                 lambda p: str(p.get("spuId")), "", "")
     report = render_report(new, old, changes, coupons_diff, cal_diff, points_diff)
-    date_str = new["capturedAt"][:10]
+    date_str = clock.today(new.get("serverTime")).isoformat()
     out = ROOT / "docs" / "market" / f"{date_str}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(report, encoding="utf-8")
+    (ROOT / "data" / "market").mkdir(parents=True, exist_ok=True)
     (ROOT / "data" / "market" / f"{date_str}.json").write_text(
         json.dumps({"changes": changes}, ensure_ascii=False, indent=1), encoding="utf-8")
     site_data = ROOT / "docs" / "data"
