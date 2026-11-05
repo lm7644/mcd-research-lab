@@ -1,6 +1,8 @@
 name: issue-tidy
 
 on:
+  push:
+    branches: [chore/issue-tidy]
   workflow_dispatch:
 
 permissions:
