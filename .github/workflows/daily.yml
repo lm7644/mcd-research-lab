@@ -2,15 +2,24 @@ name: daily-market
 
 on:
   schedule:
-    - cron: "30 22 * * *"   # UTC 22:30 = 北京时间 06:30
+    - cron: "30 22 * * *"   # UTC 22:30 = 北京时间 06:30（GitHub 定时任务常延迟，实际多在上午出刊）
   workflow_dispatch: {}
 
+concurrency:
+  group: daily-market
+  cancel-in-progress: false
+
+# 默认只读；写权限仅授予负责提交的 job，且只走 PR、不直推 main
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   market:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write       # 推送 bot 分支
+      pull-requests: write  # 开 PR 并合并
+      issues: write         # 失败时自动开 issue
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,10 +39,34 @@ jobs:
         env:
           MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
           MCD_STORE_CODE: "1450713"
-      - name: 发布日报
+      - name: 发布日报（分支 + PR + 合并，不直推 main）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "mcd-research-bot"
           git config user.email "actions@github.com"
           git add -A
-          git commit -m "data: 麦麦行情日报 $(date -u -d '+8 hours' +%F) [skip ci]" || echo "no changes"
-          git push
+          if git diff --cached --quiet; then
+            echo "no changes"; exit 0
+          fi
+          DATE=$(TZ=Asia/Shanghai date +%F)
+          BRANCH="bot/daily-market-${DATE}-${GITHUB_RUN_NUMBER}"
+          git checkout -b "$BRANCH"
+          git commit -m "data: 麦麦行情日报 ${DATE} [skip ci]"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main --head "$BRANCH" \
+            --title "data: 麦麦行情日报 ${DATE}" \
+            --body "自动采集：快照 ${DATE}、行情日报、积分省钱榜、考古图鉴。合并后由 Pages 发布。"
+          gh pr merge "$BRANCH" --merge --delete-branch
+      - name: 失败告警（自动开 issue）
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "daily-market 失败：run ${GITHUB_RUN_ID}" \
+            --body "运行日志：${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
+
+          触发方式：${GITHUB_EVENT_NAME}
+          提交：${GITHUB_SHA}"
