@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-.env
-.env.*
-!.env.example
-.venv/
-*.log
-data/personal/
-.DS_Store

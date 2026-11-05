@@ -5,11 +5,11 @@
 仅对能完整匹配菜单单品的券参与排名，匹配过程全部标注，宁可少算不瞎算。
 用法：python -m mcd_lab.points [--me]
 """
-import datetime as dt
 import json
 import re
 from pathlib import Path
 
+from . import clock
 from .client import McpClient
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -83,11 +83,10 @@ def build_rows():
             continue
         (rank if r["kind"] == "rank" else wall).append(r)
     rank.sort(key=lambda r: r["per10k"], reverse=True)
-    return rank, wall
+    return rank, wall, snap
 
 
-def render(rank, wall):
-    date = dt.date.today().isoformat()
+def render(rank, wall, date):
     L = [f"# 积分省钱榜 · {date}", "",
          "> 兑换券多为「积分 + 现金」形式。每万积分省钱 = (菜单同名单品现价合计 − 兑换现金价)"
          " ÷ 积分 × 10000，越高越划算。",
@@ -133,10 +132,10 @@ def main():
     if args.me:
         print(personal_report(McpClient()))
         return
-    rank, wall = build_rows()
-    date = dt.date.today().isoformat()
+    rank, wall, snap = build_rows()
+    date = clock.today(snap.get("serverTime")).isoformat()
     out = ROOT / "docs" / "market" / f"points-rank-{date}.md"
-    out.write_text(render(rank, wall), encoding="utf-8")
+    out.write_text(render(rank, wall, date), encoding="utf-8")
     payload = json.dumps({"date": date, "rank": rank, "wall": wall},
                          ensure_ascii=False, indent=1)
     (ROOT / "data" / "market" / "points-rank.json").write_text(payload, encoding="utf-8")
