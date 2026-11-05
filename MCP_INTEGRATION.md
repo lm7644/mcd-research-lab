@@ -22,7 +22,7 @@ Token 在 [open.mcd.cn/mcp](https://open.mcd.cn/mcp) 控制台申请；本地通
 
 ```mermaid
 flowchart TD
-    A[GitHub Action 每日 06:30] --> B[now-time-info 服务器时间]
+    A[GitHub Action 每日 10:30（北京）] --> B[now-time-info 服务器时间]
     B --> C[query-meals 门店 1450713<br/>菜单+价格+折扣类型]
     C --> D[available-coupons 麦麦省券池]
     D --> E[campaign-calendar 当月活动日历]
