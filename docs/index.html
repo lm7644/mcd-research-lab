@@ -47,14 +47,14 @@
   .brand-row .mark{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center}
   .brand-row .mark svg{width:26px}
   .brand-row .name{font-weight:900;font-size:1.02rem;letter-spacing:.04em;white-space:nowrap}
-  .brand-row .sep{opacity:.45;white-space:nowrap}
-  .brand-row .tag{font-size:.84rem;color:#FFECC0;font-weight:700}
+  .brand-row .sep{opacity:.65;white-space:nowrap}
+  .brand-row .tag{font-size:.84rem;color:#FFFDF8;font-weight:700}
   .hero h1{font-size:clamp(2.6rem,6.2vw,3.9rem);font-weight:900;letter-spacing:.01em;line-height:1.12;margin:40px 0 14px;text-wrap:balance}
-  .hero h1 .gold{color:var(--gold)}
+  .hero h1 .gold{color:#FFD24D}
   .hero .sub{max-width:34em;color:#FFFFFF;font-size:1.06rem;line-height:1.7;text-wrap:pretty}
   .hero .issue{margin-top:var(--s3);display:inline-flex;align-items:center;gap:10px;font-size:.9rem;color:#FFFFFF;
         border:1px solid rgba(255,255,255,.3);border-radius:var(--r-pill);padding:9px 18px;min-height:44px}
-  .hero .issue b{color:var(--gold);font-weight:800}
+  .hero .issue b{color:#FFFDF8;font-weight:800}
 
   /* 跑马灯：当日变动长出来的行情条 */
   .ticker{position:relative;background:var(--cocoa);overflow:hidden;white-space:nowrap}
@@ -353,11 +353,16 @@ function esc(s){ const d=document.createElement("div"); d.textContent=s??""; ret
     if (stamp) stamp.textContent = `${market.date} 收盘`;
     const ch = market.changes || [];
     const nCoupon = (market.couponPool || []).length;
-    const nUp = ch.filter(c => c.type === "up").length, nDown = ch.filter(c => c.type === "down").length;
+    const counts = {up:0, down:0, new:0, gone:0};
+    ch.forEach(c => counts[c.type]++);
+    const moves = counts.up + counts.down;
+    const third = moves
+      ? `<b class="pair"><span>${counts.up}<i>涨</i></span><span>${counts.down}<i>降</i></span></b><span>涨跌风向</span>`
+      : `<b class="pair"><span>${counts.new}<i>上新</i></span><span>${counts.gone}<i>下架</i></span></b><span>菜单进出</span>`;
     document.getElementById("market-stats").innerHTML = `
-      <div class="stat hot"><b>${market.isBaseline ? "基线日" : ch.length}<span class="unit">${market.isBaseline ? "" : " 处"}</span></b><span>${market.isBaseline ? "观察首日 · 价格基线已建立" : "价格变动（对比昨日快照）"}</span></div>
+      <div class="stat hot"><b>${market.isBaseline ? "基线日" : ch.length}<span class="unit">${market.isBaseline ? "" : " 处"}</span></b><span>${market.isBaseline ? "观察首日 · 价格基线已建立" : "行情变动（对比昨日快照）"}</span></div>
       <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券</span></div>
-      <div class="stat"><b class="pair"><span>${nUp}<i>涨</i></span><span>${nDown}<i>降</i></span></b><span>${market.isBaseline ? "今日价格变动" : "涨跌风向"}</span></div>`;
+      <div class="stat">${third}</div>`;
     const diff = c => "¥" + Math.abs(+c.to - +c.from).toFixed(1).replace(/\.0$/, "");
     if (ch.length) ch.slice(0,12).forEach(c => {
       const label = {up:`▲ ${diff(c)}`, down:`▼ ${diff(c)}`, new:"上新", gone:"下架"}[c.type] || "";
