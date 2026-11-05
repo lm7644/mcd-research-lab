@@ -952,6 +952,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "大薯条",
       "isDefault": false,
       "supportModify": false,
@@ -1450,6 +1456,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：大薯条",
     "选择小食：大杯玉米杯",
     "选择小食：脆脆薯条",
@@ -1653,6 +1660,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -2155,6 +2168,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：大薯条",
     "选择小食：大杯玉米杯",
     "选择小食：脆脆薯条",
@@ -2390,6 +2404,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -3027,6 +3047,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -3264,6 +3285,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -3870,6 +3897,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -3928,6 +3956,762 @@
     {
      "where": "主食任意选 · 原味双层深海鳕鱼堡",
      "name": "麦香鱼酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择套餐内饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
+ "9900016073": {
+  "name": "龙焰鸡腿堡三件套",
+  "rounds": [
+   {
+    "name": "龙焰鸡腿堡",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "龙焰鸡腿堡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "辣椒黄油风味酱",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "切块生菜",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "选择套餐内小食",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "中薯条",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "大薯条",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "小杯玉米杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "大杯玉米杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "脆脆薯条",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   },
+   {
+    "name": "选择套餐内饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "可乐中杯",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "好柿多多雪冰",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "龙焰鸡腿堡：龙焰鸡腿堡",
+    "选择套餐内小食：中薯条",
+    "选择套餐内饮料：可乐中杯"
+   ],
+   "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
+    "选择套餐内小食：大薯条",
+    "选择套餐内小食：小杯玉米杯",
+    "选择套餐内小食：大杯玉米杯",
+    "选择套餐内小食：脆脆薯条",
+    "选择套餐内饮料：香草风味奶昔",
+    "选择套餐内饮料：草莓风味奶昔",
+    "选择套餐内饮料：好柿多多雪冰",
+    "选择套餐内饮料：纯牛奶",
+    "选择套餐内饮料：热浓浓燕麦黑巧中杯",
+    "选择套餐内饮料：锡兰红茶",
+    "选择套餐内饮料：100%苹果汁"
+   ],
+   "freeMods": [
+    {
+     "where": "龙焰鸡腿堡 · 龙焰鸡腿堡",
+     "name": "辣椒黄油风味酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "龙焰鸡腿堡 · 龙焰鸡腿堡",
+     "name": "切块生菜",
      "price": 0.0,
      "max": 1
     },
@@ -4125,6 +4909,23 @@
       ]
      },
      {
+      "name": "龙焰鸡腿堡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "辣椒黄油风味酱",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "切块生菜",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
       "name": "双层脆鸡堡",
       "isDefault": false,
       "supportModify": true,
@@ -4217,6 +5018,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -4854,6 +5661,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -4886,6 +5694,12 @@
     {
      "where": "选择汉堡 · 海陆双全堡",
      "name": "生菜",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择汉堡 · 龙焰鸡腿堡",
+     "name": "辣椒黄油风味酱",
      "price": 0.0,
      "max": 1
     },
@@ -5155,6 +5969,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -5792,6 +6612,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -6090,6 +6911,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -6727,6 +7554,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -7439,6 +8267,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "大薯条",
       "isDefault": false,
       "supportModify": false,
@@ -7937,6 +8771,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：大薯条",
     "选择小食：大杯玉米杯",
     "选择小食：脆脆薯条",
@@ -8140,6 +8975,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -8642,6 +9483,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：大薯条",
     "选择小食：大杯玉米杯",
     "选择小食：脆脆薯条",
@@ -9501,6 +10343,23 @@
       ]
      },
      {
+      "name": "龙焰鸡腿堡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "辣椒黄油风味酱",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "切块生菜",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
       "name": "酥酥多笋卷",
       "isDefault": false,
       "supportModify": true,
@@ -9564,6 +10423,23 @@
       ]
      },
      {
+      "name": "龙焰鸡腿堡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "辣椒黄油风味酱",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "切块生菜",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
       "name": "麦辣鸡腿汉堡",
       "isDefault": false,
       "supportModify": true,
@@ -9616,6 +10492,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "薄皮焦香V翅",
       "isDefault": false,
       "supportModify": false,
@@ -9643,6 +10525,12 @@
      {
       "name": "麦辣鸡翅2块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -10313,9 +11201,11 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：薄皮焦香V翅",
     "选择小食：麦辣鸡翅2块",
     "选择小食：麦麦脆汁鸡-琵琶腿",
+    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择小食：薄皮焦香V翅",
     "选择小食：麦麦脆汁鸡-琵琶腿",
     "选择小食：蓝莓爆爆珠麦旋风",
@@ -10352,6 +11242,12 @@
     {
      "where": "选择汉堡 · 海陆双全堡",
      "name": "生菜",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择汉堡 · 龙焰鸡腿堡",
+     "name": "辣椒黄油风味酱",
      "price": 0.0,
      "max": 1
     },
@@ -10817,6 +11713,846 @@
    "paidMods": []
   }
  },
+ "9900016309": {
+  "name": "龙焰鸡腿堡四件套",
+  "rounds": [
+   {
+    "name": "龙焰鸡腿堡",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "龙焰鸡腿堡",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "辣椒黄油风味酱",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "切块生菜",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "小食",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "中薯条",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "蓝莓爆爆珠麦旋风",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "泷愿成真麦旋风——大米风味",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "脆脆薯条",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "奥利奥麦旋风",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "小杯玉米杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "大杯玉米杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   },
+   {
+    "name": "小食",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "麦乐鸡4块",
+      "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "薄皮焦香V翅",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "麦辣鸡翅2块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "麦麦脆汁鸡-琵琶腿",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   },
+   {
+    "name": "选择套餐内饮料",
+    "min": 1,
+    "max": 1,
+    "choices": [
+     {
+      "name": "可乐中杯",
+      "isDefault": true,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "好柿多多雪冰",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "冰浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       },
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "鲜萃冰咖",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "大杯鲜萃咖啡",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "奶油球",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "白砂糖",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™热美式中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "麦咖啡™冰奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "换燕麦奶",
+        "price": 2.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "冰浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "热浓浓燕麦黑巧中杯",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "麦咖啡™热奶铁中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "不加",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "加",
+        "price": 5.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "香草风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "草莓风味奶昔",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "可乐麦炫酷",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "雪碧麦炫酷",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "怡泉+C麦炫酷",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "无糖可乐麦炫酷",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "无糖可口可乐中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "无糖可口可乐大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“多汁柠柠”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "【美汁源】“黄金橙橙”",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "大杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶大杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "中杯怡泉+C",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "雪碧中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "阳光柠檬红茶中杯",
+      "isDefault": false,
+      "supportModify": true,
+      "modifications": [
+       {
+        "name": "标准",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "去冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "多冰",
+        "price": 0.0,
+        "max": 1
+       },
+       {
+        "name": "少冰",
+        "price": 0.0,
+        "max": 1
+       }
+      ]
+     },
+     {
+      "name": "锡兰红茶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯牛奶",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "100%苹果汁",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     }
+    ]
+   }
+  ],
+  "found": {
+   "defaults": [
+    "龙焰鸡腿堡：龙焰鸡腿堡",
+    "小食：中薯条",
+    "小食：麦乐鸡4块",
+    "选择套餐内饮料：可乐中杯"
+   ],
+   "swaps": [
+    "小食：蓝莓爆爆珠麦旋风",
+    "小食：泷愿成真麦旋风——大米风味",
+    "小食：脆脆薯条",
+    "小食：奥利奥麦旋风",
+    "小食：小杯玉米杯",
+    "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
+    "小食：薄皮焦香V翅",
+    "小食：麦辣鸡翅2块",
+    "小食：麦麦脆汁鸡-琵琶腿",
+    "选择套餐内饮料：好柿多多雪冰",
+    "选择套餐内饮料：鲜萃冰咖",
+    "选择套餐内饮料：热浓浓燕麦黑巧中杯",
+    "选择套餐内饮料：香草风味奶昔",
+    "选择套餐内饮料：草莓风味奶昔",
+    "选择套餐内饮料：可乐麦炫酷",
+    "选择套餐内饮料：雪碧麦炫酷",
+    "选择套餐内饮料：怡泉+C麦炫酷",
+    "选择套餐内饮料：无糖可乐麦炫酷",
+    "选择套餐内饮料：锡兰红茶",
+    "选择套餐内饮料：纯牛奶",
+    "选择套餐内饮料：100%苹果汁"
+   ],
+   "freeMods": [
+    {
+     "where": "龙焰鸡腿堡 · 龙焰鸡腿堡",
+     "name": "辣椒黄油风味酱",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "龙焰鸡腿堡 · 龙焰鸡腿堡",
+     "name": "切块生菜",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "标准",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "去冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "多冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 可乐中杯",
+     "name": "少冰",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
+     "name": "不加",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
+     "name": "奶油球",
+     "price": 0.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
+     "name": "白砂糖",
+     "price": 0.0,
+     "max": 1
+    }
+   ],
+   "paidMods": [
+    {
+     "where": "选择套餐内饮料 · 冰浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™热美式中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™冰奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 热浓浓黑巧中杯",
+     "name": "换燕麦奶",
+     "price": 2.0,
+     "max": 1
+    },
+    {
+     "where": "选择套餐内饮料 · 麦咖啡™热奶铁中杯",
+     "name": "加",
+     "price": 5.0,
+     "max": 1
+    }
+   ]
+  }
+ },
  "9900000891": {
   "name": "麦辣鸡腿堡四件套",
   "rounds": [
@@ -10901,6 +12637,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -11538,6 +13280,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -11734,6 +13477,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -12371,6 +14120,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -12572,6 +14322,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -13209,6 +14965,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -13362,6 +15119,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -13968,6 +15731,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -14111,6 +15875,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -14717,6 +16487,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -14860,6 +16631,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -15466,6 +17243,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -15614,6 +17392,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -16220,6 +18004,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -16500,6 +18285,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -17137,6 +18928,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -17346,6 +19138,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -17983,6 +19781,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -18188,6 +19987,12 @@
      {
       "name": "麦乐鸡4块",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -18825,6 +20630,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -19060,6 +20866,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "薄皮焦香V翅",
       "isDefault": false,
       "supportModify": false,
@@ -19693,6 +21505,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -19841,6 +21654,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -20447,6 +22266,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -20599,6 +22419,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -21205,6 +23031,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -21383,6 +23210,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -21989,6 +23822,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -22138,6 +23972,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -22744,6 +24584,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -22902,6 +24743,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -23508,6 +25355,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -23679,6 +25527,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -24285,6 +26139,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -24720,6 +26575,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "薄皮焦香V翅",
       "isDefault": false,
       "supportModify": false,
@@ -25353,6 +27214,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -25581,6 +27443,12 @@
       "modifications": []
      },
      {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "薄皮焦香V翅",
       "isDefault": false,
       "supportModify": false,
@@ -26214,6 +28082,7 @@
     "小食：奥利奥麦旋风",
     "小食：小杯玉米杯",
     "小食：大杯玉米杯",
+    "小食：马来咖喱风味薄皮肉骨鸡3块",
     "小食：薄皮焦香V翅",
     "小食：麦辣鸡翅2块",
     "小食：麦麦脆汁鸡-琵琶腿",
@@ -26388,6 +28257,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -26994,6 +28869,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -27165,6 +29041,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -27771,6 +29653,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -27915,6 +29798,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -28521,6 +30410,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
@@ -28641,6 +30531,12 @@
      {
       "name": "中薯条",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "马来咖喱风味薄皮肉骨鸡3块",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      },
@@ -29247,6 +31143,7 @@
     "选择套餐内饮料：可乐中杯"
    ],
    "swaps": [
+    "选择套餐内小食：马来咖喱风味薄皮肉骨鸡3块",
     "选择套餐内小食：大薯条",
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
