@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麦麦研究所 · 麦当劳菜单行情终端</title>
+<meta name="description" content="麦当劳菜单的每日行情：价格涨跌、积分省钱榜、营养速查与隐藏吃法自由度榜，数据来自麦当劳中国官方 MCP。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23DA291C'/%3E%3Cpath d='M14 50 V30 A9.5 9.5 0 0 1 33 30 V50 M33 50 V30 A9.5 9.5 0 0 1 52 30 V50' stroke='%23FFC72C' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  /* ═══ 设计 token：麦当劳品牌 × 行情终端哲学 ═══
+     色：红/金/奶油/可可 4 色 + 语义绿；字：系统圆体（中文可读性优先）；
+     间距：8pt 网格（8/16/24/32/40/48）；圆角：28/16/999 三档 */
+  :root{
+    --red:#DA291C; --red-ink:#9E2115; --red-deep:#7E1A10;
+    --gold:#FFC72C; --gold-ink:#6B4A00;
+    --cream:#FBF3E4; --paper:#FFFDF8; --cocoa:#2A1D12;
+    --ink:#24190F; --ink-soft:#6F5C45; --ink-faint:#7A6A55;
+    --green:#1F6B2B; --line:#EADCC2; --line-soft:#F2E7D2; --track:#F3E7D0;
+    --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:40px; --s6:48px;
+    --r-sheet:28px; --r-inner:16px; --r-pill:999px;
+    --shadow-card:0 1px 2px rgba(63,38,10,.04), 0 12px 32px rgba(63,38,10,.06);
+    --shadow-pop:0 4px 10px rgba(63,38,10,.08), 0 20px 48px rgba(63,38,10,.12);
+    --font:ui-rounded,"SF Pro Rounded","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+  p{text-spacing-trim:space-all;hanging-punctuation:first}
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:var(--red-ink);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--gold-ink);outline-offset:3px;border-radius:4px}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);padding:8px 16px;z-index:99;border-radius:0 0 12px 0}
+  .skip:focus{left:0}
+
+  /* ═══ 头版：红底 + 金拱门水印 + 行情跑马灯 ═══ */
+  .hero{position:relative;overflow:hidden;color:#fff;padding:72px 24px 128px;
+        background:linear-gradient(140deg,var(--red) 0%,#C92318 46%,var(--red-deep) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+        background-image:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px);
+        background-size:56px 56px}
+  .hero .arches{position:absolute;right:-70px;bottom:-90px;width:430px;max-width:65vw;opacity:.14;pointer-events:none}
+  .hero-inner{position:relative;max-width:884px;margin:0 auto}
+  .brand-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .brand-row .mark{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+  .brand-row .mark svg{width:26px}
+  .brand-row .name{font-weight:900;font-size:1.02rem;letter-spacing:.04em;white-space:nowrap}
+  .brand-row .sep{opacity:.65;white-space:nowrap}
+  .brand-row .tag{font-size:.84rem;color:#FFFDF8;font-weight:700}
+  .hero h1{font-size:clamp(2.6rem,6.2vw,3.9rem);font-weight:900;letter-spacing:.01em;line-height:1.12;margin:40px 0 16px;text-wrap:balance}
+  .hero h1 .gold{color:#FFD24D}
+  .hero .sub{max-width:34em;color:#FFFFFF;font-size:1.06rem;line-height:1.7;text-wrap:pretty}
+  .hero .issue{margin-top:var(--s3);display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:#FFFFFF;
+        border:1px solid rgba(255,255,255,.3);border-radius:var(--r-pill);padding:8px 16px;min-height:44px}
+  .hero .issue b{color:#FFFDF8;font-weight:800}
+
+  /* 跑马灯：当日变动长出来的行情条 */
+  .ticker{position:relative;background:var(--cocoa);overflow:hidden;white-space:nowrap}
+  .ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+  .ticker::before{left:0;background:linear-gradient(90deg,var(--cocoa),transparent)}
+  .ticker::after{right:0;background:linear-gradient(-90deg,var(--cocoa),transparent)}
+  .ticker-track{display:inline-block;padding:16px 0;animation:tick 38s linear infinite;will-change:transform}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ticker span{margin:0 24px;font-size:.9rem;font-weight:700;color:#F3E9D8}
+  .ticker span i{font-style:normal;color:var(--gold)}
+  .ticker .up{color:#FFB4AB} .ticker .down{color:#9FE0AE} .ticker .fresh{color:var(--gold)}
+
+  /* ═══ 章节锚点导航：长页面的视觉锚 ═══ */
+  .rail-wrap{position:sticky;top:0;z-index:20;background:rgba(251,243,228,.94);
+        backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+  .rail{display:flex;align-items:center;gap:8px;max-width:940px;margin:0 auto;padding:8px 24px}
+  .rail a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;
+        border-radius:var(--r-pill);font-size:.9rem;font-weight:800;color:var(--ink-soft);
+        transition:color .18s ease,background .18s ease}
+  .rail a:hover{text-decoration:none;color:var(--ink);background:rgba(218,41,28,.06)}
+  .rail a .no{font-size:.76rem;font-weight:900;color:var(--red-ink);letter-spacing:.02em}
+  .rail a.on{color:var(--ink);background:var(--paper);box-shadow:0 1px 2px rgba(63,38,10,.08),0 2px 10px rgba(63,38,10,.06)}
+  .rail a.on .no{color:var(--red)}
+  .rail .spacer{flex:1}
+  .rail .stamp{font-size:.78rem;color:var(--ink-faint);white-space:nowrap;padding-right:8px}
+
+  /* ═══ 主体：纸面叠在红底上 ═══ */
+  main{max-width:940px;margin:-72px auto 0;padding:0 24px 96px;position:relative}
+  section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-sheet);
+        padding:48px;margin-top:40px;box-shadow:var(--shadow-card);scroll-margin-top:80px}
+  .sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:16px;margin-bottom:24px}
+  .sec-head .title{display:flex;align-items:center;gap:16px;min-width:0}
+  .sec-head .no{font-family:var(--mono);font-size:.82rem;font-weight:800;color:var(--red-ink);
+        border:1px solid var(--line);border-radius:8px;padding:0 8px;line-height:24px;background:var(--cream)}
+  .sec-head h2{font-size:2.5rem;font-weight:900;letter-spacing:.01em;line-height:1.2;text-wrap:balance}
+  .sec-head .note{color:var(--ink-soft);font-size:.92rem;margin-top:8px}
+  .sec-head .more{white-space:nowrap;font-size:.9rem;font-weight:700;color:var(--ink-soft);min-height:44px;display:inline-flex;align-items:center}
+  .sec-head .more a{color:var(--red-ink);display:inline-flex;align-items:center;min-height:44px}
+  .meta{color:var(--ink-soft);font-size:.88rem}
+
+  /* 收盘快报：一条行情带，三格数据，不再套三层卡片 */
+  .quote-strip{display:grid;grid-template-columns:1.15fr 1fr 1fr;
+        border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:8px 0}
+  .stat{padding:24px 24px 24px 0}
+  .stat + .stat{border-left:1px solid var(--line-soft);padding-left:24px}
+  .stat b{display:block;font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:.01em}
+  .stat b .unit{font-size:.42em;font-weight:800;color:var(--ink-soft);margin-left:8px}
+  .stat>span{display:block;margin-top:8px;font-size:.88rem;line-height:1.5;color:var(--ink-soft);font-weight:600}
+  .stat.hot b{color:var(--red-ink)}
+  .stat b.pair{display:flex;align-items:baseline;gap:16px}
+  .stat b.pair span{display:inline-flex;align-items:baseline;gap:8px}
+  .stat b.pair i{font-style:normal;font-size:.36em;font-weight:800;color:var(--ink-soft);letter-spacing:.04em}
+
+  .price{font-weight:900}
+
+  /* 行情表：昨收 / 今收 / 变动，像一张真的收盘行情单 */
+  .ledger{border-top:1px solid var(--line);margin-top:var(--s2)}
+  .ledger-head,.ledger-row{display:grid;grid-template-columns:minmax(0,1fr) 80px 80px 96px;align-items:baseline;gap:16px}
+  .ledger-head{padding:8px 0;font-size:.76rem;font-weight:800;color:var(--ink-faint);letter-spacing:.06em}
+  .ledger-head .p,.ledger-head .chg{text-align:right}
+  .ledger-row{padding:16px 0;border-top:1px dashed var(--line);font-size:.98rem}
+  .ledger-row .name{font-weight:800;min-width:0;overflow-wrap:anywhere}
+  .ledger-row .prices{display:contents}
+  .ledger-row .p{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-soft);white-space:nowrap}
+  .ledger-row .p.now{color:var(--ink);font-weight:900}
+  .ledger-row .chg{text-align:right;font-weight:800;font-size:.88rem;white-space:nowrap}
+  .chg.up{color:var(--red-ink)} .chg.down{color:var(--green)} .chg.new{color:var(--red-deep)} .chg.gone{color:var(--ink-soft)}
+  .coupon-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+  .coupon{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#FFF3D0,#FFE9AE);border:1px solid #EFD489;border-radius:var(--r-pill);padding:8px 16px;font-size:.92rem;font-weight:700}
+  .coupon::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(218,41,28,.14)}
+  .coupon i{font-style:normal;font-size:.82rem;color:var(--ink-soft);font-weight:600}
+
+  /* 省钱榜：奖牌 + 单色数据条 */
+  .rank-item{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);align-items:center}
+  .rank-item:last-child{border-bottom:none}
+  .medal{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1rem;color:#fff;box-shadow:inset 0 -2px 4px rgba(0,0,0,.14)}
+  .m1{background:linear-gradient(145deg,#FFD84D,var(--gold-ink))}
+  .m2{background:linear-gradient(145deg,#D9DDE3,#AAB2BD)}
+  .m3{background:linear-gradient(145deg,#E2AC76,#B97E45)}
+  .mn{background:var(--track);color:var(--ink-soft);box-shadow:none;font-size:.9rem}
+  .rank-main b{display:block;font-weight:800;font-size:1.02rem;line-height:1.5}
+  .rank-main .formula{display:block;font-size:.88rem;color:var(--ink-soft);margin-top:8px}
+  .rank-main .formula .price{color:var(--ink)}
+  .gain{display:inline-flex;align-items:center;gap:8px;margin-left:8px;background:rgba(31,107,43,.09);color:var(--green);border-radius:var(--r-pill);padding:0 8px;line-height:24px;font-size:.82rem;font-weight:800;vertical-align:2px}
+  .bar{height:8px;border-radius:var(--r-pill);background:var(--track);overflow:hidden;margin-top:16px}
+  .bar i{display:block;height:100%;border-radius:var(--r-pill);background:var(--red)}
+
+  /* 营养速查：两栏成分表，用竖线分隔，不套卡片 */
+  .nut-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+  .nut-card{padding:8px 32px 8px 0}
+  .nut-card + .nut-card{border-left:1px solid var(--line-soft);padding:8px 0 8px 32px}
+  .nut-card h3{font-size:.94rem;font-weight:900;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+  .nut-card h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--red)}
+  .nut-card.low h3 .dot{background:var(--green)}
+  .nut-card ol{list-style:none;margin-top:8px;counter-reset:nr}
+  .nut-card li{counter-increment:nr;display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line-soft);font-size:.94rem}
+  .nut-card li:last-child{border-bottom:none}
+  .nut-card li::before{content:counter(nr,decimal-leading-zero);color:var(--ink-faint);font-weight:800;font-size:.78rem;margin-right:8px}
+  .nut-card li .n{flex:1;font-weight:700}
+  .nut-card li .k{font-weight:900;white-space:nowrap}
+  .nut-card li .k small{font-weight:600;color:var(--ink-soft);font-size:.74rem}
+  .nut-foot{margin-top:var(--s3);font-size:.88rem;color:var(--ink-soft);padding-top:16px;border-top:1px solid var(--line-soft)}
+
+  /* 考古图鉴：编号卡 */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:24px}
+  .card{position:relative;border:1px solid var(--line);border-radius:var(--r-inner);padding:24px;background:var(--paper);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+  @media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-pop);border-color:var(--gold)}}
+  .card .no{position:absolute;top:16px;right:16px;font-family:var(--mono);font-size:.78rem;font-weight:800;color:var(--red-ink);border-radius:var(--r-pill);padding:0 8px;line-height:24px;background:var(--track)}
+  .card b{display:block;font-weight:800;font-size:1rem;line-height:1.5;margin-bottom:8px;padding-right:48px}
+  .card small{display:block;color:var(--ink-soft);font-size:.86rem;line-height:1.6}
+  .card a{color:inherit}
+  .card a:hover{text-decoration:none}
+  .card a::after{content:"";position:absolute;inset:0}
+
+  /* 关于：可可色收尾 */
+  .about{background:linear-gradient(150deg,#3B2C1E,var(--cocoa));border:none;color:#F3E9D8;padding:48px}
+  .about .sec-head .no{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:var(--gold)}
+  .about .sec-head h2{color:#FFF8EA}
+  .about p{font-size:.98rem;color:rgba(250,242,228,.95);max-width:40em;line-height:1.8;text-wrap:pretty}
+  .about p + p{margin-top:16px}
+  .about a{color:var(--gold)}
+  .about .meta{color:rgba(243,233,216,.7)}
+  .about code{background:rgba(255,255,255,.1);border-radius:8px;padding:0 8px;font-size:.88em}
+
+  footer{text-align:center;color:var(--ink-faint);font-size:.86rem;line-height:1.8;padding:32px 24px 48px}
+  .empty{color:var(--ink-faint);font-style:italic}
+  .fade{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}.ticker-track{animation:none}.card,.card:hover{transition:none;transform:none}}
+  @media (max-width:700px){
+    .hero{padding:56px 24px 112px}
+    .hero h1{margin-top:32px}
+    .rail{padding:8px 16px;gap:0;overflow-x:auto;scrollbar-width:none}
+    .rail::-webkit-scrollbar{display:none}
+    .rail a{padding:0 16px;gap:8px;font-size:.86rem}
+    .rail .stamp{display:none}
+    main{padding:0 16px 72px;margin-top:-64px}
+    section{padding:32px 24px;margin-top:32px;border-radius:24px}
+    .sec-head{grid-template-columns:1fr;gap:8px}
+    .sec-head .more{padding-bottom:0}
+    .quote-strip{grid-template-columns:1fr;border-bottom:none}
+    .stat{padding:16px 0}
+    .stat + .stat{border-left:none;padding-left:0;border-top:1px solid var(--line-soft)}
+    .ledger-head{display:none}
+    .ledger-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name chg" "prices prices";gap:8px 16px;padding:16px 0}
+    .ledger-row .name{grid-area:name}
+    .ledger-row .chg{grid-area:chg}
+    .ledger-row .prices{grid-area:prices;display:flex;gap:16px;margin-top:0;font-size:.86rem}
+    .ledger-row .p{text-align:left}
+    .nut-grid{grid-template-columns:1fr;gap:0}
+    .nut-card{padding:8px 0}
+    .nut-card + .nut-card{border-left:none;padding:24px 0 0;border-top:1px solid var(--line-soft);margin-top:24px}
+    .about{padding:32px 24px}
+    .about a{display:inline-block;padding:12px 0;margin:-12px 0}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#market">跳到正文</a>
+
+<header class="hero">
+  <svg class="arches" viewBox="0 0 300 160" aria-hidden="true"><path d="M40 160 V95 A55 55 0 0 1 150 95 V160 M150 160 V95 A55 55 0 0 1 260 95 V160" stroke="#FFC72C" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+  <div class="hero-inner">
+    <div class="brand-row">
+      <span class="mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 50 V30 A9.5 9.5 0 0 1 33 30 V50 M33 50 V30 A9.5 9.5 0 0 1 52 30 V50" stroke="#FFC72C" stroke-width="7" fill="none" stroke-linecap="round"/></svg></span>
+      <span class="name">麦麦研究所</span>
+      <span class="sep">·</span>
+      <span class="tag">菜单行情终端</span>
+    </div>
+    <h1>麦当劳菜单，<br>从此<span class="gold">有行情</span>。</h1>
+    <p class="sub">行情部每日快照对比 · 考古部挖掘隐藏吃法 · 积分理财科精算每万积分 —— 数据来自麦当劳中国官方 MCP；每个交易日由 GitHub Action 自动更新，通常在上午 10:30 前后出刊。</p>
+    <span class="issue num" id="issue-line">期刊加载中…</span>
+  </div>
+</header>
+
+<div class="ticker num" aria-hidden="true"><div class="ticker-track" id="ticker-track"><span>今日行情采集中…</span></div></div>
+
+<div class="rail-wrap">
+<nav class="rail" aria-label="章节导航">
+  <a href="#market" class="on"><span class="no">01</span>行情</a>
+  <a href="#points"><span class="no">02</span>积分</a>
+  <a href="#nutrition"><span class="no">03</span>营养</a>
+  <a href="#archaeology"><span class="no">04</span>图鉴</a>
+  <span class="spacer"></span>
+  <span class="stamp num" id="rail-stamp"></span>
+</nav>
+</div>
+
+<main>
+  <section class="fade" id="market">
+    <div class="sec-head">
+      <div>
+        <div class="title"><span class="no">01</span><h2>收盘快报</h2></div>
+        <div class="note meta" id="market-date">加载中…</div>
+      </div>
+      <span class="more"><a href="https://github.com/lm7644/mcd-research-lab/tree/main/docs/market">完整日报与历史</a></span>
+    </div>
+    <div class="quote-strip" id="market-stats"></div>
+    <div class="ledger">
+      <div class="ledger-head"><span>商品</span><span class="p">昨日</span><span class="p">今日</span><span class="chg">变动</span></div>
+      <div id="market"></div>
+    </div>
+    <div class="coupon-row" id="coupons"></div>
+  </section>
+
+  <section class="fade" id="points">
+    <div class="sec-head">
+      <div>
+        <div class="title"><span class="no">02</span><h2>积分省钱榜</h2></div>
+        <div class="note meta" id="points-date"></div>
+      </div>
+      <span class="more"><a href="https://github.com/lm7644/mcd-research-lab/blob/main/README.md">算法与免责</a></span>
+    </div>
+    <div id="points"></div>
+    <div class="meta" id="points-wall" style="margin-top:16px"></div>
+  </section>
+
+  <section class="fade" id="nutrition">
+    <div class="sec-head">
+      <div>
+        <div class="title"><span class="no">03</span><h2>营养速查</h2></div>
+        <div class="note meta">共 160 款 · 数据来自官方接口</div>
+      </div>
+      <span class="more">热量两端对照</span>
+    </div>
+    <div class="nut-grid">
+      <div class="nut-card">
+        <h3><span class="dot"></span>热量最高 5 款</h3>
+        <ol id="nut-high"></ol>
+      </div>
+      <div class="nut-card low">
+        <h3><span class="dot"></span>热量最低 5 款</h3>
+        <ol id="nut-low"></ol>
+      </div>
+    </div>
+    <div class="nut-foot num" id="nut-foot"></div>
+  </section>
+
+  <section class="fade" id="archaeology">
+    <div class="sec-head">
+      <div>
+        <div class="title"><span class="no">04</span><h2>隐藏吃法自由度榜</h2></div>
+        <div class="note meta" id="arch-date"></div>
+      </div>
+      <span class="more"><a href="https://github.com/lm7644/mcd-research-lab/blob/main/docs/archaeology/INDEX.md">全部 0 元特调清单</a></span>
+    </div>
+    <div class="grid" id="arch"></div>
+  </section>
+
+  <section class="about">
+    <div class="sec-head">
+      <div>
+        <div class="title"><span class="no">05</span><h2>一所为麦麦菜单而建的研究所</h2></div>
+      </div>
+    </div>
+    <p>本站为「<a href="https://github.com/M-China/mcd-developer-innovation-challenge">麦当劳程序员创意开发大赛</a>」参赛项目：GitHub Action 每日通过麦当劳中国官方 MCP 采集菜单、券池、活动与积分商城，产出行情日报、隐藏吃法图鉴与积分省钱榜。</p>
+    <p class="meta">非麦当劳官方产品 · 不自动领券、不下单、不消耗积分 · 源代码 mcd-research-lab</p>
+  </section>
+</main>
+
+<footer>麦麦研究所 · 数据来自麦当劳官方 MCP<br>价格与商品以门店实际供应为准</footer>
+<noscript><p style="text-align:center;color:#6F5C45;padding:24px">本页需要启用 JavaScript 加载每日数据。</p></noscript>
+
+<script>
+const fmt = v => v == null ? "—" : v;
+const REPO = "https://github.com/lm7644/mcd-research-lab/blob/main/docs/";
+async function load(url) {
+  const r = await fetch(url, {cache: "no-store"});
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function esc(s){ const d=document.createElement("div"); d.textContent=s??""; return d.innerHTML; }
+
+// 章节导航高亮：滚动到哪一节，哪一节亮起
+(() => {
+  const links = [...document.querySelectorAll(".rail a")];
+  const secs = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle("on", l.getAttribute("href") === "#" + e.target.id));
+  }), {rootMargin: "-46% 0px -50% 0px"});
+  secs.forEach(s => io.observe(s));
+})();
+
+(async () => {
+  const today = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    .toISOString().slice(0, 10);
+
+  // ── 行情：看板 + 变动 + 券池 + 跑马灯 ──
+  let market = null;
+  try {
+    market = await load("data/market-latest.json");
+    document.getElementById("market-date").textContent = `${market.date} · 门店快照自动对比`;
+    document.getElementById("issue-line").innerHTML = `第 <b>${market.date.replaceAll("-",".")}</b> 期 · 已自动开盘`;
+    const stamp = document.getElementById("rail-stamp");
+    if (stamp) stamp.textContent = `${market.date} 收盘`;
+    const ch = market.changes || [];
+    const nCoupon = (market.couponPool || []).length;
+    const counts = {up:0, down:0, new:0, gone:0};
+    ch.forEach(c => counts[c.type]++);
+    const moves = counts.up + counts.down;
+    const third = moves
+      ? `<b class="pair"><span>${counts.up}<i>涨</i></span><span>${counts.down}<i>降</i></span></b><span>涨跌风向</span>`
+      : `<b class="pair"><span>${counts.new}<i>上新</i></span><span>${counts.gone}<i>下架</i></span></b><span>菜单进出</span>`;
+    document.getElementById("market-stats").innerHTML = `
+      <div class="stat hot"><b>${market.isBaseline ? "基线日" : ch.length}<span class="unit">${market.isBaseline ? "" : " 处"}</span></b><span>${market.isBaseline ? "观察首日 · 价格基线已建立" : "行情变动（对比昨日快照）"}</span></div>
+      <div class="stat"><b>${nCoupon}<span class="unit">张</span></b><span>麦麦省当前可领券</span></div>
+      <div class="stat">${third}</div>`;
+    const diff = c => "¥" + Math.abs(+c.to - +c.from).toFixed(1).replace(/\.0$/, "");
+    if (ch.length) ch.slice(0,12).forEach(c => {
+      const label = {up:`▲ ${diff(c)}`, down:`▼ ${diff(c)}`, new:"上新", gone:"下架"}[c.type] || "";
+      const prev = c.type === "new" ? "—" : `¥${fmt(c.from != null ? c.from : c.price)}`;
+      const now  = c.type === "gone" ? "—" : `¥${fmt(c.to != null ? c.to : c.price)}`;
+      document.getElementById("market").innerHTML += `<div class="ledger-row">
+        <span class="name">${esc(c.name)}</span>
+        <span class="prices"><span class="p">${prev}</span><span class="p now">${now}</span></span>
+        <span class="chg ${c.type}">${label}</span></div>`;
+    });
+    else if (!market.isBaseline) document.getElementById("market").innerHTML =
+      `<div class="ledger-row"><span class="name empty">今日与昨日快照无价格差异。</span></div>`;
+    if (nCoupon) document.getElementById("coupons").innerHTML =
+      market.couponPool.map(c=>`<span class="coupon">${esc(c.title)}<i>${esc(c.status||"")}</i></span>`).join("");
+    // 跑马灯：变动 ×2 无缝滚动；基线日用券池
+    const items = ch.length
+      ? ch.slice(0,14).map(c => {
+          const map = {up:`<i class="up num">▲¥${c.to}</i>`, down:`<i class="down num">▼¥${c.to}</i>`, new:`<i class="fresh">上新</i>`, gone:`<i>下架</i>`};
+          return `<span>${esc(c.name)} ${map[c.type]||""}</span>`;
+        })
+      : (market.couponPool||[]).map(c => `<span>券 · ${esc(c.title)}</span>`);
+    if (items.length) document.getElementById("ticker-track").innerHTML = (items.join("") + items.join(""));
+  } catch(e) { document.getElementById("market-date").innerHTML = `<span class="empty">行情数据加载失败，请刷新重试。</span>`; }
+
+  // ── 积分 ──
+  try {
+    const p = await load("data/points-rank.json");
+    document.getElementById("points-date").textContent = `更新于 ${p.date || today} · 每万积分省钱排序`;
+    const box = document.getElementById("points");
+    if (!p.rank.length) box.innerHTML = `<div class="empty">本期暂无可核价的兑换券（商城在售组合随餐段变动）。</div>`;
+    p.rank.slice(0,5).forEach((r,i) => {
+      const w = Math.max(4, Math.min(100, r.per10k / 5));
+      const medal = i<3 ? `m${i+1}` : "mn";
+      box.innerHTML += `<div class="rank-item">
+        <span class="medal ${medal}">${i+1}</span>
+        <div class="rank-main">
+          <b>${esc(r.spu)}<span class="gain">每万积分省 ¥${r.per10k}</span></b>
+          <span class="formula"><span class="price">${r.points} 积分 + ¥${r.cash}</span> · 省 ¥${r.savings}</span>
+          <div class="bar"><i style="width:${w}%"></i></div>
+        </div></div>`;
+    });
+    if (p.wall?.length) document.getElementById("points-wall").innerHTML =
+      `积分商城另有 ${p.wall.length} 条周边情报 · 个人体检请本地运行 <code>python -m mcd_lab.points --me</code>`;
+  } catch(e) { document.getElementById("points-date").innerHTML = `<span class="empty">榜单加载失败，请刷新重试。</span>`; }
+
+  // ── 营养 ──
+  try {
+    const n = await load("data/nutrition.json");
+    const foods = n.filter(x => x.energyKcal && +x.energyKcal > 0);
+    const high = [...foods].sort((a,b) => +b.energyKcal - +a.energyKcal).slice(0,5);
+    const low  = [...foods].sort((a,b) => +a.energyKcal - +b.energyKcal).slice(0,5);
+    document.getElementById("nut-high").innerHTML = high.map(x =>
+      `<li><span class="n">${esc(x.productName)}</span><span class="k num">${x.energyKcal}<small> kcal</small></span></li>`).join("");
+    document.getElementById("nut-low").innerHTML = low.map(x =>
+      `<li><span class="n">${esc(x.productName)}</span><span class="k num">${x.energyKcal}<small> kcal</small></span></li>`).join("");
+    const avg = Math.round(foods.reduce((s,x)=>s + +x.energyKcal, 0) / foods.length);
+    document.getElementById("nut-foot").textContent = `${foods.length} 款有热量数据的餐品实测均值约 ${avg} kcal · 数据来自麦当劳官方接口，仅供参考`;
+  } catch(e) { document.getElementById("nut-foot").innerHTML = `<span class="empty">营养数据加载失败，请刷新重试。</span>`; }
+
+  // ── 考古 ──
+  try {
+    const a = await load("data/archaeology-summary.json");
+    document.getElementById("arch-date").textContent = `已考古 ${a.length} 款套餐的官方选配空间`;
+    const g = document.getElementById("arch");
+    a.sort((x,y)=>(y.freeMods+y.swaps)-(x.freeMods+x.swaps)).slice(0,8).forEach((x,i) => {
+      g.innerHTML += `<div class="card"><span class="no">${String(i+1).padStart(2,"0")}</span>
+        <a href="${REPO}${encodeURI(x.file)}"><b>${esc(x.name)}</b></a>
+        <small>${x.freeMods} 项免费特调 · ${x.swaps} 个替换位 · ${x.nodes} 节点</small></div>`;
+    });
+  } catch(e) { document.getElementById("arch-date").innerHTML = `<span class="empty">图鉴加载失败，请刷新重试。</span>`; }
+})();
+</script>
+</body>
+</html>
