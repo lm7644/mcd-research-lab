@@ -4,12 +4,12 @@
 仅调用只读工具，不下单、不领券、不动积分。
 """
 import argparse
-import datetime as dt
 import json
 import os
 import re
 from pathlib import Path
 
+from . import clock
 from .client import McpClient, McpError
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -101,10 +101,11 @@ def main():
         nut_file.write_text(nut_payload, encoding="utf-8")
         print(f"  营养数据已更新: {len(nutrition)} 款 → docs/data/nutrition.json")
 
+    server_time = time_info.get("datetime", "")
     snap = {
         "storeCode": args.store,
-        "serverTime": time_info.get("datetime", ""),
-        "capturedAt": dt.datetime.now().isoformat(timespec="seconds"),
+        "serverTime": server_time,
+        "capturedAt": clock.stamp(server_time),
         "categories": categories,
         "meals": meals,
         "couponPool": coupons,
@@ -113,10 +114,11 @@ def main():
         "campaignCalendar": calendar,
         "pointsProducts": points_products,
     }
-    out = ROOT / "data" / "snapshots" / f"{dt.date.today().isoformat()}.json"
+    out = ROOT / "data" / "snapshots" / f"{clock.today(server_time).isoformat()}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"快照完成: {out}")
+    print(f"  日期口径: serverTime={server_time or '(缺失)'} → {clock.today(server_time)}（Asia/Shanghai）")
     print(f"  菜单 {len(meals)} 项 / {len(categories)} 分类 | 券池 {len(coupons)} | "
           f"活动 {len(calendar)} | 积分商品 {len(points_products)}")
 

@@ -43,22 +43,8 @@ jobs:
         env:
           MCD_MCP_TOKEN: ${{ secrets.MCD_MCP_TOKEN }}
           MCD_STORE_CODE: "1450713"
-      - name: 数据校验（菜单规模骤降则中止发布）
-        run: |
-          python - <<'PY'
-          import glob, json, sys
-          files = sorted(glob.glob("data/snapshots/*.json"))
-          if len(files) < 2:
-              print("首个快照，跳过规模校验")
-              sys.exit(0)
-          prev = json.load(open(files[-2], encoding="utf-8"))
-          cur = json.load(open(files[-1], encoding="utf-8"))
-          p, c = len(prev["meals"]), len(cur["meals"])
-          print(f"菜单项对比：上一份 {p} → 本次 {c}")
-          if p >= 20 and c < p * 0.8:
-              print(f"::error::菜单项异常减少（{p} → {c}），疑似采集时段不完整（夜间/早餐菜单），已中止发布")
-              sys.exit(1)
-          PY
+      - name: 数据校验（四类采集量，采集不全则中止）
+        run: python -m mcd_lab.validate
 
       - name: 发布日报（分支 + PR + 合并，不直推 main）
         env:
