@@ -1,4 +1,5 @@
 # 蘸酱BFF四宫格小食盘 组合考古
+<!-- arch:{"name": "蘸酱BFF四宫格小食盘", "freeMods": 0, "swaps": 6, "nodes": 9, "freeNames": []} -->
 
 > 菜单现价 ¥42.8。以下选配与特调全部来自麦当劳官方 MCP 点餐接口的真实返回，编号见 data/archaeology.json。
 

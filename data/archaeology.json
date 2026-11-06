@@ -8179,718 +8179,6 @@
    "paidMods": []
   }
  },
- "9900016673": {
-  "name": "海陆双全大堡口福三件套",
-  "rounds": [
-   {
-    "name": "选择汉堡",
-    "min": 1,
-    "max": 1,
-    "choices": [
-     {
-      "name": "海陆双全堡",
-      "isDefault": true,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "麦香鸡酱",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "生菜",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "双层脆鸡堡",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "麦香鸡酱",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "生菜",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "巨无霸",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "巨无霸酱",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "吉士",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "生菜",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "酸黄瓜",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "洋葱粒",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "name": "选择小食",
-    "min": 1,
-    "max": 1,
-    "choices": [
-     {
-      "name": "中薯条",
-      "isDefault": true,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "马来咖喱风味薄皮肉骨鸡3块",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "大薯条",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "大杯玉米杯",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "脆脆薯条",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     }
-    ]
-   },
-   {
-    "name": "选择套餐内饮料",
-    "min": 1,
-    "max": 1,
-    "choices": [
-     {
-      "name": "可乐中杯",
-      "isDefault": true,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "可乐大杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "好柿多多雪冰",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "无糖可口可乐大杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "雪碧中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "草莓风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "香草风味奶昔",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "中杯怡泉+C",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "无糖可口可乐中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "麦咖啡™冰美式中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "不加",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "加",
-        "price": 5.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "阳光柠檬红茶中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "鲜萃冰咖",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "大杯鲜萃咖啡",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "奶油球",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "白砂糖",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "麦咖啡™热美式中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "不加",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "加",
-        "price": 5.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "麦咖啡™冰奶铁中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "不加",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "加",
-        "price": 5.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "麦咖啡™热奶铁中杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "不加",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "加",
-        "price": 5.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "雪碧大杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "阳光柠檬红茶大杯",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "大杯怡泉+C",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "【美汁源】“黄金橙橙”",
-      "isDefault": false,
-      "supportModify": true,
-      "modifications": [
-       {
-        "name": "标准",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "去冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "多冰",
-        "price": 0.0,
-        "max": 1
-       },
-       {
-        "name": "少冰",
-        "price": 0.0,
-        "max": 1
-       }
-      ]
-     },
-     {
-      "name": "锡兰红茶",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "纯牛奶",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     },
-     {
-      "name": "100%苹果汁",
-      "isDefault": false,
-      "supportModify": false,
-      "modifications": []
-     }
-    ]
-   }
-  ],
-  "found": {
-   "defaults": [
-    "选择汉堡：海陆双全堡",
-    "选择小食：中薯条",
-    "选择套餐内饮料：可乐中杯"
-   ],
-   "swaps": [
-    "选择小食：马来咖喱风味薄皮肉骨鸡3块",
-    "选择小食：大薯条",
-    "选择小食：大杯玉米杯",
-    "选择小食：脆脆薯条",
-    "选择套餐内饮料：好柿多多雪冰",
-    "选择套餐内饮料：草莓风味奶昔",
-    "选择套餐内饮料：香草风味奶昔",
-    "选择套餐内饮料：鲜萃冰咖",
-    "选择套餐内饮料：锡兰红茶",
-    "选择套餐内饮料：纯牛奶",
-    "选择套餐内饮料：100%苹果汁"
-   ],
-   "freeMods": [
-    {
-     "where": "选择汉堡 · 海陆双全堡",
-     "name": "麦香鸡酱",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择汉堡 · 海陆双全堡",
-     "name": "生菜",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择汉堡 · 巨无霸",
-     "name": "巨无霸酱",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择汉堡 · 巨无霸",
-     "name": "吉士",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择汉堡 · 巨无霸",
-     "name": "酸黄瓜",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择汉堡 · 巨无霸",
-     "name": "洋葱粒",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 可乐中杯",
-     "name": "标准",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 可乐中杯",
-     "name": "去冰",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 可乐中杯",
-     "name": "多冰",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 可乐中杯",
-     "name": "少冰",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
-     "name": "不加",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
-     "name": "奶油球",
-     "price": 0.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 大杯鲜萃咖啡",
-     "name": "白砂糖",
-     "price": 0.0,
-     "max": 1
-    }
-   ],
-   "paidMods": [
-    {
-     "where": "选择套餐内饮料 · 麦咖啡™冰美式中杯",
-     "name": "加",
-     "price": 5.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 麦咖啡™热美式中杯",
-     "name": "加",
-     "price": 5.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 麦咖啡™冰奶铁中杯",
-     "name": "加",
-     "price": 5.0,
-     "max": 1
-    },
-    {
-     "where": "选择套餐内饮料 · 麦咖啡™热奶铁中杯",
-     "name": "加",
-     "price": 5.0,
-     "max": 1
-    }
-   ]
-  }
- },
  "9900016674": {
   "name": "双层脆鸡大堡口福三件套",
   "rounds": [
@@ -31449,6 +30737,12 @@
       "modifications": []
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "100%苹果汁",
       "isDefault": false,
       "supportModify": false,
@@ -31480,6 +30774,7 @@
    ],
    "swaps": [
     "选择开心乐园餐小食：小杯玉米杯",
+    "选择开心乐园餐饮料：纯悦",
     "选择开心乐园餐饮料：100%苹果汁"
    ],
    "freeMods": [
@@ -31582,6 +30877,12 @@
       "modifications": []
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "100%苹果汁",
       "isDefault": false,
       "supportModify": false,
@@ -31613,6 +30914,7 @@
    ],
    "swaps": [
     "选择开心乐园餐小食：小杯玉米杯",
+    "选择开心乐园餐饮料：纯悦",
     "选择开心乐园餐饮料：100%苹果汁"
    ],
    "freeMods": [
@@ -31684,6 +30986,12 @@
       "isDefault": true,
       "supportModify": false,
       "modifications": []
+     },
+     {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
      }
     ]
    },
@@ -31709,7 +31017,9 @@
     "选择开心乐园餐饮料：纯牛奶",
     "随机玩具1个：随机玩具1个"
    ],
-   "swaps": [],
+   "swaps": [
+    "选择开心乐园餐饮料：纯悦"
+   ],
    "freeMods": [],
    "paidMods": []
   }
@@ -31825,6 +31135,12 @@
      {
       "name": "纯牛奶",
       "isDefault": true,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
+      "name": "纯悦",
+      "isDefault": false,
       "supportModify": false,
       "modifications": []
      }
@@ -32429,6 +31745,7 @@
     "选择套餐内小食：小杯玉米杯",
     "选择套餐内小食：大杯玉米杯",
     "选择套餐内小食：脆脆薯条",
+    "选择开心乐园餐饮料：纯悦",
     "选择套餐内饮料：香草风味奶昔",
     "选择套餐内饮料：草莓风味奶昔",
     "选择套餐内饮料：好柿多多雪冰",
@@ -32689,6 +32006,12 @@
       "modifications": []
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "麦咖啡™热美式中杯",
       "isDefault": false,
       "supportModify": true,
@@ -32753,7 +32076,8 @@
     "选择饮料：无糖可口可乐中杯"
    ],
    "swaps": [
-    "选择饮料：锡兰红茶"
+    "选择饮料：锡兰红茶",
+    "选择饮料：纯悦"
    ],
    "freeMods": [
     {
@@ -32973,6 +32297,12 @@
       ]
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "麦咖啡™热美式中杯",
       "isDefault": false,
       "supportModify": true,
@@ -33036,7 +32366,9 @@
     "苹果片一袋(60g)：苹果片一袋(60g)",
     "选择饮料：锡兰红茶"
    ],
-   "swaps": [],
+   "swaps": [
+    "选择饮料：纯悦"
+   ],
    "freeMods": [
     {
      "where": "麦香鱼 · 麦香鱼",
@@ -33219,6 +32551,12 @@
       "modifications": []
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "麦咖啡™热美式中杯",
       "isDefault": false,
       "supportModify": true,
@@ -33282,7 +32620,8 @@
     "选择饮料：无糖可口可乐中杯"
    ],
    "swaps": [
-    "选择饮料：锡兰红茶"
+    "选择饮料：锡兰红茶",
+    "选择饮料：纯悦"
    ],
    "freeMods": [
     {
@@ -33454,6 +32793,12 @@
       "modifications": []
      },
      {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
+     },
+     {
       "name": "麦咖啡™热美式中杯",
       "isDefault": false,
       "supportModify": true,
@@ -33517,7 +32862,8 @@
     "选择饮料：无糖可口可乐中杯"
    ],
    "swaps": [
-    "选择饮料：锡兰红茶"
+    "选择饮料：锡兰红茶",
+    "选择饮料：纯悦"
    ],
    "freeMods": [
     {
@@ -33686,6 +33032,12 @@
       "isDefault": false,
       "supportModify": false,
       "modifications": []
+     },
+     {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
      }
     ]
    }
@@ -33697,7 +33049,8 @@
     "选择饮料：无糖可口可乐中杯"
    ],
    "swaps": [
-    "选择饮料：锡兰红茶"
+    "选择饮料：锡兰红茶",
+    "选择饮料：纯悦"
    ],
    "freeMods": [
     {
@@ -33875,6 +33228,12 @@
       "isDefault": false,
       "supportModify": false,
       "modifications": []
+     },
+     {
+      "name": "纯悦",
+      "isDefault": false,
+      "supportModify": false,
+      "modifications": []
      }
     ]
    }
@@ -33887,7 +33246,8 @@
     "选择饮料：无糖可口可乐中杯"
    ],
    "swaps": [
-    "选择饮料：锡兰红茶"
+    "选择饮料：锡兰红茶",
+    "选择饮料：纯悦"
    ],
    "freeMods": [
     {
