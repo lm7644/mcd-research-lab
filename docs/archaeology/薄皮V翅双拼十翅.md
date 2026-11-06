@@ -1,4 +1,5 @@
 # 薄皮V翅双拼十翅 组合考古
+<!-- arch:{"name": "薄皮V翅双拼十翅", "freeMods": 0, "swaps": 0, "nodes": 2, "freeNames": []} -->
 
 > 菜单现价 ¥49.9。以下选配与特调全部来自麦当劳官方 MCP 点餐接口的真实返回，编号见 data/archaeology.json。
 
