@@ -72,6 +72,14 @@ class McpClient:
                     time.sleep(2 ** attempt)
                     continue
                 raise McpError(f"{method} HTTP {e.code}: {e.read().decode('utf-8')[:200]}")
+            except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+                # 网络层瞬断（连接超时/被重置/DNS 抖动）与 429/5xx 同路径退避重试：
+                # 2026-11-07 CI 即因 connect timed out（60s）一次未重试而整条流水线失败。
+                if attempt < 4:
+                    time.sleep(2 ** attempt)
+                    continue
+                raise McpError(
+                    f"{method} 网络错误（重试 5 次仍失败）: {type(e).__name__}: {e}")
         if not raw.strip():
             return {}
         for line in raw.splitlines():

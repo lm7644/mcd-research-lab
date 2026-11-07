@@ -150,13 +150,22 @@ class RetryBackoffTest(_ClientTestBase):
         self.sleep.assert_not_called()
         self.assertEqual(len(self.http.requests) - self.base, 1)
 
-    def test_url_error_propagates_unwrapped(self):
-        # 非 HTTPError 的 URLError 不走退避分支，按原样抛出（既定行为）
-        self.http.queue(urllib.error.URLError("connection refused"))
-        with self.assertRaises(urllib.error.URLError):
+    def test_network_error_retried_then_succeeds(self):
+        # 连接超时/瞬断：与 429/5xx 同路径退避重试（2026-11-07 CI 事故回归）
+        self.http.queue(urllib.error.URLError("timed out"), rpc_result(PAYLOAD))
+        obj = self.client.call_json("query-meals", storeCode="1450713")
+        self.assertEqual(obj["data"], {"ok": 1})
+        self.assertEqual(self.sleep.call_args_list, [mock.call(1)])
+        self.assertEqual(len(self.http.requests) - self.base, 2)
+
+    def test_network_error_exhausted_raises_mcperror(self):
+        # 重试 5 次仍不通 → 收敛为 McpError，避免把裸 URLError 抛给上层
+        self.http.queue(*[urllib.error.URLError("timed out") for _ in range(5)])
+        with self.assertRaisesRegex(McpError, "网络错误（重试 5 次仍失败）"):
             self.client.call_json("query-meals", storeCode="1450713")
-        self.sleep.assert_not_called()
-        self.assertEqual(len(self.http.requests) - self.base, 1)
+        self.assertEqual(self.sleep.call_args_list,
+                         [mock.call(1), mock.call(2), mock.call(4), mock.call(8)])
+        self.assertEqual(len(self.http.requests) - self.base, 5)
 
 
 class SessionAndTransportTest(_ClientTestBase):
