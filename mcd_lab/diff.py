@@ -50,6 +50,20 @@ def diff_menus(old_meals, new_meals):
     return changes
 
 
+def merge_same_meal_new(changes):
+    """同一商品在菜单里可能对应多个内部编码（名称与价格完全相同），日报按商品合并为一行。"""
+    seen = set()
+    merged = []
+    for c in changes:
+        if c["type"] == "new":
+            key = (c["name"], c["price"])
+            if key in seen:
+                continue
+            seen.add(key)
+        merged.append(c)
+    return merged
+
+
 def key_of_coupon(c):
     return c.get("title", "")
 
@@ -139,16 +153,45 @@ def render_report(today_snap, yesterday_snap, changes, coupons_diff, cal_diff, p
     return "\n".join(lines)
 
 
+def readme_brief(report_md, max_lines=20):
+    """取日报核心段做摘要：按「## 」整节切分，避免把章节标题和条目切散。"""
+    blocks, cur = [], []
+    for ln in report_md.splitlines()[2:]:
+        if ln.strip() == "---":
+            break
+        if ln.startswith("## "):
+            if cur:
+                blocks.append(cur)
+            cur = [ln]
+        else:
+            cur.append(ln)
+    if cur:
+        blocks.append(cur)
+
+    out, count = [], 0
+    for block in blocks:
+        while block and not block[-1].strip():
+            block.pop()
+        if not block:
+            continue
+        need = len(block) + (1 if out else 0)
+        if out and count + need > max_lines:
+            break
+        out.extend([""] + block if out else block)
+        count += need
+    return "\n".join(out) + "\n\n"
+
+
 def rewrite_readme_block(report_md):
     readme = ROOT / "README.md"
     if not readme.exists():
         return
     text = readme.read_text(encoding="utf-8")
-    brief = "\n".join(report_md.splitlines()[2:20])  # 取日报核心段做摘要
+    brief = readme_brief(report_md)
     if README_BEGIN in text and README_END in text:
         pre = text.split(README_BEGIN)[0]
         post = text.split(README_END)[1]
-        readme.write_text(f"{pre}{README_BEGIN}\n{brief}\n{README_END}{post}", encoding="utf-8")
+        readme.write_text(f"{pre}{README_BEGIN}\n{brief}{README_END}{post}", encoding="utf-8")
         print("README 今日行情区块已更新")
 
 
@@ -157,7 +200,7 @@ def main():
     if old is None:
         changes, coupons_diff, cal_diff, points_diff = [], ([], []), ([], []), ([], [])
     else:
-        changes = diff_menus(old["meals"], new["meals"])
+        changes = merge_same_meal_new(diff_menus(old["meals"], new["meals"]))
         coupons_diff = diff_sets(old["couponPool"], new["couponPool"], key_of_coupon)
         cal_diff = diff_sets(old.get("campaignCalendar", []), new.get("campaignCalendar", []),
                              key_of_calendar)
