@@ -1,57 +1,81 @@
 {
- "date": "2026-11-07",
+ "date": "2026-11-09",
  "isBaseline": false,
  "changes": [
   {
-   "type": "new",
+   "type": "gone",
    "code": "521741",
    "name": "脆薯饼",
    "price": 8.5
   },
   {
-   "type": "new",
+   "type": "gone",
+   "code": "9900016073",
+   "name": "龙焰鸡腿堡三件套",
+   "price": 26.9
+  },
+  {
+   "type": "gone",
    "code": "9900014838",
    "name": "枫糖风味厚松饼猪柳蛋堡三件套",
    "price": 27.9
   },
   {
-   "type": "new",
+   "type": "gone",
+   "code": "9900014837",
+   "name": "枫糖风味厚松饼猪柳蛋堡三件套",
+   "price": 27.9
+  },
+  {
+   "type": "gone",
    "code": "521730",
    "name": "枫糖风味厚松饼猪柳蛋堡",
    "price": 22.0
   },
   {
-   "type": "new",
+   "type": "gone",
    "code": "521731",
    "name": "枫糖风味厚松饼猪柳堡",
    "price": 18.0
   },
   {
-   "type": "new",
+   "type": "gone",
    "code": "9900014974",
    "name": "枫糖风味厚松饼猪柳堡三件套",
    "price": 23.9
   },
   {
-   "type": "new",
+   "type": "gone",
    "code": "9900015151",
    "name": "麦麦周末双人餐",
    "price": 49.9
   },
   {
-   "type": "new",
+   "type": "gone",
+   "code": "9900016309",
+   "name": "龙焰鸡腿堡四件套",
+   "price": 29.0
+  },
+  {
+   "type": "gone",
+   "code": "521952",
+   "name": "龙焰鸡腿堡",
+   "price": 15.9
+  },
+  {
+   "type": "gone",
    "code": "9900016301",
    "name": "枫糖风味厚松饼猪柳蛋堡四件套",
    "price": 28.0
   },
   {
-   "type": "new",
+   "type": "gone",
    "code": "9900003538",
    "name": "学生专享饮品随心选",
    "price": 10.0
   },
   {
-   "type": "new",
+   "type": "gone",
    "code": "9900003537",
    "name": "学生专享汉堡小食随心选",
    "price": 27.0
@@ -87,11 +111,11 @@
    "status": "可领取"
   },
   {
-   "title": "人气麦旋风买一送一 \\",
+   "title": "9.9元中杯冰美式 \\",
    "status": "可领取"
   },
   {
-   "title": "9.9元中杯冰美式 \\",
+   "title": "人气麦旋风买一送一 \\",
    "status": "可领取"
   }
  ]
