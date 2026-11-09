@@ -9,9 +9,9 @@
  {
   "name": "全明星双人分享餐八件套",
   "file": "archaeology/全明星双人分享餐八件套.md",
-  "freeMods": 15,
+  "freeMods": 13,
   "swaps": 24,
-  "nodes": 58
+  "nodes": 54
  },
  {
   "name": "安格斯厚牛堡四件套随心选",
@@ -26,13 +26,6 @@
   "freeMods": 13,
   "swaps": 22,
   "nodes": 46
- },
- {
-  "name": "人气超值四件套随心选",
-  "file": "archaeology/人气超值四件套随心选.md",
-  "freeMods": 12,
-  "swaps": 22,
-  "nodes": 49
  },
  {
   "name": "培根安格斯厚牛堡四件套",
@@ -54,6 +47,13 @@
   "freeMods": 12,
   "swaps": 22,
   "nodes": 45
+ },
+ {
+  "name": "人气超值四件套随心选",
+  "file": "archaeology/人气超值四件套随心选.md",
+  "freeMods": 11,
+  "swaps": 22,
+  "nodes": 48
  },
  {
   "name": "芝士安格斯厚牛堡四件套",
