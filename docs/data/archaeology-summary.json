@@ -119,13 +119,6 @@
   "nodes": 23
  },
  {
-  "name": "炸鸡随心配1+1",
-  "file": "archaeology/炸鸡随心配1-1.md",
-  "freeMods": 13,
-  "swaps": 12,
-  "nodes": 24
- },
- {
   "name": "双层吉士汉堡套餐",
   "file": "archaeology/双层吉士汉堡套餐.md",
   "freeMods": 12,
@@ -166,6 +159,13 @@
   "freeMods": 13,
   "swaps": 11,
   "nodes": 31
+ },
+ {
+  "name": "炸鸡随心配1+1",
+  "file": "archaeology/炸鸡随心配1-1.md",
+  "freeMods": 13,
+  "swaps": 11,
+  "nodes": 24
  },
  {
   "name": "吉士汉堡包套餐",
