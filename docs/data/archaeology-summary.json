@@ -3,106 +3,106 @@
   "name": "鱼牛汉堡四件套随心选",
   "file": "archaeology/鱼牛汉堡四件套随心选.md",
   "freeMods": 19,
-  "swaps": 22,
-  "nodes": 49
- },
- {
-  "name": "全明星双人分享餐八件套",
-  "file": "archaeology/全明星双人分享餐八件套.md",
-  "freeMods": 13,
-  "swaps": 24,
-  "nodes": 54
+  "swaps": 21,
+  "nodes": 48
  },
  {
   "name": "安格斯厚牛堡四件套随心选",
   "file": "archaeology/安格斯厚牛堡四件套随心选.md",
   "freeMods": 15,
+  "swaps": 21,
+  "nodes": 45
+ },
+ {
+  "name": "全明星双人分享餐八件套",
+  "file": "archaeology/全明星双人分享餐八件套.md",
+  "freeMods": 13,
   "swaps": 22,
-  "nodes": 46
+  "nodes": 52
  },
  {
   "name": "海陆双全堡四件套",
   "file": "archaeology/海陆双全堡四件套.md",
   "freeMods": 13,
-  "swaps": 22,
-  "nodes": 46
+  "swaps": 21,
+  "nodes": 45
  },
  {
   "name": "培根安格斯厚牛堡四件套",
   "file": "archaeology/培根安格斯厚牛堡四件套.md",
   "freeMods": 12,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "培根蔬萃双层牛堡四件套",
   "file": "archaeology/培根蔬萃双层牛堡四件套.md",
   "freeMods": 12,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "巨无霸四件套",
   "file": "archaeology/巨无霸四件套.md",
   "freeMods": 12,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "人气超值四件套随心选",
   "file": "archaeology/人气超值四件套随心选.md",
   "freeMods": 11,
-  "swaps": 22,
-  "nodes": 48
+  "swaps": 21,
+  "nodes": 47
  },
  {
   "name": "芝士安格斯厚牛堡四件套",
   "file": "archaeology/芝士安格斯厚牛堡四件套.md",
   "freeMods": 11,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "双层深海鳕鱼堡四件套",
   "file": "archaeology/双层深海鳕鱼堡四件套.md",
   "freeMods": 10,
-  "swaps": 22,
-  "nodes": 46
+  "swaps": 21,
+  "nodes": 45
  },
  {
   "name": "酥酥多笋卷四件套",
   "file": "archaeology/酥酥多笋卷四件套.md",
   "freeMods": 10,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "板烧鸡腿堡四件套",
   "file": "archaeology/板烧鸡腿堡四件套.md",
   "freeMods": 9,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "麦辣鸡腿堡四件套",
   "file": "archaeology/麦辣鸡腿堡四件套.md",
   "freeMods": 9,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "不素之霸双层牛堡四件套",
   "file": "archaeology/不素之霸双层牛堡四件套.md",
   "freeMods": 8,
-  "swaps": 22,
-  "nodes": 45
+  "swaps": 21,
+  "nodes": 44
  },
  {
   "name": "精选单人餐三件套",
   "file": "archaeology/精选单人餐三件套.md",
   "freeMods": 15,
-  "swaps": 12,
-  "nodes": 37
+  "swaps": 11,
+  "nodes": 36
  },
  {
   "name": "双吉随心配1+1",
@@ -119,48 +119,6 @@
   "nodes": 23
  },
  {
-  "name": "双层吉士汉堡套餐",
-  "file": "archaeology/双层吉士汉堡套餐.md",
-  "freeMods": 12,
-  "swaps": 12,
-  "nodes": 34
- },
- {
-  "name": "培根安格斯厚牛堡三件套",
-  "file": "archaeology/培根安格斯厚牛堡三件套.md",
-  "freeMods": 12,
-  "swaps": 12,
-  "nodes": 34
- },
- {
-  "name": "培根蔬萃双层牛堡三件套",
-  "file": "archaeology/培根蔬萃双层牛堡三件套.md",
-  "freeMods": 12,
-  "swaps": 12,
-  "nodes": 34
- },
- {
-  "name": "双层脆鸡大堡口福三件套",
-  "file": "archaeology/双层脆鸡大堡口福三件套.md",
-  "freeMods": 13,
-  "swaps": 11,
-  "nodes": 31
- },
- {
-  "name": "巨无霸大堡口福三件套",
-  "file": "archaeology/巨无霸大堡口福三件套.md",
-  "freeMods": 13,
-  "swaps": 11,
-  "nodes": 31
- },
- {
-  "name": "海陆双全大堡口福三件套",
-  "file": "archaeology/海陆双全大堡口福三件套.md",
-  "freeMods": 13,
-  "swaps": 11,
-  "nodes": 31
- },
- {
   "name": "炸鸡随心配1+1",
   "file": "archaeology/炸鸡随心配1-1.md",
   "freeMods": 13,
@@ -168,32 +126,60 @@
   "nodes": 24
  },
  {
+  "name": "双层吉士汉堡套餐",
+  "file": "archaeology/双层吉士汉堡套餐.md",
+  "freeMods": 12,
+  "swaps": 11,
+  "nodes": 33
+ },
+ {
+  "name": "培根安格斯厚牛堡三件套",
+  "file": "archaeology/培根安格斯厚牛堡三件套.md",
+  "freeMods": 12,
+  "swaps": 11,
+  "nodes": 33
+ },
+ {
+  "name": "培根蔬萃双层牛堡三件套",
+  "file": "archaeology/培根蔬萃双层牛堡三件套.md",
+  "freeMods": 12,
+  "swaps": 11,
+  "nodes": 33
+ },
+ {
+  "name": "双层脆鸡大堡口福三件套",
+  "file": "archaeology/双层脆鸡大堡口福三件套.md",
+  "freeMods": 13,
+  "swaps": 10,
+  "nodes": 30
+ },
+ {
+  "name": "巨无霸大堡口福三件套",
+  "file": "archaeology/巨无霸大堡口福三件套.md",
+  "freeMods": 13,
+  "swaps": 10,
+  "nodes": 30
+ },
+ {
+  "name": "海陆双全大堡口福三件套",
+  "file": "archaeology/海陆双全大堡口福三件套.md",
+  "freeMods": 13,
+  "swaps": 10,
+  "nodes": 30
+ },
+ {
   "name": "吉士汉堡包套餐",
   "file": "archaeology/吉士汉堡包套餐.md",
   "freeMods": 11,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "芝士安格斯厚牛堡三件套",
   "file": "archaeology/芝士安格斯厚牛堡三件套.md",
   "freeMods": 11,
-  "swaps": 12,
-  "nodes": 34
- },
- {
-  "name": "双层深海鳕鱼堡三件套",
-  "file": "archaeology/双层深海鳕鱼堡三件套.md",
-  "freeMods": 10,
-  "swaps": 12,
-  "nodes": 35
- },
- {
-  "name": "酥酥多笋卷三件套",
-  "file": "archaeology/酥酥多笋卷三件套.md",
-  "freeMods": 10,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "开心亲子双人餐",
@@ -203,53 +189,67 @@
   "nodes": 39
  },
  {
+  "name": "双层深海鳕鱼堡三件套",
+  "file": "archaeology/双层深海鳕鱼堡三件套.md",
+  "freeMods": 10,
+  "swaps": 11,
+  "nodes": 34
+ },
+ {
+  "name": "酥酥多笋卷三件套",
+  "file": "archaeology/酥酥多笋卷三件套.md",
+  "freeMods": 10,
+  "swaps": 11,
+  "nodes": 33
+ },
+ {
   "name": "板烧鸡腿堡三件套",
   "file": "archaeology/板烧鸡腿堡三件套.md",
   "freeMods": 9,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "麦辣鸡腿汉堡三件套",
   "file": "archaeology/麦辣鸡腿汉堡三件套.md",
   "freeMods": 9,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "麦香鱼套餐",
   "file": "archaeology/麦香鱼套餐.md",
   "freeMods": 9,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "麦香鸡套餐",
   "file": "archaeology/麦香鸡套餐.md",
   "freeMods": 9,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "不素之霸双层牛堡三件套",
   "file": "archaeology/不素之霸双层牛堡三件套.md",
   "freeMods": 8,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "麦乐鸡套餐",
   "file": "archaeology/麦乐鸡套餐.md",
   "freeMods": 7,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "麦辣鸡翅4块套餐",
   "file": "archaeology/麦辣鸡翅4块套餐.md",
   "freeMods": 7,
-  "swaps": 12,
-  "nodes": 34
+  "swaps": 11,
+  "nodes": 33
  },
  {
   "name": "随心配1+1三件套!!!",
