@@ -1,12 +1,14 @@
 {
- "date": "2026-11-12",
+ "date": "2026-11-13",
  "isBaseline": false,
  "changes": [
   {
-   "type": "gone",
-   "code": "521881",
-   "name": "马来咖喱风味薄皮肉骨鸡3块",
-   "price": 15.5
+   "type": "down",
+   "code": "9900015730",
+   "name": "BFF四宫格小食盘",
+   "from": 39.8,
+   "to": 38.8,
+   "delta": -1.0
   }
  ],
  "couponPool": [
