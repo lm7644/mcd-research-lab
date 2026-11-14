@@ -7,18 +7,18 @@
   "nodes": 48
  },
  {
+  "name": "全明星双人分享餐八件套",
+  "file": "archaeology/全明星双人分享餐八件套.md",
+  "freeMods": 14,
+  "swaps": 22,
+  "nodes": 54
+ },
+ {
   "name": "安格斯厚牛堡四件套随心选",
   "file": "archaeology/安格斯厚牛堡四件套随心选.md",
   "freeMods": 15,
   "swaps": 21,
   "nodes": 45
- },
- {
-  "name": "全明星双人分享餐八件套",
-  "file": "archaeology/全明星双人分享餐八件套.md",
-  "freeMods": 13,
-  "swaps": 22,
-  "nodes": 52
  },
  {
   "name": "海陆双全堡四件套",
@@ -98,6 +98,13 @@
   "nodes": 44
  },
  {
+  "name": "枫糖风味厚松饼猪柳蛋堡四件套",
+  "file": "archaeology/枫糖风味厚松饼猪柳蛋堡四件套.md",
+  "freeMods": 8,
+  "swaps": 21,
+  "nodes": 44
+ },
+ {
   "name": "精选单人餐三件套",
   "file": "archaeology/精选单人餐三件套.md",
   "freeMods": 15,
@@ -124,6 +131,13 @@
   "freeMods": 13,
   "swaps": 11,
   "nodes": 24
+ },
+ {
+  "name": "麦麦周末双人餐",
+  "file": "archaeology/麦麦周末双人餐.md",
+  "freeMods": 11,
+  "swaps": 12,
+  "nodes": 37
  },
  {
   "name": "双层吉士汉堡套餐",
@@ -201,6 +215,20 @@
   "freeMods": 10,
   "swaps": 11,
   "nodes": 33
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳蛋堡三件套",
+  "file": "archaeology/枫糖风味厚松饼猪柳蛋堡三件套.md",
+  "freeMods": 8,
+  "swaps": 12,
+  "nodes": 36
+ },
+ {
+  "name": "枫糖风味厚松饼猪柳堡三件套",
+  "file": "archaeology/枫糖风味厚松饼猪柳堡三件套.md",
+  "freeMods": 8,
+  "swaps": 12,
+  "nodes": 35
  },
  {
   "name": "板烧鸡腿堡三件套",
